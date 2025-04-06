@@ -1,0 +1,70 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.img-text-list {
+    $root: &;
+
+    #{$root} {
+        &__wrap {
+            @include mix.flexbox(column);
+            gap: 2rem;
+
+            @include mix.respond-to(pc) {
+                gap: 6.5%;
+                flex-direction: row;
+            }
+        }
+
+        &__img {
+            border-radius: 3.2rem;
+            overflow: hidden;
+
+            @include mix.respond-to(pc) {
+                min-width: 45%;
+            }
+        }
+
+        &__item {
+            &~.img-text-list__item {
+                margin-top: 1.4rem;
+
+                @include mix.respond-to(pc) {
+                    margin-top: 3.2rem;
+                }
+            }
+        }
+    }
+
+    .sub__content-title {
+        position: relative;
+        padding-left: 1.6rem;
+        margin-bottom: 0.8rem;
+
+        @include mix.respond-to(pc) {
+            padding-left: 3rem;
+            margin-bottom: 1.6rem;
+        }
+
+        &::before {
+            content: '';
+            @include mix.position(absolute, $top: 50%, $left: 0);
+            @include mix.widthHeight(.8rem, .8rem);
+            transform: translateY(-50%);
+            background: var.$primary-color;
+            border-radius: 50%;
+
+            @include mix.respond-to(pc) {
+                @include mix.widthHeight(1.2rem, 1.2rem);
+            }
+        }
+    }
+
+    .sub-paragraph {
+        padding-left: 1.6rem;
+
+        @include mix.respond-to(pc) {
+            padding-left: 3rem;
+        }
+    }
+}

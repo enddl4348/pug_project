@@ -1,0 +1,76 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/videoRow.pug
+include ./components/imgTextRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody FRA','Prevention is the only cure', 'Download Brochure', 'inbody-fra', '../files/FRA_brochure.pdf')
+            p.sub-paragraph The InBody Fall Risk Assessment (FRA), is designed to identify the risk of falling and assess the current state of balance. Though the FRA can be used by anyone, the population of the elderly is the one who benefits of its outcomes the most.<br><br>Most falls among the elderly are caused by the lack of body balance and leg strength. By knowing ones risk of falling, 80% of all falls can be prevented among the elderly. A simple fall may seem insignificant but it can greatly affect the lives of older people as it can cause injuries and impair their physical function.<br><br>Therefore, the InBody FRA is of paramount importance to inform medical professionals of potential risk of falling in their patients. First, we evaluate the risk of falling, and if the risk is above a certain level, we identify fall risk factors from various angles. The fall risk can be reduced if its factors are continuously managed and patients are given personalized treatment.
+
+
+        section  
+            .inner-box 
+                +subTitle('How does it work?', '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'testing', subTitle: 'Intake and testing', desc: 'Firstly, the patient will register with you and fill out a short survey to get to know their health background. You then perform a sensory system, nervous system and balance capability test on the InBody FRA.' },
+                    { iconClass: 'advice', subTitle: 'Analysis and advice', desc: 'After thorough testing of the patient, the outcomes can be analyzed and interpreted by the professional. Based on this, the professional will provide reliable advice on how to improve the balance and strength.' },
+                    { iconClass: 'monitoring', subTitle: 'Monitoring', desc: 'In due time, the patient should show positive change in their ability to balance. Through the monitoring of the patients’ progress, the professional can assess and adjust the treatment where necessary.'}
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +subTitle('InBody FRA Highlights', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/fra_highlight01.jpg', subTitle: 'Personalized treatment and patient management', desc: 'The various parameters provided in the results increase the quality of treatment related to balance and falls, and the treatment becomes convenient with scores and evaluations that can be easily and intuitively understood. In addition, it is possible to establish an efficient and personalized patient management system by managing the high-risk fall groups through periodic examination and treatment.' },
+                    { itemClass: '', imgSrc: '../img/product/fra_highlight02.jpg', subTitle: 'Progress and improvement through fun', desc: 'The InBody FRA does not simply perform balance capability tests, but also provides balance exercises that can improve the lacking balance factors in patients. Balance exercises provide a customized program for each patient based on the initial balance capability test.<br><br>These balance exercises are presented in a playful manner, meaning the InBody FRA has integrated games to enhance the balance of patients through play. These games are specifically designed to make balance improvement fun!' },
+                ], 'slideUp')
+
+        section  
+            .inner-box 
+                +subTitle('Explore the InBody FRA Result Sheet', '', '', 'slideInLeft')
+                +imgTextRow('../img/product/fra_product_detail.png', 'product-detail fra', false, false, 'slideInLeft')
+                    .img-text-row__content.img-text-list
+                        ul.img-text-list__content 
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title Sensory System Analysis
+                                p.sub-paragraph Sensory System Analysis is an item that evaluates how well it maintains equilibrium using information transmitted from the somatosensory, visual, and vestibular senses in detail. This test, called m-CTSIB, analyzes your ability to maintain equilibrium with each sensory decline.
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title Integrated Balance Capability Test
+                                p.sub-paragraph The integrated balance capability analysis evaluates how well the center of gravity is managed while maintaining integrative balance, based on the fact that the sensory system, nervous system, and musculoskeletal system can achieve the balance of the body when they faithfully perform their roles.
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title Nervous System Analysis
+                                p.sub-paragraph Neural System Analysis measures the reaction time and posture holding time to evaluate how fast you respond when recognizing a situation. The elderly people react slower as they get older, so the risk of falls can be lowered if they can quickly recognize and judge the situation when exposed to the risk of falls.
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title Musculoskeletal System Analysis
+                                p.sub-paragraph Musculoskeletal analysis Evaluates whether or not the leg muscle mass, leg strength are sufficient, last but not least if the symmetrical balance is achieved. Decrease in leg muscle mass and leg strength is commonly found in the elderly people, and weakness in the lower extremity is a very important risk factor causing falls.
+                
+
+        +barBanner('Explore the InBody FRA Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '526 x 850 x 1175 (L x W x H ) : mm', key02: 'Frequencies', value02: '1, 5, 50, 250, 500, 1000 kHz'},
+            { key01: 'Test Duration', value01: '60 seconds', key02: 'Weight Range', value02: '10 – 270 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '38 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'Body Composition Result Sheet, Body Water Result Sheet (Optional), USB Thumb Drive, InBody Tissue', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '30 impedance measurements, 6 frequencies at each of the 5 segments (Right Arm, Left Arm, Trunk, Right Leg, Left Leg)'},
+            { key01: 'Additional Features', value01: 'EMR Integration (HL7 Ready), Barcode Scanner Integration, Lookin’Body 120 and Lookin’Body Web Compatible, Touchscreen, Voice Guidance System, Wi-Fi/Bluetooth Connectivity, Security Access Code'},
+            { key01: 'Outputs', value01: 'Standard Outputs : <br> Weight, Total Body Water, Soft Lean Mass, Fat Free Mass, Body Fat Mass, Skeletal Muscle Mass, Body Mass Index, Percent Body Fat, InBody Score, Segmental Lean Analysis, Body Composition History, Body Fat-Lean Body Mass Control, Basal Metabolic Rate, Impedance at each segment/ frequency<br><br>Additional Outputs :<br>Intracellular Water, Extracellular Water, ECW/TBW Analysis, Visceral Fat Level, Segmental Fat Analysis, Visceral Fat Area, Segmental Body Water Analysis, Segmental ECW/TBW Analysis, Segmental ICW Analysis, Segmental ECW Analysis, Leg Lean Mass, TBW/LBM, Reactance, Whole Body and Segmental Phase Angle'}
+        ])

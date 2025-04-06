@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title InBody
+		link(rel="stylesheet", href="../css/library.css")
+		link(rel="stylesheet", href="../css/style.css")
+		script(src="../js/libs/gsap.min.js")
+		script(src="../js/libs/jquery-3.7.1.min.js")
+		script(src="../js/libs/ScrollTrigger.min.js")
+		script(src="../js/libs/swiper.min.js")
+	body
+		div.wrap
+			include header
+			div
+					block content
+			include footer
+		
+		script(src="../js/ui.js")
+		script(src="../js/animation.js")
+		block bottomScripts

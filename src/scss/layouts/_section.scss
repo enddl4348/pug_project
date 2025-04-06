@@ -1,0 +1,151 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/functions' as func;
+@use 'abstracts/mixins' as mix;
+
+// 서브 title section
+.sub-intro {
+    $root: &;
+    position: relative;
+    margin: 0 1.6rem;
+    height: 21rem;
+    background: url('../img/sub/sub_intro01.jpg') no-repeat 50%;
+    background-size: cover;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    &.technology {
+        background-image: url('../img/sub/sub_intro_learn02.jpg');
+    }
+
+    &.procedures {
+        background-image: url('../img/sub/sub_intro_learn03.jpg');
+    }
+
+    &.interpretation {
+        background-image: url('../img/sub/sub_intro_learn04.jpg');
+    }
+
+    &.composition {
+        background-image: url('../img/sub/sub_intro_learn05.jpg');
+    }
+
+    &.immune-system {
+        background-image: url('../img/sub/sub_intro_learn06.jpg');
+        background-position: 74% 50%;
+
+        &::before {
+            opacity: .2;
+        }
+    }
+
+    &.safety-tips {
+        background-image: url('../img/sub/sub_intro_learn07.jpg');
+    }
+
+    &.sectors01 {
+        background-image: url('../img/sub/sub_intro_sector01.jpg');
+    }
+
+    &.sectors02 {
+        background-image: url('../img/sub/sub_intro_sector02.jpg');
+        background-position: 68% 50%;
+    }
+
+    &.sectors03 {
+        background-image: url('../img/sub/sub_intro_sector03.jpg');
+    }
+
+    &.sectors04 {
+        background-image: url('../img/sub/sub_intro_sector04.jpg');
+        background-position: 66% 50%;
+    }
+
+    &.sectors05 {
+        background-image: url('../img/sub/sub_intro_sector05.jpg');
+        background-position: 74% 50%;
+    }
+
+    &.download-centre {
+        background-image: url('../img/sub/sub_intro_support01.jpg');
+        background-position: 74% 50%;
+    }
+
+    &.data-integration {
+        background-image: url('../img/sub/sub_intro_support02.jpg');
+        background-position: 74% 50%;
+    }
+
+    &.brochure-download {
+        background-image: url('../img/sub/sub_intro_support03.jpg');
+        background-position: 74% 50%;
+    }
+
+    @include mix.respond-to(pc) {
+        height: 47rem;
+        margin: 0 4rem;
+    }
+
+    &::before {
+        content: '';
+        @include mix.position(absolute, $top: 0, $left: 0);
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: .4;
+    }
+
+    #{$root} {
+
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 2.4rem 2.4rem;
+
+            @include mix.respond-to(pc) {
+                padding: 0 8rem 8rem;
+            }
+        }
+
+        &__content {
+            margin-top: auto;
+            color: var.$white-color;
+            z-index: 1;
+        }
+
+        &__title {
+            @include mix.fontStyle(3rem, 700, 1.26);
+
+            @include mix.respond-to(pc) {
+                font-size: 6.6rem;
+            }
+        }
+
+        &__desc {
+            @include mix.fontStyle(1.5rem, 400, 1.46);
+            margin-top: 0.4rem;
+            color: #e3e3e3;
+
+            @include mix.respond-to(pc) {
+                margin-top: 2rem;
+                font-size: 2.6rem;
+            }
+        }
+    }
+}
+
+
+section {
+    // overflow-x: hidden; //animation용
+
+    &.section--bg {
+        margin-top: 8rem;
+        padding-bottom: 8rem;
+        background: var.$bg-f8;
+
+        @include mix.respond-to(pc) {
+            margin-top: 16rem;
+            padding-bottom: 16rem;
+        }
+    }
+}

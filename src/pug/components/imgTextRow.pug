@@ -1,0 +1,10 @@
+mixin imgTextRow(imgSrc , extraClass, isTextFirst = false, animationMode01 = false, animationMode02 = false)
+    .img-text-row(class=extraClass)
+        if isTextFirst
+            block
+            .img-text-row__img(data-animation=animationMode01)
+                img(src=imgSrc, alt="")
+        else
+            .img-text-row__img(data-animation=animationMode02)
+                img(src=imgSrc, alt="")
+            block

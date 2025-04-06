@@ -1,0 +1,102 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.sectors {
+    &-medical {
+        .sheet-link__img {
+            margin-top: 4rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-dietitian {
+        .sheet-link__img {
+            margin-top: 4rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.sheet-link {
+    &__inner {
+        @include mix.flexbox(column);
+
+        @include mix.respond-to(pc) {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 0;
+        }
+    }
+
+    .sub-title {
+        margin-bottom: 3.2rem;
+
+        @include mix.respond-to(pc) {
+            margin-bottom: 9rem;
+        }
+    }
+
+    &__img {
+        padding: 0 1rem;
+        width: 100%;
+
+        @include mix.respond-to(pc) {
+            padding: 7rem 0 0;
+            min-width: 47.2%;
+        }
+    }
+
+    &__text {
+        width: 100%;
+    }
+}
+
+.bg-round-box {
+    padding: 3.2rem 2.4rem;
+    background: var.$bg-f9;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @include mix.respond-to(pc) {
+        padding: 12rem 5.6% 8rem;
+    }
+
+    &__inner {}
+
+    &__title {
+        @include mix.fontStyle(2.6rem, 700, 1.23);
+        text-align: center;
+
+        @include mix.respond-to(pc) {
+            font-size: 4rem;
+        }
+    }
+
+    .etc-text {
+        margin-top: 2rem;
+        @include mix.fontStyle(1.6rem, 400, 1.75);
+        color: var.$gray-666;
+        text-align: center;
+
+        @include mix.respond-to(pc) {
+            margin-top: 4rem;
+            font-size: 2rem;
+            text-align: right;
+        }
+    }
+}
+
+.sub .quotation {
+    padding-top: 4rem;
+
+    @include mix.respond-to(pc) {
+        padding-top: 6rem;
+    }
+}

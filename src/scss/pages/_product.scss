@@ -1,0 +1,434 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.product {
+    overflow: hidden;
+}
+
+.product-visual {
+    $root: &;
+    background: var.$bg-f8;
+
+    #{$root} {
+        &__inner {
+            position: relative;
+            padding: 6.4rem 1.6rem 0;
+            @include mix.flexbox(column);
+            align-items: flex-start;
+            gap: 4.2rem;
+
+            @include mix.respond-to(pc) {
+                flex-direction: row;
+                padding: 14rem 7.6%;
+                margin: 0 auto;
+                max-width: 160rem;
+                gap: 0;
+            }
+
+            @media (min-width: 1600px) {
+                padding: 14rem 0;
+            }
+
+            &::before {
+                @include mix.respond-to(pc) {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 0;
+                    width: 79.2rem;
+                    height: 19.5rem;
+                    background: url('../img/sub/inbody_decotext.png')no-repeat 0 0;
+                    background-size: 100% auto;
+                }
+            }
+        }
+
+        &__content {
+            @include mix.respond-to(pc) {
+                width: 63%;
+            }
+        }
+
+        &__text {
+            margin-bottom: 4rem;
+
+            @include mix.respond-to(pc) {
+                margin-bottom: 9rem;
+            }
+        }
+
+        &__title {
+            @include mix.fontStyle(3.4rem, 700, 1);
+            margin-bottom: 1rem;
+            color: var.$primary-color;
+
+            @include mix.respond-to(pc) {
+                font-size: 8.8rem;
+                margin-bottom: 1.4rem;
+            }
+        }
+
+        &__sub {
+            @include mix.fontStyle(1.8rem, 500, 1.44);
+            margin-bottom: 2.8rem;
+
+            @include mix.respond-to(pc) {
+                font-size: 3.2rem;
+                margin-bottom: 5rem;
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: 34.7rem;
+            margin: 0 auto;
+            background: no-repeat 50% 100%;
+            background-size: contain;
+
+            @include mix.respond-to(pc) {
+                @include mix.position(absolute, $bottom: 0, $right: 0);
+            }
+
+            &.inbody-970 {
+                height: 33.5rem;
+                background-image: url('../img/product/visual_970.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_970_pc.png');
+                    width: 55rem;
+                    height: 76.4rem;
+                }
+            }
+
+            &.inbody-770 {
+                background-image: url('../img/product/visual_770.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_770_pc.png');
+                    width: 55rem;
+                    height: 67rem;
+                }
+            }
+
+            &.inbody-580 {
+                height: 34.5rem;
+                background-image: url('../img/product/visual_580.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_580_pc.png');
+                    width: 55rem;
+                    height: 65.6rem;
+                }
+            }
+
+            &.inbody-380 {
+                background-image: url('../img/product/visual_380.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_380_pc.png');
+                    width: 55rem;
+                    height: 68rem;
+                }
+            }
+
+            &.inbody-270 {
+                background-image: url('../img/product/visual_270.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_270_pc.png');
+                    width: 55rem;
+                    height: 62.4rem;
+                }
+            }
+
+            &.inbody-bwa {
+                background-image: url('../img/product/visual_bwa.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_bwa_pc.png');
+                    width: 55rem;
+                    height: 71.1rem;
+                }
+            }
+
+            &.inbody-s10 {
+                background-image: url('../img/product/visual_s10.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_s10_pc.png');
+                    width: 55rem;
+                    height: 65.2rem;
+                }
+            }
+
+            &.bpbio_750 {
+                background-image: url('../img/product/visual_bpbio750.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_bpbio750_pc.png');
+                    width: 55rem;
+                    height: 65.2rem;
+                }
+            }
+
+            &.bpbio_320 {
+                background-image: url('../img/product/visual_bpbio320.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_bpbio320_pc.png');
+                    width: 55rem;
+                    height: 76.4rem;
+                }
+            }
+
+            &.inbody-bp170 {
+                background-image: url('../img/product/visual_bp170.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_bp170_pc.png');
+                    width: 55rem;
+                    height: 79.2rem;
+                }
+            }
+
+            &.inbody-fra {
+                background-image: url('../img/product/visual_fra.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_fra_pc.png');
+                    width: 55rem;
+                    height: 93.2rem;
+                }
+            }
+
+            &.ingrip {
+                background-image: url('../img/product/visual_ingrip.png');
+
+                @include mix.respond-to(pc) {
+                    background-image: url('../img/product/visual_ingrip_pc.png');
+                    width: 55rem;
+                    height: 65.2rem;
+                }
+            }
+
+            &.lookinbody-web {
+                height: 34.6rem;
+                background-image: url('../img/product/visual_lookinbody.png');
+
+                @include mix.respond-to(pc) {
+                    width: 55rem;
+                    height: 73.6rem;
+                }
+            }
+
+        }
+    }
+}
+
+.product {
+    .bar-banner {
+        margin-top: 6.4rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 16rem;
+        }
+    }
+
+    .product-sheet {
+        @include mix.respond-to(pc) {
+            gap: 5%;
+        }
+
+        .img-text-row__img {
+            padding: 2.5rem 0;
+            background: var.$bg-f8;
+            border-radius: 3.2rem;
+            overflow: hidden;
+
+            @include mix.respond-to(pc) {
+                min-width: 45%;
+                padding: 4.4rem 0;
+            }
+
+            img {
+                margin: 0 auto;
+                width: 80%;
+
+                @include mix.respond-to(pc) {
+                    width: 68%;
+                }
+            }
+        }
+
+        &.bpbio320 {
+            .img-text-row__img {
+                padding: 13% 0;
+
+                @include mix.respond-to(pc) {
+                    padding: 7.6rem 0;
+                }
+            }
+        }
+
+
+    }
+
+    .product-detail {
+        @include mix.respond-to(pc) {
+            gap: 5%;
+        }
+
+        .img-text-row__img {
+            @include mix.flexbox(row, $justify: center, $align: flex-end);
+            padding: 2rem 2rem 0;
+            background: var.$bg-f8;
+            border-radius: 3.2rem;
+            overflow: hidden;
+
+            @include mix.respond-to(pc) {
+                padding-top: 3rem;
+                height: auto;
+                min-width: 45%;
+            }
+
+            img {
+                width: auto;
+                height: 100%;
+
+                @include mix.respond-to(mobile-small) {
+                    height: auto;
+                }
+
+                @include mix.respond-to(pc) {}
+            }
+        }
+
+        &.fra {
+            .img-text-row__img {
+                padding: 3rem 10% 0;
+
+                @include mix.respond-to(pc) {
+                    padding: 7rem 8.4rem 0;
+                }
+            }
+        }
+
+        &.ingrip {
+            .img-text-row__img {
+
+                @include mix.respond-to(pc) {
+                    padding: 5.4rem 0 0;
+                }
+            }
+        }
+    }
+}
+
+// lookinweb
+.lookinweb {
+    .img-text-row {
+        gap: 3.2rem;
+
+        @include mix.respond-to(pc) {
+            gap: 5%;
+        }
+
+        .sub-text {
+            margin-bottom: 0.8rem;
+            @include mix.fontStyle(1.8rem, 500, 1.44);
+
+            @include mix.respond-to(pc) {
+                margin-top: 1.6rem;
+                font-size: 3.2rem;
+            }
+        }
+
+        &__img {
+            @include mix.flexbox($justify: center);
+            border-radius: 3.2rem;
+            background: var.$bg-f8;
+            height: 40.8rem;
+            overflow: hidden;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+                max-width: 45%;
+                min-height: 82rem;
+                border-radius: 3.4rem;
+            }
+
+            img {
+                width: 88.4%;
+
+                @include mix.respond-to(pc) {
+                    width: 76.6%;
+                }
+            }
+
+        }
+
+        .sub-title {
+            margin-bottom: 0;
+        }
+
+        .sub-title__title~.sub-paragraph {
+            margin-top: 1.4rem;
+            color: var.$gray-888;
+
+            @include mix.respond-to(pc) {
+                margin-top: 3.2rem;
+                color: var.$gray-666;
+            }
+        }
+
+        &.application {
+            .img-text-row__img {
+                @include mix.respond-to(pc) {
+                    padding: 5% 0;
+                }
+            }
+
+            .img-text-row__img img {
+                width: auto;
+                height: 85.2%;
+
+            }
+        }
+
+        &.health-analysis {
+            .img-text-row__img img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    .app-down {
+        display: flex;
+        gap: .8rem;
+        margin-top: 1.6rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 8rem;
+            gap: 2.4rem;
+        }
+
+        .google-play {
+            width: 13.6rem;
+
+            @include mix.respond-to(pc) {
+                width: 24.4rem;
+            }
+        }
+
+        .apple-store {
+            width: 12rem;
+
+            @include mix.respond-to(pc) {
+                width: 21.6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/videoIframe.pug
+include ./components/imgTextRow.pug
+include ./components/iconListContent.pug
+include ./components/imgTextColumn.pug
+
+
+block content
+    -const obesityList_01 = ['Early mortality', 'Cardiovascular disease' ,'Hypertension' ,'Diabetes', 'Gallbladder disease' ,'Cancer', 'Arthritis', 'Back pain'];
+    -const obesityList_02 = ['Pregnancy complications','Menstrual abnormalities','Shortness of breath','Sleep apnea','Increased LDL & triglycerides','Decreased HDL','Impaired heart function','Impaired immune function'];
+    -const bodyFatList = ['Poor insulation','Minimal energy stores','Lack of cushioning for organs','Poor cardiovascular function','Prone to illness','Poor recovery from exercise/illness','Low testosterone','Weak muscles', 'Loss of bone density' ,'Amenorrhea'];
+    -const sarcopeniaList = ['Frailty','Starvation','Poor insulin resistance/glycemic control','Metabolic problems increase','Osteoporosis','Hormone dysregulation','Low strength','Higher risk of hospitalization/ hospital LOS'];
+
+    main.sub.composition.pb-0
+        +subIntro('Body composition', 'Body composition is a method of describing what the body is made of.','composition')
+        section.video-section
+            .inner-box
+                .align-box 
+                    .video-area
+                        +videoIframe('https://www.youtube.com/embed/B6jIUOi8puk?si=ySNk1Zz7ZRhHn7dk')   
+                    +subTitle('What is body composition?', '', 'mb-0')
+                        p.sub-paragraph Body composition is a method of describing what the body is made of. It includes fat, protein, minerals and body water. It also describes weight more accurately than BMI. Body composition analysis can accurately show changes in fat mass, muscle mass, and body fat percentage. This can help validate services like personal training, patient care, and corporate wellness.
+        
+        section.section--bg
+            .inner-box
+                +imgTextRow('../img/sub/composition_01.jpg','', true)
+                    .img-text-row__content
+                        +subTitle('The Modern Assessment of Health')
+                            p.sub-paragraph When you’re thinking of losing weight or simply want to see how healthy you are, you probably do one of two things: step on a scale or calculate your BMI. But the truth is, these methods don’t tell you anything about how healthy you are– all weight and BMI does is compare how heavy you are to a standard that doesn’t fit your individual goals.<br><br>When you’re trying to get healthier, you’re most likely going to lose fat and (hopefully) gain muscle. But BMI and weight don’t differentiate between muscle and fat. So how can you? Through body composition analysis.<br><br>Body composition analysis is a method of describing what the body is made of, differentiating between fat, protein, minerals, and body water to give you a snapshot of your health. InBody is in the business of body composition analysis, and we’re here to teach you the importance of it today’s day and age to help you reach your health goals from the inside out.
+                
+                +imgTextRow('../img/sub/composition_02.jpg','', true)
+                    .img-text-row__content
+                        +subTitle('What is body composition?')
+                            p.sub-paragraph Body composition is used to describe the percentages of fat, bone, water, and muscle in human bodies. Two people of same sex and body weight may look completely different from each other because they have a different body composition.<br><br>Body composition and growth are key components of health in both individuals and populations. The ongoing epidemic of obesity in children and adults has highlighted the importance of understanding body fat levels for short-term and long-term health. However, other components of body composition also influence health outcomes, and its measurement is increasingly valuable in clinical practice.<br><br>These women are all professional athletes at their peak. Though the scale and BMI may say they’re overweight or even underweight, they’re actually at the prime of their performance.
+
+        section 
+            .inner-box
+                +imgTextRow('../img/sub/img_body.jpg','guidance_02')
+                    .img-text-row__content
+                        +subTitle('Why do you need to differentiate between muscle and fat?', '', 'mb-0')
+                            p.sub-paragraph Health practitioners universally agree that too much fat is a serious health risk. Problems such as hypertension, elevated blood lipids (fats and cholesterol), diabetes mellitus, cardiovascular disease, respiratory dysfunction, gallbladder disease, and a myriad of other health problems are all related to obesity.<br><br>The ongoing epidemic of obesity in children and adults has highlighted the importance of knowing a person’s body fat for short-term and long-term health. An important part of understanding a user’s health is differentiating between what is healthy and what is not, especially when it comes to fat.<br><br>It’s common to assume that having as little fat as possible is healthy. However, being thin does not automatically reduce one’s health risk. Being thin refers to weighing less than the recommended values in age-height-weight tables. Leanness, however, refers to the muscle, bone, and fat composition of one’s body weight. Being lean intrinsically indicates greater muscle mass development than thin.<br><br><em class="bold">Understanding the differences between thinness, leanness, overweight, and obesity is important for health practitioners to:</em>
+
+                +iconListContent('', [
+                    { iconClass: 'obesity', subTitle: '', desc: 'Provide baseline data for nutrition counseling and treatment of obesity' },
+                    { iconClass: 'profiles', subTitle: '', desc: "Develop complete physical fitness profiles for clients" },
+                    { iconClass: 'muscle', subTitle: '', desc: "Monitor body fat loss and muscle growth due to exercise/diet" },
+                    { iconClass: 'growth', subTitle: '', desc: "Describe changes due to growth, development, maturation, and aging " },
+                ])
+
+        section.section--bg
+            .inner-box
+                +subTitle('So how are you measuring health?')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/sub/health_01.jpg', subTitle: 'BMI is an outdated method', desc: 'Body Mass Index (BMI) is a common method used to assess the health of an individual by comparing the amount of weight they carry to the height of the individual. In its most basic sense, BMI may be useful for identifying those who are at an increased health risk as a result of excess fat accumulation. Despite the widespread use of BMI in clinical practice, BMI has many limitations and is a poor tracking tool for weight change because there’s no way to identify if changes in your weight are in fat or muscle. That’s because BMI is calculated simply by dividing a person’s weight in kilograms by their height: BMI = kg/m2 Predicting health or mortality using a single number such as BMI oversimplifies health risks and ignores important factors that contribute to positive health. Newer technologies are able to separate body weight into specific components that can be examined separately, like DSM-BIA.' },
+                    { itemClass: '', imgSrc: '../img/sub/health_02.jpg', subTitle: 'Focus on body fat percentage instead', desc: 'As you move away from BMI, you should focus on the percentage of body fat you have at your weight. At InBody, we call this PBF (percent body fat).<br><br>There is no consensus on what the best body fat level for health (the amount of fat storage that maximizes health by minimizing risk for adverse health states/conditions) is for the general population.<br><br>The normal body fat range provided by InBody is set at 10-20% for males (15% as ideal) and 18-28% for females (23% as ideal).' },
+                ])
+
+        //- section.complications
+        //-     .inner-box
+        //-         +subTitle('What are dangers of not knowing your body composition?')
+        //-         .align-box.item-division
+        //-             .item-box
+        //-                 .definition-list
+        //-                         .definition-list__title  Complications of obesity
+        //-                         .definition-list__content.align-box
+        //-                             ul
+        //-                                 each item, index in obesityList_01
+        //-                                     li.definition-list__item= item
+        //-                             ul
+        //-                                 each item, index in obesityList_02
+        //-                                     li.definition-list__item= item
+        //-             .item-box
+        //-                 .align-box.list-division
+        //-                     .definition-list
+        //-                         .definition-list__title  Complications of low body fat
+        //-                         .definition-list__content
+        //-                             .row-align-box
+        //-                                 ul
+        //-                                     each item, index in bodyFatList
+        //-                                         li.definition-list__item= item
+                        
+        //-                     .definition-list
+        //-                         .definition-list__title  Complications of low muscle mass (sarcopenia)
+        //-                         .definition-list__content
+        //-                             .row-align-box
+        //-                                 ul
+        //-                                     each item, index in sarcopeniaList
+        //-                                         li.definition-list__item= item
+
+        //- section.section--bg
+        //-     .inner-box
+        //-         +subTitle('Methods of Body Composition Analysis')
+        //-             p.sub-paragraph There are many ways to determine your body composition. Some are quick and easy but provide basic information only. Some are lengthy and expensive and require the assistance of a trained technician to administer a test. Here are a few methods that are used to determine body composition: 
+        //-         +imgTextColumn([
+        //-             { itemClass: '', imgSrc: '../img/sub/composition_analysis_01.jpg', subTitle: 'Skinfold Calipers', desc: 'One of the anthropometric methods used for measuring body fat is the skinfold test. It is also known as pinch test. As the name implies, this method involves pinching the subcutaneous fat layer with fingers and measuring the thickness using a caliper.<br><br>Calipers easily portable, and measurement is simple and inexpensive. However, this method involves estimating the total Percent Body Fat (PBF) based on subcutaneous fat.<br><br>Although a large portion of body fat is subcutaneous fat, the measurement may not be accurate for people whose body fat distributions vary. Also, measurement is difficult if the subcutaneous fat layer thickness is 5 cm or more and reproducibility of the result varies greatly depending on the skills of the measurer.<br><br>Image Credit: Flickr' },
+        //-             { itemClass: '', imgSrc: '../img/sub/composition_analysis_02.jpg', subTitle: 'Hydrostatic Weighing', desc: 'Underwater weighing calculates the total body fat by the density of the body. It is based on Archimedes’ principle: when an object is submerged in water, the difference between the mass of the object in the air and its mass in water is the object’s volume.<br><br>Body density = Mass of air /(Mass of air – Mass of water)<br><br>Underwater weighing is regarded as the gold standard for body composition measurement as it is one of the only body composition technologies that have been compared directly to cadaver analysis.<br><br>Image Credit: Texas A&M'},
+        //-             { itemClass: '', imgSrc: '../img/sub/composition_analysis_03.jpg', subTitle: 'Air Displacement Plethysmography', desc: 'This method measures the volume of a human body by measuring the volume of air according to the changes in pressure in a chamber.<br><br>First, weight and volume of the person are used to calculate body density and then Percent Body Fat and the fat-free ratio.<br><br>Density = Mass / Volume<br>Percent Body Fat = (495 / Density) – 450 <br> Fat free ratio = 100-BF%<br>Time required for measurement is relatively short at 3-5 minutes and the examinee can continue breathing in the chamber as opposed to underwater weighing. This method is known as a gold standard because it allows body composition analysis and produces accurate measurements using volume just like underwater weighing.<br><br>Image Credit: U.S. Air Force photo by Joel Martinez' },
+        //-             { itemClass: '', imgSrc: '../img/sub/composition_analysis_04.jpg', subTitle: 'Dual Energy X-Ray Absorptiometry (DEXA)', desc: 'DEXA is an imaging method that measures the body weight in terms of BMC, lean, and fat based on the decrement of X-ray on the images obtained by exposing to two different X-rays. With the patient lying down, photons of the X-ray beams of different energy levels scan the patient. It takes about 5 to 30 minutes.<br><br>As a standard method for body composition analysis, DEXA has high accuracy along with hydrodensitometry. Its advantage is that it can measure the body composition of bone density, body fat and muscle mass for different parts. Advancements to the technology affords DEXA the ability to differentiate lean and fat, allowing this technology to advance from a 2 compartment model to a 3 compartment model.<br><br>In order to get a DEXA scan performed, you will typically need to make an appointment with a hospital or clinic that has a DEXA device. You may need to do some research; not all hospitals and clinics will have DEXA devices.<br><br>Image Credit: Wikipedia' },
+        //-             { itemClass: '', imgSrc: '../img/sub/composition_analysis_05.jpg', subTitle: 'MRI (Magnetic Resonance Imaging)', desc: 'Magnetic resonance is a form of imaging technique where the body water may be mapped (but not quantified). The body is scanned in segmental (slices) scans are used to predict whole-body values. MRI is considered to be the most accurate tool for in vivo quantification of body composition. It is an ideal evaluation tool for measurement of skeletal muscle mass and adipose tissue (and can divide adipose into visceral and subcutaneous depots).<br><br>MRI’s use a high-strength magnet, thus all metal must be removed. Individuals with metallic chips, materials, surgical clips, artificial joints/prosthetics, pacemakers, metal implants, artificial heart valves, metallic cochlear implants, bullet fragments, or insulin pumps should not test. However, since there is no ionizing radiation, this is a preferable option for many (elderly, children, etc.)<br><br>A whole-body scan is roughly 25-30min for scan and 3 hours to analyze via computer software.<br><br>Image Credit: Northwest Radiology' },
+        //-             { itemClass: '', imgSrc: '../img/sub/composition_analysis_06.jpg', subTitle: 'Bioelectric Impedance Analysis (BIA)', desc: 'Bioelectrical Impedance Analysis (BIA) is a method of measuring impedance by applying alternating electrical currents to a user to measuring their volume of water through impedance values. <br><br> This non-invasive method involves the placement of electrodes on a person’s feet, hands, or both. A low-level electrical current is sent through the body, and the flow of the current is affected by the amount of water in the body. BIA devices measure how this signal is impeded through different types of tissue (muscle has high conductivity but fat slow the signal down). <br<br> As BIA determines the resistance to flow of the current as it passes through the body, it provides estimates of body water from which body fat is calculated using selected equations.<a href="#" class="link--underline">Learn how InBody’s BIA technology works</a>'},
+        //-         ])
+
+        section
+            .box-link
+                .box-link__item.box-link__item--01
+                    a.box-link__link(href="#") 
+                        .box-link__content
+                            span.box-link__sub Next steps
+                            .box-link__title Measure your body<br>composition with InBody
+                            p.box-link__desc What does that look like?
+                            i.box-link__icon
+                .box-link__item.box-link__item--02
+                    a.box-link__link(href="#")
+                        .box-link__content
+                            span.box-link__sub Go beyond weight
+                            .box-link__title See progress in<br>a tangible way
+                            p.box-link__desc What do body composition results look like?
+                            i.box-link__icon
+
+
+block bottomScripts 

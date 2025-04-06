@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.table {
+    border-top: 1px solid var.$border-color-e5;
+
+    th,
+    td {
+        padding: 1.6rem 2rem;
+        @include mix.fontStyle(1.4rem, 600, 1.42);
+        border-bottom: 1px solid var.$border-color-e5;
+
+        @include mix.respond-to(pc) {
+            padding: 2.4rem 4rem;
+            font-size: 2rem;
+        }
+    }
+
+    th {
+        min-width: 15rem;
+        background: var.$bg-f8;
+        text-align: left;
+
+        @include mix.respond-to(pc) {
+            width: 20%;
+        }
+    }
+
+    td {
+        min-width: 27rem;
+        font-weight: 400;
+        color: var.$gray-666;
+    }
+}
+
+.row-table {
+    $root: &;
+
+    #{$root} {
+        &__content {
+            margin-right: -1.6rem;
+            overflow: hidden;
+
+            @include mix.respond-to(pc) {
+                margin-right: 0;
+            }
+        }
+
+        &__wrap {
+            width: 100%;
+            overflow-x: auto;
+        }
+    }
+}

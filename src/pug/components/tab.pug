@@ -1,0 +1,8 @@
+mixin tab(tabs, extraClass)
+    .tab(data-js="tab", class=extraClass)
+        .tab__buttons(data-js="tabButtons")
+            .tab__inner
+                each tab, index in tabs
+                    button.tab__button(type="button",data-js="tabButton")= tab.buttonText
+        .tab__contents(data-js="tabContents")
+            block  

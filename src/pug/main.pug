@@ -1,0 +1,65 @@
+extends ./layout/layout
+include ./components/contentTitle.pug
+include ./components/barBanner.pug
+include ./mixin/mainSlide.pug
+include ./mixin/cardItem.pug
+include ./mixin/productItem.pug
+
+block content
+	-const productList = [{title: 'BWA',desc: 'Body Water Analyzer',img: '../img/main/product01.png '},{title: 'InBody',desc: 'The standard of body composition analyzer',img: '../img/main/product02.png'}, {title: 'BPBIO',desc: 'Blood Pressure Monitor',img: '../img/main/product03.png'}, {title: 'Wellness',desc: 'FRA and InGrip',img: '../img/main/product04.png'}];
+	-const sectorDatas = [{title: 'MEDICAL',desc: 'Use the InBody to make accurate diagnoses for yout patients and create a targeted treatment plan.',img: '../img/main/sector_img01.png'},{title: 'FITNESS',desc: 'Add extra value to your trainning program and turn your coaches into health experts with objective analysis.',img: '../img/main/sector_img02.png'},{title: 'PHYSIOTHERAPY',desc: 'Data-evidence based to help monitor recovery progress of your patients.',img: '../img/main/sector_img03.png'}, {title: 'CORPORATE',desc: 'A self-care zone that gives your employees the full health creening fr healthier workplace.',img: '../img/main/sector_img04.png'}, {title: 'DIETITIAN',desc: 'Make the effect of your method visible by providing more insights into patients’s body composition.',img: '../img/main/sector_img05.png'}];
+
+	main.main  
+		.main-wrapper
+			section.main-visual
+				.main-swiper.swiper 
+					.swiper-wrapper
+						+mainSlide('BWA<br>2.0&970', 'A new standard of Innovation ', 'main-swiper__img01')
+						+mainSlide('InBody<br>380&580', 'Introducing the all new', 'main-swiper__img02')
+						+mainSlide('INGRIP', 'Accurate and reliable', 'main-swiper__img03')
+					.main-swiper__control-wrap
+						.main-swiper__controler
+							.main-swiper__pagination
+							button.main-swiper__player(type="button", title="play")
+				button.main__scroll-button(type="button", aria-label="scroll down")
+				
+			section.main-products.inner-box
+				+contentTitle('Products', 'InBody is Achieving Sustainable<br>Growth in the World')
+
+				ul.product-list 
+					each item in productList
+						+productItem(item.title, item.desc, item.img)
+			
+			section.main-intro.inner-box
+				.align-box 
+					.main-intro__text
+						+contentTitle('What makes InBody technology different?')
+						p.content__paragraph(data-animation="slideInLeft") InBody’s medical-grade body composition analyzers use four pillars of technology to provide accurate, precise direct segmental measurement multi-frequency bioelectrical impedance analysis (DSM-MFBIA) extensively validated to gold-standard methods. <br><br> Advanced BIA technology refined through years of innovation. Learn more about what makes InBody different.
+						a.round-arrow-link(href="#", data-animation="slideInLeft") Learn More
+							i.icon-arrow-round
+					.main-intro__img(aria-hidden="true", data-animation="slideInRight")
+
+			section
+				+barBanner('Download', 'Download the InBody product brochure you need.', 'Download Brochure', '', 'slideInRight' )
+			
+			section.main-sectors.inner-box
+				+contentTitle('How Can InBody<br>Be Used?', 'Due to the excellent analysis and the fast, simple way of measuring, the InBody is used worldwide in many different sectors.')
+				.card-content
+					ul.card-content__list(data-animation="slideInLeft")
+						each item in sectorDatas
+							+cardItem(item.title, item.desc, item.img)
+
+			section.main-contact
+				.main-contact__wrap
+					.main-contact__content
+						a.round-arrow-link(href="#", data-animation="slideInRight") GET IN CONTACT!
+							i.icon-arrow-round.white
+						div.main-contact__img
+							img.img-mo(src="../img/main/contact_bg_blur.png", alt="", aria-hidden="true")
+							img.img-pc(src="../img/main/contact_bg_blur_pc.png", alt="", aria-hidden="true")
+						.main-contact__text-box
+							p.main-contact__sub(data-animation="slideInLeft") Please do not hesitate to contact us
+							h4.main-contact__title(data-animation="slideInLeft") Interested in learning <br>more about InBody and<br>our products?
+
+block bottomScripts
+	script(src="../js/main.js")

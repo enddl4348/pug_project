@@ -1,0 +1,227 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+// 서브 티이틀
+.sub-title {
+    margin-bottom: 4.2rem;
+
+    @include mix.respond-to(pc) {
+        margin-bottom: 8rem;
+    }
+
+    &__title {
+        @include mix.fontStyle(3rem, 600, 1.2);
+
+        @include mix.respond-to(pc) {
+            font-size: 6rem;
+        }
+
+        &~.sub-paragraph {
+            margin-top: .8rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    &__desc {
+        @include mix.fontStyle(1.6rem, 400, 1.5);
+        margin-top: .8rem;
+        color: var.$gray-888;
+
+        @include mix.respond-to(pc) {
+            font-size: 2.4rem;
+            margin-top: 1.8rem;
+        }
+    }
+
+    &.mb-0 {
+        margin-bottom: 0;
+    }
+}
+
+
+// 메인 단락
+.content__paragraph {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.34;
+    color: var.$gray-666;
+
+    @include mix.respond-to(pc) {
+        font-size: 2rem;
+    }
+}
+
+// 서브 단락
+.sub-paragraph {
+    @include mix.fontStyle(1.5rem, 400, 1.46);
+    color: var.$gray-666;
+
+    @include mix.respond-to(pc) {
+        font-size: 2rem;
+    }
+
+    &~.sub-paragraph {
+        margin-top: 2.8rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 4rem;
+        }
+    }
+
+    .bold {
+        font-weight: 700;
+        color: var.$black-color;
+    }
+}
+
+.etc-paragraph {
+    @include mix.fontStyle(1.5rem, 400, 1.46);
+    color: var.$gray-999;
+
+    @include mix.respond-to(pc) {
+        font-size: 1.8rem;
+    }
+}
+
+.sub__content-title {
+    @include mix.fontStyle(2.4rem, 700, 1.33);
+
+    @include mix.respond-to(pc) {
+        font-size: 4rem;
+    }
+}
+
+.important {
+    color: var.$primary-color;
+}
+
+.ellipsis_2 {
+    @include mix.text-overflow(2, 2.4rem);
+}
+
+.list-title {
+    @include mix.fontStyle(1.8rem, 700, 1.44);
+
+    @include mix.respond-to(pc) {
+        font-size: 3.2rem;
+    }
+}
+
+.text-list {
+    &__item {
+        @include mix.fontStyle(1.5rem, 400, 1.46);
+        color: var.$gray-666;
+
+        @include mix.respond-to(pc) {
+            font-size: 2rem;
+            line-height: 1.8;
+        }
+
+        &~.text-list__item {
+            margin-top: 1.4rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 2rem;
+            }
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+    }
+
+    &.text-list--number {
+        counter-reset: list-counter;
+
+        .text-list__item {
+            display: flex;
+
+            &::before {
+                counter-increment: list-counter;
+                content: counter(list-counter) ".";
+                margin-right: 0.4rem;
+            }
+        }
+    }
+
+    &.text-list--dot {
+        .text-list__item {
+            position: relative;
+            padding-left: 2.4rem;
+
+            &~.text-list__item {
+                margin-top: 0;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: .8rem;
+                left: .8rem;
+                width: 3px;
+                height: 3px;
+                background: var.$gray-666;
+                border-radius: 50%;
+
+                @include mix.respond-to(pc) {
+                    top: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.definition-list {
+    &__title {
+        @include mix.fontStyle(2rem, 700, 1.4);
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var.$gray-eee;
+
+        @include mix.respond-to(pc) {
+            padding-bottom: 2rem;
+            font-size: 2.8rem;
+            line-height: 1.28;
+        }
+    }
+
+    &__content {
+        margin-top: 1.6rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 2.4rem;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 1.8rem;
+        @include mix.fontStyle(1.5rem, 400, 2.1);
+        color: var.$gray-666;
+
+        @include mix.respond-to(pc) {
+            font-size: 2rem;
+            line-height: 1.8;
+            padding-left: 2.4rem;
+        }
+
+        &::before {
+            content: '';
+            @include mix.position(absolute, $top: 1.3rem, $left: 0.6rem);
+            width: .3rem;
+            height: .3rem;
+            background: var.$gray-666;
+            border-radius: 50%;
+
+            @include mix.respond-to(pc) {
+                width: 0.4rem;
+                height: 0.4rem;
+                top: 1.6rem;
+                left: 1rem;
+            }
+        }
+    }
+}

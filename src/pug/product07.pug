@@ -1,0 +1,77 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/videoRow.pug
+include ./components/imgTextRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody S10','Research Grade Analysis', 'Download Brochure', 'inbody-s10', '../files/970_brochure.pdf')
+            p.sub-paragraph Specialised Disease Management The InBody S10 body water analyser is specifically designed for immobile or amputee patients. The InBody S10 uses attachable electrodes to identify excess fluid and assess cellular health
+
+
+        section  
+            .inner-box 
+                +subTitle('What’s different about the InBody S10?', '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'touchscreen', subTitle: 'No Estimations', desc: 'Only impedance is used to determine your body composition results; no empirical estimations such as age or gender are used or required to predict your body composition.' },
+                    { iconClass: 'laying-down', subTitle: 'Supine Testing', desc: 'Measure body water while the user is laying down in less than 90 seconds. No dunking. No pinching. No discomfort. Simply attach the electrodes to the user to test.' },
+                    { iconClass: 'portable', subTitle: 'Portable', desc: 'Move the InBody S10 on its cart for convenient testing in different rooms.' }
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +subTitle('What is measured?', '', '', 'slideInLeft')
+                +imgTextRow('../img/product/s10_img01.png', 'product-detail', false, false, 'slideInLeft')
+                    .img-text-row__content.img-text-list
+                        ul.img-text-list__content 
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title BODY WATER COMPOSITION HISTORY
+                                p.sub-paragraph Body Water Composition History monitors changes, providing valuable data to see how a patient is responding to a program and if modifications need to be made to improve their health.
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title WHOLE BODY PHASE ANGLE
+                                p.sub-paragraph Phase angle is a good indicator of cellular integrity. The InBody S10 provides whole body phase angle and segmental phase angle analysis at 50 kHz. The higher the phase angle, the healthier cellular integrity is. Phase angle values can be used to ensure a patient is receiving the appropriate vitamin and mineral intake.
+                            li.img-text-list__item(data-animation="slideInRight")
+                                h3.sub__content-title NOTES FOR DIALYSIS PATIENTS
+                                p.sub-paragraph Segmental ECW/TBW reveals body water distribution in each individual body segment. This allows for monitoring of trends and detection of unusual shifts in fluid distribution that result from injury, aging, obesity and other health factors.
+                
+        section  
+            .inner-box 
+                +imgTextRow('../img/product/s10_result_sheet.png','product-sheet', true, 'slideInRight')
+                    .img-text-row__content.img-text-list
+                        +subTitle('Explore the InBody S10 Result Sheet', '', '', 'slideInLeft')
+                        ul.img-text-list__content 
+                            li.img-text-list__item(data-animation="slideInLeft")
+                                h3.sub__content-title Dialysis Treatment
+                                p.sub-paragraph Segmental ECW/TBW reveals body water distribution in each individual body segment. This allows for monitoring of trends and detection of unusual shifts in fluid distribution that result from injury, aging, obesity and other health factors. Track the changes in Body Water Composition History to see how a patient is responding to a program and if modifications need to be made to improve their health.
+                            li.img-text-list__item(data-animation="slideInLeft")
+                                h3.sub__content-title Malnutrition and Cancer Treatment
+                                p.sub-paragraph Phase angle is a good indicator of cellular integrity. The InBody S10 provides whole body phase angle and segmental phase angle analysis at 50 kHz. The higher the phase angle, the healthier cellular integrity is. Phase angle values can be used to ensure a patient is receiving the appropriate vitamin and mineral intake.
+
+        +barBanner('Explore the InBody S10 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '202 x 322 x 53 (L x W x H ) : mm', key02: 'Frequencies', value02: '1, 5, 50, 250, 500, 1000 kHz'},
+            { key01: 'Test Duration', value01: '1 min 50 sec', key02: 'Weight Range', value02: '10 – 250 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '2 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'InBody Results Sheets, USB Thumb Drive, InBody Tissue', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '30 impedance measurements by using 6 different frequencies at each 5 segments of the body (right arm, left arm, trunk, right leg, left leg)'},
+            { key01: 'Additional Features', value01: 'Lookin’Body 120 and Lookin’Body Web Compatible, Touchscreen, Bluetooth Connectivity, Security Access Code'},
+            { key01: 'Outputs', value01: 'Standard Outputs : <br> Total Body Water, Soft Lean Mass, Fat Free Mass, Body Fat Mass, Skeletal Muscle Mass, Body Mass Index, Percent Body Fat, InBody Score, Segmental Lean Analysis, Body Composition History, Body Fat-Lean Body Mass Control, Basal Metabolic Rate, Impedance at each segment/ frequency<br><br>Additional Outputs :<br>Water Control, Intracellular Water, Extracellular Water, ECW/TBW Analysis, Visceral Fat Level, Segmental Fat Analysis, Visceral Fat Area, Segmental Body Water Analysis, Segmental ECW/TBW Analysis, Segmental ICW Analysis, Segmental ECW Analysis, TBW/LBM, Reactance, Whole Body and Segmental Phase Angle'}
+        ])

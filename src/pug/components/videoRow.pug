@@ -1,0 +1,8 @@
+mixin videoRow (items, animationMode=false)
+        .video-row__wrap
+            each item in items
+                .video-row__item
+                    .video-row__video-box(data-animation=animationMode)
+                        .video-wrap.video-wrap--iframe
+                            iframe.video-item(src=item.videoSrc, width=item.width, height=item.height, frameborder="0", allow="autoplay; encrypted-media", allowfullscreen)
+                    h3.sub__content-title(data-animation=animationMode)= item.subTitle

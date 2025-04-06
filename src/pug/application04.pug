@@ -1,0 +1,32 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/sheetLink.pug
+include ./components/videoRow.pug
+
+block content
+
+    main.sub.sectors.pb-0
+        +subIntro('Physiotherapy','A data-evidence based solution in physiotherapy','sectors04')
+
+        +sheetLink('Monitor progress of recovery and identify inflammation or edema', 'Assist in prevention, risk analysis and evaluation of patient progress.', 'Discover our result sheet', '../img/sub/physiotheraphy_sheet.png')
+
+        section.video-row  
+            .inner-box 
+                +subTitle('Real-Life stories from clients')
+                    p.sub-paragraph Watch testimony videos of how doctors, fitness professionals, and health experts alike have used InBody to validate their programs and increase member retention.
+                +videoRow([
+                    {videoSrc: 'https://www.youtube.com/embed/A8sWSbcAKqc', width: '100%', subTitle: 'InBody Spotlight – DBC Physiotherapy'},
+                    {videoSrc: 'https://www.youtube.com/embed/Yht6fi2ZPKo', width: '100%', subTitle: 'BLIS is the functional assessment that DBC Physiotherapy uses on their patients.'}
+                ])
+
+        section.img-text-bg.bg--pink
+            .inner-box  
+                .img-text-bg__inner
+                    .img-text-bg__img
+                        img(src="../img/sub/physiotheraphy_img01.png", alt="")
+                    .img-text-bg__text
+                        +subTitle('Physiotherapy case studies', '', 'mb-0')
+                            p.sub-title__desc More physiotherapy case studies related to injuries, post-operation, and stroke patients
+                        a.round-arrow-link(href="#") Request for information
+                            i.icon-arrow-round 

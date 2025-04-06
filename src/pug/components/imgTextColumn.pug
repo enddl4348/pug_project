@@ -1,0 +1,13 @@
+include ./subTitle.pug
+
+mixin imgTextColumn (items, animationMode=false)
+    .img-text-column
+        if items && items.length 
+            .img-text-column__box
+                each item in items
+                    .img-text-column__item(class=item.itemClass)
+                        .img-text-column__img(data-animation=animationMode)
+                            img(src=item.imgSrc)
+                        h4.sub__content-title(data-animation=animationMode)= item.subTitle
+                        if item.desc
+                            p.sub-paragraph(data-animation=animationMode) !{item.desc}

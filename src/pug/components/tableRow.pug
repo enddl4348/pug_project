@@ -1,0 +1,21 @@
+include ./subTitle.pug
+
+mixin tableRow(title, items)
+    .row-table
+        .inner-box
+            if title
+                +subTitle(title, '','', 'slideInLeft')
+            .row-table__content(data-animation="slideUp")
+                .row-table__wrap
+                    table.table
+                        tbody
+                            each item in items
+                                tr
+                                    th= item.key01
+                                        if item.value02 
+                                            td !{item.value01}
+                                            th !{item.key02}
+                                            td !{item.value02}
+                                        else
+                                            td(colspan="3") !{item.value01}
+                                            

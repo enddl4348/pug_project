@@ -1,0 +1,35 @@
+# 빌드된 파일 무시
+dist
+
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Build
+src/css/
+src/html/
+
+
+# 환경 설정
+.env
+
+# 로그 파일
+*.log
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# 편집기 관련
+.idea/
+# .vscode/
+
+# 캐시
+*.cache
+*.tmp
+

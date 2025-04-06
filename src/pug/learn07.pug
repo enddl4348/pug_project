@@ -1,0 +1,61 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/imgTextRow.pug
+include ./components/iconListContent.pug
+include ./components/imgTextColumn.pug
+
+
+block content
+    main.sub
+        +subIntro('Safety & Sanitation Tips', 'How to revamp your InBody experience to respond to COVID-19 health and safety concerns.','safety-tips')
+        section
+            .inner-box
+                p.sub-paragraph Whether you are back in business or reopening is on the horizon, keeping your clients and staff safe and healthy is now your top priority. You may have many questions about disinfecting solutions and updating your testing experience to meet increased safety expectations. We are here with best practices and guidance to help you optimize your InBody experience to address COVID-19 health and safety concerns.
+        section.guidance
+            .inner-box
+                +subTitle('Sanitation Guidance')
+                +imgTextRow('../img/sub/sanitation_guide01.jpg','guidance_01')
+                    .img-text-row__content
+                        p.sub-paragraph We recommend that you disinfect your InBody device after every test. It is important to note that there is a difference between cleaning and disinfecting your equipment.
+                        .line-box-content
+                            .line-box-content__inner
+                                h5.line-box-content__title According to the Centers for Disease Control and Prevention (CDC):
+                                ol.text-list.text-list--number
+                                    li.text-list__item Cleaning removes dirt, germs, and impurities from surfaces or objects. When you clean, you physically remove germs from surfaces using soap (or detergent) and water. This process does not necessarily kill germs, but by removing them, it reduces their numbers and the risk of spreading infection.
+                                    li.text-list__item Disinfecting kills germs on surfaces or objects using chemicals. This process does not clean dirty surfaces but kills germs on a surface after cleaning. Disinfecting can further reduce the risk of spreading infection.
+                        +iconListContent('', [
+                            { iconClass: 'clean', subTitle: '', desc: 'To avoid damaging your device, do not clean it with soap and water; instead, you must disinfect it.' },
+                            { iconClass: 'hand', subTitle: '', desc: "To keep your InBody free of dirt and impurities, ask your clients to clean their hands and feet before they test." },
+                        ])
+
+
+
+                +imgTextRow('../img/sub/sanitation_guide02.jpg','guidance_02')
+                    .img-text-row__content
+                        h3.sub__content-title Disinfecting Your Body
+                        p.sub-title__desc To help provide a hygienic testing experience for your clients and employees, we recommend that you follow this procedure after every test.
+                        .line-box-content
+                            .line-box-content__inner
+                                h5.line-box-content__title.heading-number.number_01 To adequately disinfect your device, we recommend that you
+                                p.sub-paragraph Wear disposable gloves and use 70% (or above) Isopropyl Alcohol Wipes to disinfect the InBody while paying special attention to the hand electrodes, footplate, screen, and any other parts of the device that are frequently touched
+                                h5.line-box-content__title.heading-number.number_02 To prevent damage to the device
+                                ul.text-list.text-list--dot
+                                    li.text-list__item Do not spray or pour liquids directly on your InBody device
+                                    li.text-list__item Do not immerse any part of the InBody device in liquid
+                                    li.text-list__item Do not use cleaning agents composed of quaternary ammonium compounds such as benzalkonium/benzalkonium chloride, which may cause discoloration and corrosion
+                        p.sub-paragraph.etc If you have questions about disinfecting your InBody, please contact us <a href="#" class="link--underline">here</a> 
+
+        section.experience
+            .inner-box
+                +subTitle('Optimizing Your InBody Testing Experience')
+                    p.sub-title__desc Once you open your doors for business, it may be necessary to modify your testing procedures to adhere to any new state and/or local health guidelines while still delivering an exceptional testing experience for your clients.<br><br>Your InBody comes standard with an assortment of advanced features and resources designed to help you adapt your testing experience.
+                h3.sub__content-title.sub-etc Give Your Clients a Contact-Free Experience
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/sub/guidance_test.jpg', subTitle: 'Voice Guidance Testing', desc: 'While your client tests on the device, the InBody’s voice guidance and on-screen instructions will help guide them through the testing procedure, allowing you to maintain social distancing requirements.' },
+                    { itemClass: '', imgSrc: '../img/sub/digital_sheet.jpg', subTitle: 'Digital Result Sheet', desc: 'After the test, you may choose to forgo the standard Result Sheet printout and provide a paperless option through LookinBody Web, our cloud database management software, which allows you to send your clients’ test information to them via the free InBody app. For more information about Lookin’Body Web, <a href="#" class="link--underline">please contact us.</a>' },
+                ])
+
+
+
+block bottomScripts 

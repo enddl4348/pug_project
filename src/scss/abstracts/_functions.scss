@@ -1,0 +1,5 @@
+@use 'abstracts/variables' as var;
+
+@function percent($current, $container) {
+    @return calc($current / $container) * 100%;
+}

@@ -1,0 +1,347 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.header {
+    $root: &;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var.$white-color;
+    z-index: 11;
+
+    &.hidden {
+        transform: translateY(-100%);
+    }
+
+    #{$root} {
+        &__inner {
+            position: relative;
+            @include mix.flexbox();
+            height: 6.4rem;
+            padding: 0 1.6rem;
+
+            @include mix.respond-to(pc) {
+                height: 10rem;
+                padding: 0 6rem;
+            }
+        }
+
+        &__logo {
+            @include mix.widthHeight(7rem, 2rem);
+            margin-right: 5.4rem;
+
+            @include mix.respond-to(pc) {
+                @include mix.widthHeight(12rem, 3.4rem);
+            }
+        }
+
+        &__gnb {
+            display: none;
+
+            @include mix.respond-to(pc) {
+                display: block;
+            }
+        }
+
+        &__util {
+            margin-left: auto;
+            @include mix.flexbox();
+        }
+
+        &__contact {
+            display: none;
+
+            @include mix.respond-to(pc) {
+                display: block;
+                @include mix.fontStyle(1.6rem, 500, 1);
+                padding: 0 2.8rem;
+                margin-right: 4rem;
+                height: 4.4rem;
+                line-height: 4.4rem;
+                background: #eeeeee;
+                border-radius: 50px;
+            }
+        }
+    }
+
+    .gnb {
+
+        &__item {}
+
+        &__link {}
+
+        &__depth {}
+
+        &__depth-list {}
+
+        &__depth-item {}
+
+        &__depth-link {}
+    }
+
+    .util {
+        display: flex;
+
+        &__item {
+
+            a,
+            button {
+                background-size: 2.8rem auto;
+                @include mix.widthHeight(4rem, 4rem);
+
+                @include mix.respond-to(pc) {
+                    background-size: 100% auto;
+                }
+            }
+
+        }
+
+        .util__item--global {
+            margin-right: .8rem;
+            position: relative;
+
+            @include mix.respond-to(pc) {
+                margin-right: 3rem;
+            }
+
+            &.is-open {
+                .util__global-layer {
+                    height: 10.8rem;
+                }
+            }
+        }
+
+        &__global-button {
+            @include mix.icon('icon_global', 2.8rem, 2.8rem);
+        }
+
+        &__menu-button {
+            @include mix.icon('icon_menu', 2.8rem, 2.8rem);
+        }
+
+        &__global-layer {
+            @include mix.flexbox($justify: center);
+            @include mix.position(absolute, $top: 5rem, $left: 50%);
+            transform: translateX(-50%);
+            padding: 0 2.4rem;
+            background: var.$white-color;
+            border-radius: 2rem;
+            box-shadow: 10px 10px 32px 0px rgba(34, 34, 34, 0.24);
+            height: 0;
+            overflow: hidden;
+            transition: height .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            .global-list {
+
+                &__item {
+                    @include mix.fontStyle(1.6rem, 500, 1);
+                    padding: .5rem 0;
+                    text-align: center;
+                }
+
+                &__link {
+                    display: inline-block;
+                    padding: .5rem 0;
+                    @include mix.widthHeight(auto, auto);
+                    transition: all .4s ease;
+
+                    @include mix.respond-to(pc) {
+                        &:hover {
+                            color: var.$primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-open {
+        .header__logo {
+            z-index: 10;
+        }
+
+        .header__util {
+            z-index: 10;
+        }
+
+        .all-gnb {
+            transform: translateX(0);
+        }
+
+        .util__menu-button {
+            @include mix.icon('icon_close', 4rem, 4rem);
+            background-size: 2.8rem auto;
+
+            @include mix.respond-to(pc) {
+                background-size: 100% auto;
+            }
+        }
+    }
+}
+
+// gnb
+.gnb {
+    display: flex;
+
+    &__depth {
+        display: none;
+        @include mix.position(absolute, $top: 7.2rem, $left: 4rem);
+        width: 30.8rem;
+        padding: 1.8rem 2.4rem;
+        background: var.$white-color;
+        border-radius: 2rem;
+        box-shadow: 10px 10px 32px 0px rgba(34, 34, 34, 0.24);
+    }
+
+    &__item {
+        position: relative;
+        padding: 1rem 0;
+
+        &:hover .gnb__depth {
+            display: block;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        @include mix.fontStyle(2rem, 600, 1);
+        padding: 1.6rem 4rem;
+        text-transform: uppercase;
+
+        &:hover {
+            color: var.$primary-color;
+
+            &~.gnb__depth {
+                display: block;
+            }
+        }
+    }
+
+    &__depth-list {}
+
+    &__depth-item {}
+
+    &__depth-link {
+        display: inline-block;
+        padding: 1rem 0;
+        @include mix.fontStyle(1.8rem, 500, 1);
+        transition: all .4s ease;
+
+        &:hover {
+            color: var.$primary-color;
+            transform: translateX(.6rem);
+        }
+    }
+
+}
+
+// all-menu
+.all-gnb {
+    $root: &;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var.$white-color;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    #{$root} {
+        &__category {
+            margin-top: 6.4rem;
+            padding: 0 2.6rem 8rem;
+            border-top: 1px solid var.$gray-eee;
+            overflow-y: auto;
+            height: calc(100% - 6.4rem);
+
+            @include mix.respond-to(pc) {
+                @include mix.flexbox(row, flex-start, flex-start);
+                gap: 3.2%;
+                margin: 10rem auto 0;
+                padding: 7.6rem 12% 8rem;
+                // width: 144rem;
+                height: calc(100% - 10rem);
+                border-top: 0;
+                overflow: visible;
+            }
+        }
+
+        &__category-item {
+            padding-top: 2.6rem;
+
+            @include mix.respond-to(pc) {
+                padding-top: 0;
+                width: 25%;
+            }
+
+            &.sectors .all-gnb__title {
+                position: relative;
+
+                @include mix.respond-to(pc) {
+                    &::before {
+                        content: '';
+                        @include mix.position(absolute, $bottom: 0.8rem, $right: -1.8rem);
+                        @include mix.widthHeight(1.1rem, 1.1rem);
+                        border-radius: 50%;
+                        background: var.$primary-color;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            @include mix.fontStyle(1.6rem, 700, 1);
+            text-transform: uppercase;
+
+            @include mix.respond-to(pc) {
+                font-size: 4rem;
+            }
+        }
+
+        &__menu {
+            margin-top: 2.5rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 4.5rem;
+            }
+        }
+
+        &__side-link {
+            margin-top: 2.6rem;
+
+            @include mix.respond-to(pc) {
+                display: none;
+            }
+        }
+    }
+
+    .menu-list {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var.$gray-eee;
+
+        @include mix.respond-to(pc) {
+            border-bottom: 0;
+        }
+
+        &__item {}
+
+        &__link {
+            display: inline-block;
+            padding: 1.6rem 0;
+            @include mix.fontStyle(1.4rem, 700, 1);
+            color: var.$gray-999;
+
+            @include mix.respond-to(pc) {
+                padding: 1.2rem 0;
+                font-size: 2rem;
+                transition: all .4s ease;
+            }
+
+            &:hover {
+                color: var.$primary-color;
+            }
+        }
+    }
+}

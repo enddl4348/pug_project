@@ -1,0 +1,6 @@
+mixin video(videoSrc,width,height)
+    .video-box
+        .video-wrap 
+            video.video-item(width=width, height=height, controls, loop, autoplay, muted)
+                source(src=`${videoSrc}.mp4`, type="video/mp4")
+                source(src=`${videoSrc}.webm`, type="video/webm")

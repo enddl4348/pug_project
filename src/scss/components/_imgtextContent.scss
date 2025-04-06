@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.img-text-column {
+    $root: &;
+
+    #{$root} {
+        &__box {
+            @include mix.flexbox(column);
+            gap: 3.2rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: -6.6rem;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: 3.7%;
+            }
+        }
+
+        &__item {
+            width: 100%;
+
+            @include mix.respond-to(pc) {
+                width: calc((100% / 2) - 1.9%);
+                margin-top: 7.4rem;
+            }
+        }
+
+        &__img {
+            margin-bottom: 2rem;
+            border-radius: 2rem;
+            overflow: hidden;
+
+            @include mix.respond-to(pc) {
+                margin-bottom: 3.4rem;
+                border-radius: 3.4rem;
+
+                &:hover img {
+                    transform: scale(1.09);
+                }
+            }
+
+            img {
+                @include mix.respond-to(pc) {
+                    transition: transform .8s ease;
+                }
+            }
+        }
+    }
+
+    .sub-paragraph {
+        margin-top: .8rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 1.6rem;
+            font-size: 2.4rem;
+        }
+    }
+}
+
+// row형
+.img-text-row {
+    @include mix.flexbox(column, $align: flex-start);
+    gap: 2.8rem;
+
+    @include mix.respond-to(pc) {
+        flex-direction: row;
+        align-items: center;
+        gap: 7.4%;
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 2rem;
+        overflow: hidden;
+
+        @include mix.respond-to(pc) {
+            min-width: 42.4%;
+            border-radius: 3.4rem;
+
+            // &:hover img {
+            //     transform: scale(1.05);
+            // }
+        }
+
+        // img {
+        //     @include mix.respond-to(pc) {
+        //         transition: transform .6s ease;
+        //     }
+        // }
+    }
+
+    &__content {}
+
+    .etc-paragraph {
+        margin-top: 2.4rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 4rem;
+        }
+    }
+
+    &.align-top {
+        @include mix.respond-to(pc) {
+            align-items: flex-start;
+        }
+    }
+}

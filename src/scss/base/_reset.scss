@@ -1,0 +1,145 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    // flex-shrink: 0;
+}
+
+:root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    cursor: default;
+    overflow-wrap: break-word;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+
+button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+//base setting
+html {
+    font-size: var.$root-font-size;
+
+    @include mix.respond-to(mobile-small) {
+        font-size: 8.8px;
+    }
+
+    @include mix.respond-to(tablet) {
+        font-size: clamp(10px, 1.08vw, 12.8px);
+    }
+
+    @include mix.respond-to(pc) {
+        font-size: 9.4px;
+    }
+
+    @media (min-width: 1600px) {
+        font-size: 10px;
+    }
+}
+
+body {
+    font-family: 'Roboto';
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+    background: #fff;
+    color: var.$black-color;
+}
+
+li {
+    list-style: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* 추가 */
+input,
+textarea {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+    -webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type="password"] {
+    font-size: 3.5rem;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    caret-color: #000;
+    /* 텍스트 커서의 색상을 빨간색으로 설정합니다. */
+}

@@ -1,0 +1,66 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/videoRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody 970','Innovative Body Composition Analyzer', 'Download Brochure', 'inbody-970', '../files/970_brochure.pdf')
+            p.sub-paragraph The high-end InBody970 is developed with the accumulated cutting-edge technology of InBody to set a new standard for body composition analysis. InBody970 Result Sheets, have the most various and useful data among other InBody devices, and the InBody970’s magnificent design goes beyond the boundaries of apparatus design to use from young children to athletes and the extremely obese. <br><br>The InBody970 is equipped with state-of-the-art 3MHz technology and new ergonomic design to better suit patients with different conditions and medical specialties than ever before.
+
+        section  
+            .inner-box 
+                +subTitle('What’s different about the InBody 970?', '', '', 'slideInLeft')
+                +iconListContent('What’s different about the InBody 580?', [
+                    { iconClass: 'technology', subTitle: 'Accurate 3 MHz Measurement Technology', desc: 'Utilizing the 3MHz frequency for more accuracy, which enables the precise measurement in diverse subjects. This higher 3MHz technology also ensures the measurement stability in all range of frequencies regardless of test environment.' },
+                    { iconClass: 'data', subTitle: 'Age Specific Evaluation by InBody Big Data', desc: 'InBody provides body composition evaluation by age, based on globally accumulated InBody Big Data. With this, a comprehensive analysis is provided so that you can compare your data to the data of the young age group (T-score) and the same age group (Z-score).' },
+                    { iconClass: 'analysis', subTitle: '7 Different Result Sheets for In-Depth Analysis', desc: 'Provides 7 different result sheets to fulfill all the needs of our researchers. Evaluation, research, comparison, visceral fat, body composition (for children), and body water result sheet are available.' }
+                ], 'slideUpMulti')
+
+        .video-content
+            .inner-box(data-animation="slideUp")
+                +video('https://inbodyasia.com/wp-content/uploads/2021/11/1-4.-First-Look_970', '100%')
+
+        section  
+            .inner-box 
+                +subTitle('InBody 970 Highlights', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/970_img01.jpg', subTitle: 'Innovative Design', desc: 'The InBody970 delivers a new seamless look with the premise of detail. The concave head design protects the privacy of the subject during measurement while also enhancing user’s visibility. Stainless electrodes and enhanced footplate improve conductivity and allow weight measurement up to 300kg. With four corner loadcells, your measurement starts right after step on the device.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/970_img02.jpg', subTitle: 'Accurate 3MHz High-Frequency Measurement Technology', desc: 'The higher the frequency, the more difficult it is to control the frequency in the human body which results in an unstable impedance measurement.​ The InBody970 overcame this limitation and applied the world’s first 3MHz frequency which penetrates through our cell membranes even better.' },
+                    { itemClass: 'hilights_03', imgSrc: '../img/product/970_img03.jpg', subTitle: 'Smart InBody Measurement', desc: 'The ID recognition process can be performed quickly and with ease by using the InBody Band, Fingerprint, or Barcode scanner.' },
+                ], 'slideUp')
+        
+        +barBanner('Explore the InBody 970 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+        section  
+            .inner-box 
+                +subTitle('How can Inbody 970 ultimate body composition analyzer be used?', '', '', 'slideInLeft')
+                    p.sub-title__desc(data-animation="slideInLeft") The high-end InBody970 Ultimate body composition analyzer is developed with the accumulated cutting-edge technology of InBody and is used worldwide in many business such as
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/medical.jpg', subTitle: 'Medical', desc: 'Use the InBody to make accurate diagnoses for your patients and create a targeted treatment plan.' },
+                    { itemClass: '', imgSrc: '../img/product/physiotherapy.jpg', subTitle: 'Physiotherapy', desc: 'Data-evidence based to help monitor recovery progress of your patients' },
+                ], 'slideUp')
+                
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '526 x 850 x 1175 (L x W x H ) : mm', key02: 'Frequencies', value02: '1, 5, 50, 250, 500, 1000 kHz'},
+            { key01: 'Test Duration', value01: '60 seconds', key02: 'Weight Range', value02: '10 – 270 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '38 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'Body Composition Result Sheet, Body Water Result Sheet (Optional), USB Thumb Drive, InBody Tissue', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '30 impedance measurements, 6 frequencies at each of the 5 segments (Right Arm, Left Arm, Trunk, Right Leg, Left Leg)'},
+            { key01: 'Additional Features', value01: 'EMR Integration (HL7 Ready), Barcode Scanner Integration, Lookin’Body 120 and Lookin’Body Web Compatible, Touchscreen, Voice Guidance System, Wi-Fi/Bluetooth Connectivity, Security Access Code'},
+            { key01: 'Outputs', value01: 'Standard Outputs : <br> Weight, Total Body Water, Soft Lean Mass, Fat Free Mass, Body Fat Mass, Skeletal Muscle Mass, Body Mass Index, Percent Body Fat, InBody Score, Segmental Lean Analysis, Body Composition History, Body Fat-Lean Body Mass Control, Basal Metabolic Rate, Impedance at each segment/ frequency<br><br>Additional Outputs :<br>Intracellular Water, Extracellular Water, ECW/TBW Analysis, Visceral Fat Level, Segmental Fat Analysis, Visceral Fat Area, Segmental Body Water Analysis, Segmental ECW/TBW Analysis, Segmental ICW Analysis, Segmental ECW Analysis, Leg Lean Mass, TBW/LBM, Reactance, Whole Body and Segmental Phase Angle'}
+        ])

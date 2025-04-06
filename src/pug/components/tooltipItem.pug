@@ -1,0 +1,6 @@
+mixin tooltipItem(indexClass, id, title, desc, alignClass)
+    .tooltip(class=indexClass + ' ' + alignClass,)
+        button.tooltip__button(type="button", aria-label="open", data-href=id,  data-js="popupButton")
+        .tooltip__box
+            h4.tooltip__title= title
+            p.tooltip__desc= desc

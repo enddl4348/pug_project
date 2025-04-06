@@ -1,0 +1,119 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/tab.pug
+include ./components/barBanner.pug
+include ./mixin/valueItem.pug
+
+block content
+	-const historyImg = ['history_00','history_01','history_02','history_03','history_04','history_05'];
+	-const historyYear = ['2024', '2018', '2017','2016','2015','2014','2013','2012','2009','2000','1996',"Early 1990's"];
+
+	main.sub.about-us.pb-0
+		+subIntro('About Us', 'We are InBody, a worldwide leader in body<br> composition technology.')
+		+tab([{buttonText: 'About InBody'},{buttonText:' History of InBody'}] , 'tab--list2')
+			.tab__content(data-js="tabContent")
+				section.overview.inner-box
+					.img-text-content 
+						.img-text-content__desc
+							+subTitle('Overview', '', 'mb-0')
+								p.sub-paragraph In the early 1990s,our founder and CEO, Dr. Kichul Cha, recognized that the available BIA devices were limited and faulty. They were often inaccurate, and from a medical standpoint, useless for treating patients who needed body composition analysis the most. Drawing from his background in mechanical engineering, he set to work to design something better.
+								p.sub-paragraph  In 1996, he founded InBody.Two years later, the first InBody device  was born. Today, InBody has grown from a small biotech startup in South Korea to a multinational corporation with branches and distributors in more than 80 countries. Our clients trust us to provide precise, useful, and accurate body composition data to their users because they know that InBody combines convenience, accuracy, and reproducibility into one easy-to-use device.
+						.img-text-content__img
+							img(src="../img/sub/about_overview.jpg", alt="")
+				section.vision.inner-box
+					+subTitle('Mission&Vision')
+					div.vision-content
+						.vision-content__item 
+							.vision-content__box
+								i.vision-content__icon.icon-mission
+								strong.vision-content__title Mission
+								p.vision-content__desc “InBody is dedicated to <br>inspiring and leading people<br>to live a healthier life.“ 
+						.vision-content__item.vision-content__item--center
+							.vision-content__img 
+								img(src="../img/sub/vision_logo.png", alt="")
+						.vision-content__item 
+							.vision-content__box
+								i.vision-content__icon.icon-vision
+								strong.vision-content__title Vision
+								p.vision-content__desc “It is InBody’s vision  that one day<br>health will not  only be measured<br>by knowing your weight but by<br>having an accurate insight in<br>your body composition.”
+
+				section.inner-box
+					+subTitle('Company Values')
+					.company-values 
+						ul.company-values__list
+							+valueItem("Education", "We continuously push ourselves to be better than yesterday to create a better world for today and the generations to come.We're looking to the future with every new product that is produced.", "value01")
+							+valueItem("Motivation", "We continuously push ourselves to be better than yesterday to create a better world for today and the generations to come.We're looking to the future with every new product that is produced.", "value02")
+							+valueItem("Application", "We continuously push ourselves to be better than yesterday to create a better world for today and the generations to come.We're looking to the future with every new product that is produced.", "value03")
+							+valueItem("Innovation", "We continuously push ourselves to be better than yesterday to create a better world for today and the generations to come.We're looking to the future with every new product that is produced.", "value04")
+				section.representative.inner-box
+					.img-text-content 
+						.img-text-content__img(aria-hidden="ture")
+						.img-text-content__desc
+							+subTitle("We are the <span class='deco'>people</span><br> who make", " the best machine.")
+								p.sub-paragraph "Since InBody established in 1996, we have strived to operate as an excellent, 21st-century company. By fulfilling our corporate mission of contributing to society with world-leading technology. We will continue to support the growth of society with highly value-added products and services, facing all challenges and meeting your expectations with a deep sense of responsibility. InBody continues to grow day after as we don’t look for a big success at a time but all time we are trying to pile up small achievements. InBody is dedicated to inspiring, leading people to live a healthier life. Going forward, we will continue to follow our motto — “Makes Life better” — while steadfastly adhering to our guiding principles of passion, effort and innovation."
+
+			.tab__content.is-active(data-js="tabContent")
+				.history
+					.history__control-box(data-js="scrollButtonWrap")
+						.history__control
+							.history__control-buttons(data-js="scrollButtonBox")
+								each year, index in historyYear
+									button(type="button", class=(index === 0 ? 'history__control-button is-active' : 'history__control-button'), data-js="scrollButton")= year
+					.history__content-box.inner-box
+						.history__wrap
+							.history__img
+								each img in historyImg
+									.history__img-item(class=img)
+										img(src=`../img/sub/${img}.jpg`, alt="")  
+							.history__content
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2024
+									.history__content-desc
+										p.history__content-text Established InBody Vietnam in Ho Chi Minh City.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2018
+									.history__content-desc
+										p.history__content-text 'BPBIO320' passed the clinical test of the European Society of Hypertension (ESH)
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2017
+									.history__content-desc
+										p.history__content-text InBody releases the InBody BAND 2, a second-generation wearable body composition device. <br> The BAND 2 features EZTrainingTM, which automatically tracks exercises.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2016
+									.history__content-desc
+										p.history__content-text Lookin’BodyWeb, a cloud-based data software is launched. The InBody PUSH, a handheld, portable stadiometer is released for the first time in the United States.<br><br> The InBody 270, designed specifically for professionals who need to analyze body composition on-the-go, goes on sale.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2015
+									.history__content-desc
+										p.history__content-text iF DESIGN AWARD is given to the InBody 770.InBody receives the 2015 Foreign Direct Investment Award from the Los Angeles Chamber of Commerce during World Trade Week.<br><br>InBody BAND and InLab win CES 2015 Innovation Award for wearable technologies. <br><br> InBody unveiled the InBody BAND, the world’s first wearable body composition device.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2014
+									.history__content-desc
+										p.history__content-text The InBody 770, a new research-grade body composition analyzer is launched and the InBody 570 wins the Red Dot Design Award.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2013
+									.history__content-desc
+										p.history__content-text The InBody 570, capable of measuring segmental fat analysis including visceral fat level, is released.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2012
+									.history__content-desc
+										p.history__content-text InBody moved its corporate office from Beverly Hills to Cerritos, California.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2009
+									.history__content-desc
+										p.history__content-text GE Healthcare Strategic Business Partnership
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 2000
+									.history__content-desc
+										p.history__content-text InBody established its first overseas subsidiary in Beverly Hills, California. InBody technology is FDA approved and results have been validated by research.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title 1996
+									.history__content-desc
+										p.history__content-text InBody was founded in South Korea. Products feature direct segmental multi-frequency bioelectrical impedance analysis (DSM-BIA) and an eight-point tactile electrode system to measure an individual’s body composition without the use of empirical data.
+								.history__content-item(data-js="scrollSection")
+									strong.history__content-title Early 1990's
+									.history__content-desc
+										p.history__content-text Dr. Kichul Cha recognized BIA devices were inaccurate, making them useless to the medical industry.
+		+barBanner('Business Area', 'Search through the page to choose the InBody product that best fit your business!', 'See our products')
+block bottomScripts

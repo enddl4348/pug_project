@@ -1,0 +1,178 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.footer {
+    $root: &;
+    background: var.$black-color;
+
+    #{$root} {
+        &__inner {
+            padding: 0 1.6rem;
+
+            @include mix.respond-to(pc) {
+                padding: 0 7.6%;
+                max-width: 160rem;
+                margin: 0 auto;
+            }
+
+            @media (min-width: 1600px) {
+                padding: 0;
+            }
+        }
+
+        &__top {
+            position: relative;
+
+            &::before {
+                content: '';
+                @include mix.position(absolute, $top: 4.8rem);
+                width: 100%;
+                height: 2px;
+                background: #393939;
+
+                @include mix.respond-to(pc) {
+                    top: 7.6rem;
+                }
+            }
+
+            @include mix.respond-to(pc) {
+                .footer__inner {
+                    @include mix.respond-to(pc) {
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            padding: 4rem 0;
+
+            @include mix.respond-to(pc) {
+                padding: 3rem 0 5rem;
+            }
+        }
+
+        &__menu {
+            display: flex;
+        }
+
+        &__menu-link {
+            padding: 1.8rem 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1;
+            color: var.$white-color;
+
+            @include mix.respond-to(pc) {
+                padding: 2.8rem 1.6rem 2.8rem;
+                font-size: 2rem;
+            }
+
+            &:first-child {
+                position: relative;
+                padding-left: 0;
+            }
+        }
+
+        &__content {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var.$gray-888;
+            line-height: 2.2rem;
+
+            @include mix.respond-to(pc) {
+                display: flex;
+                font-size: 1.8rem;
+            }
+        }
+
+        &__logo {
+            @include mix.widthHeight(11.4rem, 5rem);
+
+            @include mix.respond-to(pc) {
+                @include mix.widthHeight(14rem, 6rem);
+                margin-right: 9.4rem;
+            }
+        }
+
+        &__company-info {
+            margin-top: 2.4rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 0;
+                line-height: 2.6rem;
+            }
+        }
+
+        &__copyright {
+            margin-top: 1.6rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: auto;
+                margin-left: auto;
+                font-size: 1.8rem;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .sns-link {
+        padding-top: 2rem;
+        display: flex;
+
+        @include mix.respond-to(pc) {
+            margin-left: auto;
+        }
+
+        &__item {
+            &~.sns-link__item {
+                margin-left: 1rem;
+            }
+
+            &.facebook {
+                @include mix.icon(icon_facebook, 3.2rem, 3.2rem);
+
+                @include mix.respond-to(pc) {
+                    @include mix.widthHeight(3.8rem, 3.8rem);
+                }
+            }
+
+            &.instagram {
+                @include mix.icon(icon_instagram, 3.2rem, 3.2rem);
+
+                @include mix.respond-to(pc) {
+                    @include mix.widthHeight(3.8rem, 3.8rem);
+                }
+            }
+
+            &.tiktok {
+                @include mix.icon(icon_tiktok, 3.2rem, 3.2rem);
+
+                @include mix.respond-to(pc) {
+                    @include mix.widthHeight(3.8rem, 3.8rem);
+                }
+            }
+
+            &.youtube {
+                @include mix.icon(icon_youtube, 3.2rem, 3.2rem);
+
+                @include mix.respond-to(pc) {
+                    @include mix.widthHeight(3.8rem, 3.8rem);
+                }
+            }
+
+            &.zalo {
+                @include mix.icon(icon_zalo, 3.2rem, 3.2rem);
+
+                @include mix.respond-to(pc) {
+                    @include mix.widthHeight(3.8rem, 3.8rem);
+                }
+            }
+
+        }
+    }
+}

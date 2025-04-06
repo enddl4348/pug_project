@@ -1,0 +1,6 @@
+mixin subIntro(title, subText, extraClass)
+    .sub-intro(class=extraClass)
+        .sub-intro__inner
+            .sub-intro__content
+                h2.sub-intro__title= title 
+                p.sub-intro__desc !{subText}

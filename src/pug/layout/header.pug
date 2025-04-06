@@ -1,0 +1,46 @@
+-const gnbList = ['Learn', 'Products', 'Applications', 'Support'];
+-const gnbDepthLists = [['About Us', 'InBody Technology', 'InBody Test Procedures', 'Result Sheet Interpretation', 'What is Body Composition', 'InBody and the Immune System', 'Safety & Sanitation Tips'], ['InBody 970', 'InBody 770', 'InBody 580', 'InBody 380', 'InBody 270', 'InBody BWA 2.0', 'InBody S10', 'BPBIO 750', 'BPBIO 320', 'BP170(B)', 'InBody FRA', 'INGRIP', 'LookinBody Web'], ['Medical', 'Fitness', 'Dietitian', 'Physiotherapy', 'Corporate'], ['Data Integration', 'Brochure Downloads'], []];
+
+header.header(data-js="header")
+    .header__inner
+        .header__logo 
+            a(href="#", title="InBody Main")
+                img(src="../img/common/logo.svg", alt="InBody")
+        .header__gnb    
+            ul.gnb
+                each item, i in gnbList
+                    li.gnb__item
+                        a(href="#").gnb__link #{item} 
+                        if gnbDepthLists[i].length > 0 
+                            .gnb__depth
+                                ul.gnb__depth-list
+                                    each depthItem in gnbDepthLists[i]
+                                        li.gnb__depth-item
+                                            a(href="#").gnb__depth-link= depthItem
+        .header__util
+            a.header__contact(href="#") GET IN CONTACT! 
+            .util
+                .util__item.util__item--global(data-js="globalLayer")
+                    button.util__global-button(type="button", aria-label="global menu", data-js="globalButton")
+                    .util__global-layer
+                        ul.global-list 
+                            li.global-list__item  
+                                a.global-list__link(href="#", data-js="globalLink") EN
+                            li.global-list__item  
+                                a.global-list__link(href="#",data-js="globalLink") VN
+                .util__item
+                    button.util__menu-button(type="button", aria-label="menu", data-js="gnbButton")
+    nav.all-gnb
+        div.all-gnb__category
+            each item, i in gnbList
+                - const extraClass = (i === 2) ? 'sectors' : ''
+                .all-gnb__category-item(class=extraClass)
+                    strong.all-gnb__title= item
+                    .all-gnb__menu 
+                        ul.menu-list
+                            each depthItem in gnbDepthLists[i]
+                                li.menu-list__item 
+                                    a(href="#").menu-list__link= depthItem
+            div.all-gnb__side-link
+                a.all-gnb__contact.round-arrow-link(href="#") GET IN CONTACT!
+                    i.icon-arrow-round 

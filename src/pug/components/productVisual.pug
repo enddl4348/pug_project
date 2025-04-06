@@ -1,0 +1,13 @@
+mixin productVisual(title, subText, linkText, extraClass, linkHref="#", imgSrc)
+    .product-visual
+        .product-visual__inner
+            .product-visual__content
+                .product-visual__text
+                    h1.product-visual__title(data-animation="slideInLeftMulti")= title
+                    p.product-visual__sub(data-animation="slideInLeftMulti")= subText
+                    .product-visual__desc(data-animation="slideInLeftMulti")
+                        block
+                .product-visual__link(data-animation="slideInLeftMulti")
+                    a.round-arrow-link(href=linkHref, target="_blank", title="new window")= linkText
+                        i.icon-arrow-round 
+            .product-visual__img(class=extraClass, data-animation="slideInRight")

@@ -1,0 +1,33 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/sheetLink.pug
+include ./components/deviceList.pug
+
+block content
+
+    main.sub.sectors
+        +subIntro('Corporate','Give your employees the motivation to lead a healthier lifestyle','sectors05')
+ 
+        +sheetLink('Real-time data for real-life value', 'Get a full body composition analysis in less than 60 seconds.', 'Discover our resultsheet', '../img/sub/corporate_sheet.png')
+
+        section.quotation.inner-box
+            +subTitle('Prevention is the key') 
+                p.sub-title__desc Corporate health care expenditures are mainly focused on the treatment of diseases resulting from an unhealthy lifestyle.
+            .bg-round-box
+                .bg-round-box__inner
+                    h3.bg-round-box__title … the chronically ill, who suffer from costly conditions like advanced diabetes, heart conditions …. <em class="important">consume at least 50%</em> of a company’s claims expense
+                    .etc-text - Harvard Business Reviews -
+                
+
+
+        section.device-field.inner-box
+            +subTitle('Which InBody is right for you?') 
+                p.sub-title__desc Get in contact with one of our InBody Specialists in order to make the right choice and to get details on pricing.
+            +deviceList([
+                { imgSrc: '../img/product/sector_device_270.png', title: 'InBody 270', desc: 'Do InBody tests wherever you go! With its compact design the InBody 270 is created for travelling professionals.', extraClass: 'device_270'},
+                { imgSrc: '../img/product/sector_device_380.png', title: 'InBody 380', desc: 'The InBody 380 is the base model for gyms. This model was especially designed to attract the attention of members within a gym.' , extraClass: 'device_380'},
+                { imgSrc: '../img/product/sector_device_580.png', title: 'InBody 580', desc: 'The InBody 580 tracks besides muscle and fat the intra- and extracellular water. In the field of diabetes, obesity and sarcopenia essential parameters.'},
+                { imgSrc: '../img/product/sector_device_770.png', title: 'InBody 770', desc: 'The Inbody 770 is a research grade body composition analyser and helps professionals worldwide in the field of diabetes, sarcopenia, nephrology, obesity, fitness and more.'},
+            ])
+

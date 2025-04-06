@@ -1,0 +1,104 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.contact {
+    $root: &;
+
+    &__form {
+        @include mix.respond-to(pc) {
+            padding: 0 7.6%;
+            max-width: 160rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1600px) {
+            padding: 0;
+        }
+    }
+
+    .form {
+        padding: 4rem 1.6rem 4rem;
+        background: var.$bg-f8;
+
+        @include mix.respond-to(pc) {
+            padding: 8rem;
+            border-radius: 5rem;
+        }
+
+        &__group {
+            @include mix.respond-to(pc) {
+                @include mix.flexbox();
+                gap: 5rem;
+            }
+
+            &~.form__group {
+                margin-top: 2.8rem;
+
+                @include mix.respond-to(pc) {
+                    margin-top: 5rem;
+                }
+            }
+        }
+
+        &__item {
+            @include mix.respond-to(pc) {
+                flex-basis: 100%;
+            }
+
+            &~.form__item {
+                margin-top: 2.8rem;
+
+                @include mix.respond-to(pc) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .input-title {
+        @include mix.fontStyle(1.5rem, 700, 1.46);
+
+        @include mix.respond-to(pc) {
+            font-size: 2rem;
+        }
+    }
+
+    .description {
+        margin-top: 2.8rem;
+        @include mix.fontStyle(1.5rem, 400, 1.46);
+
+        @include mix.respond-to(pc) {
+            margin-top: 5rem;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__button-box {
+        margin-top: 2.8rem;
+        text-align: center;
+
+        @include mix.respond-to(pc) {
+            margin-top: 6rem;
+        }
+    }
+
+    &__etc-text {
+        padding: 2.8rem 1.6rem 0;
+
+        @include mix.respond-to(pc) {
+            padding: 4rem 7.6% 0;
+            max-width: 160rem;
+            margin: 0 auto;
+
+            .sub-paragraph {
+                max-width: 64%;
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            padding: 4rem 0 0;
+        }
+    }
+}

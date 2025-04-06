@@ -1,0 +1,13 @@
+include ./subTitle.pug
+
+mixin sheetLink(title, subText,linkText,imgSrc,extraClass)
+    section.sheet-link.inner-box
+        .sheet-link__inner(class=extraClass)
+            .sheet-link__text
+                +subTitle(title)
+                    if subText
+                        p.sub-title__desc= subText
+                a.round-arrow-link(href="#")= linkText
+                    i.icon-arrow-round 
+            .sheet-link__img
+                img(src=imgSrc, alt="")

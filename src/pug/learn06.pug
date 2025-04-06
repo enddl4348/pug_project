@@ -1,0 +1,17 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/imgTextRow.pug
+include ./components/barBanner.pug
+
+
+block content
+    main.sub.pb-0
+        +subIntro('InBody and the Immune System', 'It is important for a person to strengthen the immune system and the entire organism','immune-system')
+        section.content-row
+            .inner-box
+                +imgTextRow('../img/sub/learn_ebook.jpg')
+                    .img-text-row__content
+                        p.sub-paragraph Our body is exposed to the effects of viruses and bacteria every day. Our immune system is constantly busy to protect the body against these pathogens. With a strong immune system, the pathogens are weakened, which can ensure health. The flu epidemics of the past 20 years (SARS 2002/03, MERS 2012, Ebola 2014 & Covid-19) have shown that especially people with a weakened immune system, e.g. malnutrition or increased stress, as well as people with pre-existing diseases are at risk. <br><br> For this reason, it is important for everyone to take targeted preventive measures that strengthen the immune system and the entire organism. We developed this paper with our Medical Application Team to support you with evidence-based applications. Your health service has a positive effect on the immune system and this can also be made visible!
+                        p.etc-paragraph &#42; The information provided on this site is intended for your general knowledge only and is not a substitute for professional medical advice or treatment for specific medical conditions. You should not use this information to diagnose or treat a health problem or disease without consulting with a qualified healthcare provider. Please consult your healthcare provider with any questions or concerns you may have regarding your condition.
+        +barBanner('Application Paper for the Immune System', 'Find out how you can use body composition analysis to evaluate the immune system and take individual measures for your customers/patients.', 'FREE EBOOK Download')
+block bottomScripts 

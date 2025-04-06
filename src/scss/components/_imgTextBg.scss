@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.img-text-bg {
+    background: var.$bg-f8;
+    margin-top: 8rem;
+    padding-bottom: 8rem;
+
+    @include mix.respond-to(pc) {
+        margin-top: 16rem;
+        padding-bottom: 16rem;
+    }
+
+    &__inner {
+        @include mix.flexbox(column);
+        gap: 2.8rem;
+
+        @include mix.respond-to(pc) {
+            flex-direction: row;
+        }
+    }
+
+    &__text {
+        width: 100%;
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 2rem;
+        overflow: hidden;
+
+        @include mix.respond-to(pc) {
+            border-radius: 3.4rem;
+        }
+    }
+
+    .sub-title__desc {
+        @include mix.respond-to(pc) {
+            margin-top: 4rem;
+            font-size: 2rem;
+        }
+    }
+
+    &.bg--pink {
+        background: #E8D8DB;
+        padding: 6.6rem 0;
+
+        @include mix.respond-to(pc) {
+            padding: 0;
+            height: 60rem;
+        }
+
+        .inner-box {
+            padding-top: 0;
+        }
+
+        .img-text-bg__inner {
+            gap: 4%;
+            position: relative;
+
+            @include mix.respond-to(pc) {
+                gap: 6%;
+            }
+        }
+
+        .img-text-bg__img {
+            height: 29rem;
+            display: flex;
+            justify-content: center;
+
+            @include mix.respond-to(pc) {
+                height: 60rem;
+            }
+
+            img {
+                height: 96%;
+                width: auto;
+                max-width: none;
+
+                @include mix.respond-to(pc) {
+                    margin-top: 6.4rem;
+                }
+            }
+        }
+
+        .img-text-bg__text {
+            @include mix.respond-to(pc) {
+                min-width: 46.2%;
+            }
+        }
+
+        .round-arrow-link {
+            margin-top: 3.2rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 8rem;
+            }
+        }
+    }
+}

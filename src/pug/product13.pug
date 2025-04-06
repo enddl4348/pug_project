@@ -1,0 +1,70 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/videoIframe.pug
+include ./components/imgTextRow.pug
+include ./components/accordion.pug
+
+block content
+
+    main.sub.lookinweb
+        +productVisual('LookinBody Web','Cloud Database Management', 'Register Today', 'lookinbody-web', '#')
+            p.sub-paragraph Manage all of your clients’ InBody data from any computer anytime, anywhere.
+
+        section  
+            .inner-box 
+                +subTitle('LookinBody Web', '', '', 'slideInLeft')
+                +videoIframe('https://www.youtube.com/embed/umx1re3yd2Q', '100%', 'slideUp')
+        section
+            .inner-box 
+                +imgTextRow('../img/product/lookinweb_01.jpg', '', false, false, 'slideInLeft')
+                    .img-text-row__content
+                        .sub-text(data-animation="slideInRight") Convenient Access
+                        +subTitle('On-Deman<br>Anywhere and Everywhere', '', '', 'slideInRight')
+                            p.sub-paragraph(data-animation="slideInRight") With multi-browser compatibility, use any computer or tablet to keep track of your clientele data.
+
+        section
+            .inner-box 
+                +imgTextRow('../img/product/lookinweb_02.jpg', '' , false, false, 'slideInLeft')
+                    .img-text-row__content
+                        .sub-text(data-animation="slideInRight") Data You Can Trust
+                        +subTitle('Intuitive Analytics', '', '', 'slideInRight')
+                            p.sub-paragraph(data-animation="slideInRight") LookinBody Web Analytics takes the guesswork out of one-on-one consultations by providing you with relevant information you need to adjust diet, nutrition, and exercise plans per client.
+        
+        section
+            .inner-box 
+                +imgTextRow('../img/product/lookinweb_03.jpg','application', false, false, 'slideInLeft')
+                    .img-text-row__content
+                        .sub-text(data-animation="slideInRight") Mobile Application
+                        +subTitle('Stay Connected', '', '', 'slideInRight')
+                            p.sub-paragraph(data-animation="slideInRight") Stay connected with your clients. The InBody mobile app is designed to let your clients keep track of their results and goals as well as to keep them connected to you.
+                        .app-down
+                            a.app-dowm__link.google-play(href="#", title="new window" , target="_blank", data-animation="slideInRight") 
+                                img(src="../img/sub/google_play.jpg", alt="get it on google play")
+                            a.app-dowm__link.apple-store(href="#", title="new window", target="_blank", data-animation="slideInRight") 
+                                img(src="../img/sub/apple_store.jpg", alt="get download on the app store")
+
+
+        section
+            .inner-box 
+                +imgTextRow('../img/product/lookinweb_04.jpg','health-analysis', false, false, 'slideInLeft')
+                    .img-text-row__content
+                        .sub-text(data-animation="slideInRight") Build Better Relationships
+                        +subTitle('Client-Centric-Health Analysis', '', '', 'slideInRight')
+                            p.sub-paragraph(data-animation="slideInRight") The built-in management system allows you to maintain and manage clients individually, giving you more insight on how you can keep your clients on track towards their goals.     
+        
+        section 
+            .inner-box 
+                +subTitle('FAQ')
+                +accordion([
+                    {title: 'How do I know if my InBody machine is capable of using this service?', content: 'If you have the 270, 570, or 770, please head into the administrator menu of your device and verify if option 4. Cloud Service is available. If this option is not available for you or if you have a device that is not listed here, please feel free to contact us for more information'},
+                    {title: 'Can I use this service outside of the country?', content: 'Please note, that when shipping the unit out of the country it may violate the terms and conditions you have agreed to at the time of the purchase. Currently this service is only available in the United States. The services will not work outside of the 50 states, including US territories and in any other country. As we expect to expand the service to other countries, please feel free to visit this page for any updates.'},
+                    {title: 'What are the Wi-fi requirements for this device?', content: 'Currently, the InBody machine can only connect to the internet on a 2.4Ghz 802.11 B/G/N wireless network. If this option is not available to you, you can also connect to the internet via an ethernet connection as well.'},
+                    {title: 'How long does it take for the results to be uploaded?', content: 'Data sync occurs in real time when the unit is fully connected to the web service. After a test has been completed it should only take a couple of seconds for the result to upload. If it does not please double check to see if the unit is properly connected to your network, logged in to the cloud service, and that the proper mobile number was used.'},
+                    {title: 'Can I have share my login credentials with other staff members or can a shared login credential be setup for us?', content: 'The Terms of Service does not allow for us to create nor allow you to share your login credentials. For the protection of your data and your client’s information every authorized user must have their own login credentials. Failure to do so may be a violation of one or more local privacy laws such as HIPAA or the Privacy Act.'},
+                    {title: 'What kind of printers can I use?', content: 'The LookinBody Web app can use any printer that is installed and connected to your printer. This includes Bluetooth and Wireless printers as well. Additionally, when printing through the web service, you can use regular blank sheets of paper to print out your client’s result sheet.'},
+                    {title: 'I have multiple units and multiple locations. How do I manage them all through the service?', content: 'We offer a couple of different solutions where you will be able to efficiently manage the data coming in. Please speak to one of our LookinBody Web specialists for more information'},
+                    {title: 'Will my clients be able to view their results on the InBody app if I do not have this service?', content: 'Unfortunately the LookinBody web service is required in order for the results to upload and sync automatically. Alternatively, users of the InBody App can manually enter in their results on the app to keep track of their progress.'},
+                    {title: 'How does my InBody machine upload the results to the app?', content: 'The InBody unit will connect to the internet using either a WIFI or LAN connection, and verify the account status by logging into the web service. Once verified individuals testing on the unit will enter in their mobile number which will be relayed to the service allowing for the results to be synced to the app automatically. To ensure that the sync occurs in real time, please be sure to have a strong WIFI connection, an active subscription, and the correct mobile number entered in.'},
+                    {title: 'How do I connect my InBody unit to the LookinBody Web service?', content: 'Please visit the guide on how you can connect your unit to your account.'},
+                ], 'slideUp')

@@ -1,0 +1,102 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+iframe,
+video {
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @include mix.respond-to(pc) {
+        border-radius: 3.4rem;
+    }
+}
+
+.video-wrap {
+
+    &.video-wrap--iframe {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+
+        /* 16:9 비율*/
+        iframe {
+            @include mix.position(absolute, $top: 0, $left: 0);
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// row형 정렬 layout
+.video-row {
+    $root: &;
+
+    #{$root} {
+        &__wrap {
+            @include mix.flexbox(column, $align: stretch);
+            gap: 3.2rem;
+            margin-top: 3.2rem;
+
+            @include mix.respond-to(pc) {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 3%;
+                margin-top: 8rem;
+            }
+        }
+
+        &__item {
+            @include mix.respond-to(pc) {
+                width: 100%;
+            }
+        }
+
+        &__video-box {
+            margin-bottom: 1.8rem;
+
+            @include mix.respond-to(pc) {
+                margin-bottom: 3.4rem;
+            }
+        }
+    }
+
+    .sub__content-title {
+        @include mix.respond-to(pc) {
+            font-size: 4rem;
+        }
+    }
+
+    .sub-title {
+        @include mix.respond-to(pc) {
+            margin-bottom: 1.8rem;
+        }
+    }
+
+    .sub-paragraph {
+        @include mix.respond-to(pc) {
+            max-width: 60%;
+        }
+    }
+}
+
+// vdeio + content layout
+.video-section {
+    .align-box {
+        @include mix.respond-to(pc) {
+            align-items: center;
+            gap: 7.5%;
+        }
+    }
+
+    .video-area {
+        margin-bottom: 2.8rem;
+
+        @include mix.respond-to(pc) {
+            min-width: 68rem;
+            margin-bottom: 0;
+        }
+    }
+}

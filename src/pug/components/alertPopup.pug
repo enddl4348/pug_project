@@ -1,0 +1,7 @@
+mixin alertPopup(id, title, desc)
+    .alert-popup(id=id, data-js="popupLayer")
+        .alert-popup__dim(data-js="popupDim")
+        .alert-popup__layer(data-js="popupCont")
+            h4.alert-popup__title= title
+            p.alert-popup__desc= desc
+            button.alert-popup__close(type="button", aria-label="popup-close", data-js="popupClose")

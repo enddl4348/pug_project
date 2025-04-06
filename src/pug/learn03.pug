@@ -1,0 +1,26 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/videoIframe.pug
+include ./components/barBanner.pug
+include ./components/numberContent.pug
+
+
+block content
+    main.sub.pb-0
+        +subIntro('InBody Test Procedures', 'How to Test How to Test How to Test','procedures')
+        section.procedures
+            .inner-box
+                .align-box 
+                    .video-area
+                        +videoIframe('https://www.youtube.com/embed/kwrPBW0iKJU?si=IHmB8IsTeI3MGzxW', '100%', '')  
+                    +numberContent([
+                        {src: '../img/sub/procedures_01.jpg', title: 'Wipe down hands & feet', desc: 'Wipe down your hands and feet with an InBody Tissue to increase your conductivity.'},
+                        {src: '../img/sub/procedures_02.jpg', title: 'Step onto the InBody', desc: 'Align your feet with the foot electrodes—your weight will be automatically measured.'},
+                        {src: '../img/sub/procedures_03.jpg', title: 'Enter your info', desc: 'Once the InBody confirms your weight, enter your ID, height, and age.Place your thumbs on the oval electrodes.'},
+                        {src: '../img/sub/procedures_04.jpg', title: 'Grab the handles', desc: 'Place your thumbs on the oval electrodes.'},
+                        {src: '../img/sub/procedures_05.jpg', title: 'Get into position', desc: 'Keep your arms straight and hold the handles away from your body at a 45-degree angle.'},
+                        {src: '../img/sub/procedures_06.jpg', title: 'Maintain testing posture', desc: ' Keep still and maintain the testing posture until the test is completed.'},
+                        {src: '../img/sub/procedures_07.jpg', title: 'Receive your results', desc: 'Your InBody Test results will automatically print out once the test is completed.'},
+                    ])
+        +barBanner('So you just took an InBody Test. What do your results mean?', '', 'Result Sheet Interpretation')
+block bottomScripts 

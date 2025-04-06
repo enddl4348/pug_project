@@ -1,0 +1,11 @@
+mixin cardItem(title, desc, img)
+    li.card-content__item
+        a.card-content__link(href="#")
+            .card-content__text
+                h3.card-content__title= title
+                p.card-content__desc= desc
+            span.icon-arrow-round.black.small(aria-hidden="true")
+            div.card-content__img(aria-hidden="true")
+                img(src=img, alt="")
+
+

@@ -1,0 +1,85 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/barBanner.pug
+include ./components/titleList.pug
+
+block content
+
+    main.sub.support.pb-0
+        +subIntro('Data Integration','InBody System Experts can help you safely integrate data from your InBody device to your system, with an integration method that meets your system requirements.','data-integration') 
+        
+        section
+            .inner-box
+                +subTitle('Data Integration')
+                    ul.text-list.text-list--dot
+                        li.text-list__item Youcan safely integrate the data measured by InBody Co., Ltd’s Products to the system.
+                        li.text-list__item There are various Data Integration Methods that meet your system requirements, and our system experts can directly help you.
+                .bg-round-box
+                    .img-box.integration_img01
+                        img.img--mo(src="../img/sub/data_integration01_mo.png", alt="")
+                        img.img--pc(src="../img/sub/data_integration01_pc.png", alt="")
+        section
+            .inner-box
+                h3.list-title <em class="important">00.</em> Review Your Data Management Policies First.
+                ul.text-list.text-list--dot
+                    li.text-list__item There are different ways to integrate data depending on whether you use InBody Cloud Server or not.
+                    li.text-list__item First, you need to review your company’s Data Management Policies to determine whether sending data to InBody Cloud Server.
+                .align-box
+                    .bg-round-box
+                        .img-box.integration_img02
+                            img.img--mo(src="../img/sub/data_integration02_mo.png", alt="")
+                            img.img--pc(src="../img/sub/data_integration02_pc.png", alt="")
+                        p.img-title Data Integration via InBody Cloud Server
+                    .bg-round-box
+                        .img-box.integration_img03
+                            img.img--mo(src="../img/sub/data_integration03_mo.png", alt="")
+                            img.img--pc(src="../img/sub/data_integration03_pc.png", alt="")
+                        p.img-title Data Integration via Direct Linkage with Products
+
+        section
+            .inner-box
+                h3.list-title <em class="important">01.</em> Data Integration via InBody Cloud Server - All Products
+                ul.text-list.text-list--dot
+                    li.text-list__item All products of InBody Co., Ltd. can send data to InBody Cloud Server.
+                    li.text-list__item If you work in a way that gets the data from InBody Cloud Server, you can minimize the development work.
+                    li.text-list__item First, you need to review your company’s Data Management Policies to determine whether sending data to InBody Cloud Server.
+                .bg-round-box.bg-round-box--scroll
+                    .scroll-wrap
+                        .img-box.integration_img04
+                            img(src="../img/sub/data_integration04.png", alt="")
+                +titleList(1, 'Web API', ['It is a method of integrating data from Professional Inbody, Blood Pressure Monitor, and Stadiometer through the Web API method between servers.', 'There are two different API(OTP API, Subscription API) according to price, period of InBody Cloud Server data storage, and users’ InBody APP usage.'])
+
+        section
+            .inner-box
+                h3.list-title <em class="important">02-1.</em> Data Integration via Direct Linkage with Products - Professional InBody, Blood Pressure Monitor, Stadiometer
+                ul.text-list.text-list--dot
+                    li.text-list__item Data can be integrated through products and/or S/W.
+                    li.text-list__item A PC must exist next to the products, and the PC S/W which is developed for data integration send the data to the system.
+                .bg-round-box.bg-round-box--scroll
+                    .scroll-wrap
+                        .img-box.integration_img05
+                            img(src="../img/sub/data_integration05.png", alt="")
+                +titleList(1, 'Open Protocol', ['You can send data to the system by developing S/W directly connected with the product through Serial, USB, LAN, and Wi-Fi.', 'It supports Medical Protocol HL7.'])
+                +titleList(2, 'LB120', ['LB120, Windows S/W for data management, provides the function to save CSV data file or Results Sheet IMG file to specific folder at the time of data creation. You can integrate with the system by developing S/W that takes saved CSV data file or IMG file.', 'In addition, it provides Web API that can connect with the system through network communication. You can integrate with the system by Web API.', 'It supports Medical Protocols HL7 and GDT.'])
+                +titleList(3, 'LBS', ['LBS, Windows S/W for data integration, provides the function to communicate data through the Windows Message method.', 'You can integrate with the system by developing S/W that works with LBS. It supports C#, Java, and Python languages.'])
+                +titleList(4, 'Data Solution', ['Unlike the above 3 options, IT Special company, LookinBody Co., Ltd., can develop customised data solution for your own system without your S/W development.'])
+        
+        section
+            .inner-box
+                h3.list-title <em class="important">02-2.</em> Data Integration via Direct Linkage with Products –Pressure Monitor, Stadiometer
+                ul.text-list.text-list--dot
+                    li.text-list__item If you use only a Blood Pressure Monitor and/or Stadiometer without Professional InBody, you can also integrate the data through products and/or S/W.
+                    li.text-list__item A PC must exist next to the products, and the PC S/W which is developed for data integration send the data to the system.
+                .bg-round-box.bg-round-box--scroll
+                    .scroll-wrap
+                        .img-box.integration_img06
+                            img(src="../img/sub/data_integration06.png", alt="")
+                +titleList(1, 'Open Protocol', ['You can send data to the system by developing S/W directly connected with the product through Serial Communication.'])
+                +titleList(2, 'LB Link', ['LB Link, Windows S/W for user self-measurement, provides the function to save CSV data file to a specific folder at the time of data creation.', 'You can integrate with the system by developing S/W that takes the saved CSV data file.'])
+                +titleList(3, 'LB Link M', ['LB Link M, Windows S/W for data integration, provides the function to save CSV data file to a specific folder at the time of data creation.', 'You can integrate with the system by developing S/W that takes the saved CSV data file.'])
+                +titleList(4, 'Data Solution', ['Unlike the above 3 options, IT Special company, LookinBody Co., Ltd., can develop customised data solution for your own system without your S/W development.'])
+
+        +barBanner('Data Integration Inquiry', 'If you click the button below and fill out the content, our system expert will guide you for smooth data integration.<br>We will respond by email within a week after filling out the content.', 'Inquiry', 'https://docs.google.com/forms/d/e/1FAIpQLSdd-D4j-bmtPX9BUc0JDbVly8I_gCknfUa3Ne44nuIrCBLu7w/viewform', '', 'data-bar-banner')
+
+

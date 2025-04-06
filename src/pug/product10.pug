@@ -1,0 +1,71 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/imgTextList.pug
+include ./components/videoRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('BP170(B)','Clinically Validated Automatic Blood Pressure Monitor For Home Use', 'Download Brochure', 'inbody-bp170', '../files/BP170_brochure.pdf')
+            p.sub-paragraph Manual Blood Pressure Monitor<br><br>Lately, measuring the blood pressure at home has become a necessity. Monitoring blood pressure is important cause long standing high blood pressure can cause damage to arteries and the heart. By checking blood pressure daily, it’s possible to monitor if medications are needed or working.<br><br>Moreover, many people find that they have higher blood pressure readings at the doctor’s office, this patient alerting reaction is a phenomenon called “white coat syndrome”.
+
+        section  
+            .inner-box 
+                +subTitle('What’s new about the BP170?')
+                +imgTextColumn([
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/bp170_img01.jpg', subTitle: 'One-touch cuff', desc: 'Easy to use even alone<br>The key of the BP170 is proprietarily one-touch cuff. When placing the cuff at the correct position and pressing the cuff with your palm, the cuff will be automatically equipped.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/bp170_img02.jpg', subTitle: 'Wide screen', desc: 'All information at a glance<br>All result values can be checked through the wide screen at a glance. Superior visibility is provided with the large display and number.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/bp170_img03.jpg', subTitle: 'Data storage', desc: 'Stable blood pressure measurement<br>By expressing average blood pressure on the most recent 3 measurements, measure blood pressure more stable.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/bp170_img04.jpg', subTitle: 'Thin thickness (26mm)', desc: 'Thinner, easier<br>The main body is very thin so that it can be stored even in a small drawer.' },
+                ], 'slideUp')
+
+        section  
+            .inner-box 
+                +subTitle('BP170 Features', '', '', 'slideInLeft')
+                +iconListContent('item--row3', [
+                    { iconClass: 'one-touch', subTitle: 'One-touch measurement' },
+                    { iconClass: 'pulse', subTitle: 'Detecting irregular pulse waves'},
+                    { iconClass: 'cuff', subTitle: 'One-touch cuff'},
+                    { iconClass: 'cuff', subTitle: 'Checking cuff wearing state'},
+                    { iconClass: 'pressure', subTitle: 'Checking average blood pressure'},
+                    { iconClass: 'user', subTitle: 'Storing blood pressure values for 2 users'},
+                    { iconClass: 'screen', subTitle: 'Wide screen'},
+                    { iconClass: 'hypertension', subTitle: 'Detecting early morning hypertension'},
+                    { iconClass: 'movement', subTitle: 'Detecting movement during measurement'},
+                ], 'slideUp')
+
+
+        section  
+            .inner-box 
+                +subTitle('Product composition & function name', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/bp170_composition01.jpg', subTitle: 'Main Unit Major Features'},
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/bp170_composition02.jpg', subTitle: 'Cuff Descriptions'},
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/bp170_composition03.jpg', subTitle: 'Screen Descriptions'},
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/bp170_composition04.jpg', subTitle: 'Components and storage method'},
+                ], 'slideUp')
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+        +tableRow('Product Specifications', [
+            { key01: 'Measurement Method', value01: 'Oscillometric', key02: 'Measurement Area', value02: 'Left or right upper arm'},
+            { key01: 'Pressurization method', value01: 'Automatic pressurization method', key02: 'Decompression method', value02: 'Automatic exhaust method'},
+            { key01: 'Cuff', value01: '22-32 cm (M size base)', key02: 'Measurement Range', value02: 'Pressure (numerical value): 0-300 mmHg <br>Pulse: 30-240'},
+            { key01: 'Beats/minute accuracy', value01: 'Pressure (numerical value): ±3 mmHg <br>Pulse: Within ±3%', key02: 'Minimum scale unit', value02: 'Pressure (numerical value): 1 mmHg'},
+            { key01: 'Measurement result', value01: 'Systolic blood pressure, diastolic blood pressure, pulse', key02: 'Power Source', value02: 'AA size 4 batteries or dedicated AC adaptor (separately)'},
+            { key01: 'Operating environment', value01: '10 ~ 40 ℃, 30 ~ 75% RH, 70 ~ 106 kPa', key02: 'Storage environment', value02: '-10 ~ 70℃, 10 ~ 80% RH, 50 ~ 106 kPa (No Condensation)'},
+            { key01: 'Weight', value01: 'Approx. 379g', key02: 'Dimension', value02: '99(W) x 26(H) x191(L) mm'},
+            { key01: 'Manufacturing country', value01: 'Republic of Korea', key02: 'Manufacturer', value02: 'InBody Co., Ltd.'}
+        ])

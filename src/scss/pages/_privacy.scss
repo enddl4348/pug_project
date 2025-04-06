@@ -1,0 +1,73 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.content {
+    &-section {
+        padding: 3.2rem 0 8rem;
+        background: var.$bg-f8;
+
+        @include mix.respond-to(pc) {
+            padding: 8rem 0 16rem;
+        }
+    }
+
+    &-wrap {
+        padding: 0 1.6rem 0;
+
+        @include mix.respond-to(pc) {
+            padding: 0 7.6%;
+            max-width: 160rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1600px) {
+            padding: 0;
+        }
+    }
+
+    &-box {
+        &~.content-box {
+            margin-top: 4rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 6rem;
+            }
+        }
+    }
+
+    &-title {
+        margin-bottom: 1.2rem;
+        @include mix.fontStyle(2rem, 600, 1.46);
+
+        @include mix.respond-to(pc) {
+            font-size: 2.4rem;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &-subtitle {
+        margin-bottom: 1.2rem;
+        @include mix.fontStyle(1.5rem, 600, 1.46);
+
+        @include mix.respond-to(pc) {
+            font-size: 2rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &-desc {
+        @include mix.fontStyle(1.5rem, 400, 1.6);
+        color: var.$gray-666;
+
+        @include mix.respond-to(pc) {
+            font-size: 2rem;
+        }
+
+        .text-title {
+            display: block;
+            font-weight: 600;
+            color: var.$black-color;
+        }
+    }
+}

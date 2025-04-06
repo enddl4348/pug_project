@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@import "base/reset";
+@import "base/fonts";
+// text, color, icon
+@import "base/typography";
+@import "base/color";
+@import "base/icons";
+
+// component
+@import "components/accordion";
+@import "components/button";
+@import "components/text";
+@import "components/input";
+@import "components/select";
+@import "components/tab";
+@import "components/table";
+@import "components/tooltip";
+@import "components/barBanner";
+@import "components/iconContent";
+@import "components/videoContent";
+@import "components/imgtextContent";
+@import "components/imgtextList";
+@import "components/numberContent";
+@import "components/device";
+@import "components/imgTextBg";
+@import "components/alert";
+
+// layout
+@import "layouts/layout";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/section";
+
+// pages
+@import "pages/main";
+@import "pages/learn";
+@import "pages/contact";
+@import "pages/privacy";
+@import "pages/product";
+@import "pages/sectors";
+@import "pages/support";

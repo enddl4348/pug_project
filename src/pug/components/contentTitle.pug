@@ -1,0 +1,5 @@
+mixin contentTitle(title, subText)
+    .main__section-title
+        h2.main__title(data-animation="slideInLeft") !{title}
+        if subText
+            p.main__sub-text(data-animation="slideInLeft") !{subText}

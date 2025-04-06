@@ -1,0 +1,9 @@
+mixin valueItem(title, desc, valueClass)
+    li.company-values__item(data-js="sizeAnimation")
+        .company-values__img
+            .company-values__img-box(class=valueClass)
+        span.company-values__deco-title= title
+        .company-values__info
+            h4.company-values__title= title
+            p.company-values__desc !{desc}
+

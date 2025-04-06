@@ -1,0 +1,18 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+  // "pugbeautify.fillTab": true,
+  // "pugbeautify.tabSize": 4,
+  // "pugbeautify.omitDiv": false,
+}

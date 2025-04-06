@@ -1,0 +1,19 @@
+-const snsList = ['facebook','instagram','tiktok','youtube','zalo'];
+
+footer.footer 
+    .footer__top 
+        .footer__inner
+            .footer__menu
+                a.footer__menu-link(href="#") Privacy Policy  
+            .footer__sns.sns-link
+                each sns in snsList
+                    a.sns-link__item(class=sns, href="#", aria-label=sns)
+    .footer__bottom
+        .footer__inner
+            .footer__content
+                .footer__logo 
+                    img(src="../img/common/footer_logo.svg", alt="Inbody")
+                .footer__company-info
+                    strong.info-title InBody Vietnam
+                    p.info-text Address : 11th Floor, COBI TOWER II, 2-4 Street 8, Tan Phu Ward, District 7, HSMC, 70000 Vietnam <br>E-mail : info.vn@inbody.com
+                p.footer__copyright Copyright &copy; 2024 InBody Vietnam. <br>All rights reserved. 

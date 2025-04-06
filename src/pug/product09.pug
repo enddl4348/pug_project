@@ -1,0 +1,53 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/imgTextRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('BPBIO 320','Clinically Validated Blood Pressure Monitor', 'Download Brochure', 'bpbio_320', '#')
+            p.sub-paragraph Automatic, Non-Invasive Blood Pressure Measurement.<br><br>The BPBIO 320 is an accurate, fully automated and easy-to-use blood pressure monitor. The monitor features a voice-guided, single-step measurement process and an elbow sensor that allows you to be in the ideal position for testing.<br><br>These technologies ensure that you follow proper testing protocols each time for accurate readings.
+
+        section  
+            .inner-box 
+                +subTitle('How can the BPBIO 320 optimize your services?' , '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'clinical', subTitle: 'Clinical Accuracy', desc: 'The clinically validated BPBIO 320 features an ergonomic elbow groove and adjustable stool that puts users in the ideal position for accurate, precise results every time.' },
+                    { iconClass: 'convenent', subTitle: 'Convenent & Contact-free', desc: 'The BPBIO 320 is auto-calibrated, space-efficient, and portable for convenient measurement with minimal effort. To enhance sanitary testing conditions, the BPBIO 320 is available with a disposable cuff barrier and contact-free testing guidelines.' },
+                    { iconClass: 'tests', subTitle: 'Quick Self-Testing', desc: 'With an intuitive design and voice guidance, users can measure their blood pressure in 45 seconds with the touch of a button. Choose from four result receipts with up to seven outputs and a test history Result Sheet for easy tracking.' }
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +imgTextRow('../img/product/bpbio320_result_sheet.png','product-sheet bpbio320', true, 'slideInRight')
+                    .img-text-row__content.img-text-list
+                        +subTitle('Explore the BPBIO 320 Result Sheet', '', '', 'slideInLeft')
+                            p.sub-title__desc(data-animation="slideInLeft") The clinically validated BPBIO 320 records a user’s systolic and diastolic blood pressure, mean arterial pressure, pulse pressure, pulse, and rate pressure product.
+
+        +barBanner('Explore the BPBIO 320 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')                    
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'Add extra value to your training program and turn your coaches into health experts with objective analysis.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'Make the effect of your method visible by providing more insights into patiecnt’s body composition.' },
+                ], 'slideUp')
+
+
+        +tableRow('Product Specifications', [
+            { key01: 'Product Dimensions', value01: '450 x 490 x 284 ( L x W x H ) : mm', key02: 'Stand Dimensions', value02: '381 x 460 x 820 ( L x W x H ) : mm'},
+            { key01: 'Measurement Method', value01: 'Oscillometric', key02: 'Display Unit', value02: '1mmHg'},
+            { key01: 'Test Duration', value01: '45 sec', key02: 'Measurement Range', value02: '0 – 300mmHg (Pressure)<br>30 – 240bpm (Pulse)'},
+            { key01: 'Product Weight', value01: '9 kg', key02: 'Database', value02: 'Stores results for the last 5 measurements'},
+            { key01: 'Warranty', value01: '1 Year Manufacturer’s Warranty', key02: 'Power Source', value02: 'AC 100 – 240V, 50/60Hz'},
+            { key01: 'Display Type', value01: '7-Segment LED (Systolic, Diastolic, Time, Pulse)', key02: 'Printer', value02: 'High-speed thermal printer'},
+            { key01: 'Accuracy', value01: '± 2mmHG (Pressure), ± 1.5% (Pulse)', key02: 'Cuff Size', value02: 'Arm circumference: 18 – 42 cm'},
+            { key01: 'Outputs', value01: 'Systolic Blood Pressure, Diastolic Blood Pressure, Pulse'},
+            { key01: 'Dual Safety System', value01: '[START/STOP] button:<br>If the air pressure exceeds 300mmHg, the cuff will automatically deflate.<br><br>[EMERGENCY] button:<br> The cuff will quickly deflate regardless of the pressure.'},
+            { key01: 'Type of Result Sheets', value01: '3-line high-speed printing or graph'}])

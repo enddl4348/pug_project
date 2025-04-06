@@ -1,0 +1,42 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/iconListContent.pug
+include ./components/videoRow.pug
+include ./components/imgTextBg.pug
+include ./components/deviceList.pug
+
+block content
+
+    main.sub.sectors
+        +subIntro('Fitness','Take your gym to the next level!', 'sectors02')
+
+        section
+            .inner-box
+                +iconListContent('', [
+                    { iconClass: 'services', subTitle: 'VALIDATE YOUR SERVICES', desc: 'Prove the quality of your services on paper. Give your clients their results in black and white and show them how they can improve' },
+                    { iconClass: 'loyalty', subTitle: 'GENERATE CLIENT LOYALTY', desc: "Show your clients you're with them every step of the way on their health and fitness journeys. Inspire your members to focus on changes that really matter based on their InBody Test results" },
+                    { iconClass: 'revenue', subTitle: 'INCREASE REVENUE', desc: 'Boost your ROI and revenue by offering complimentary consultations with InBody Tests. Sell the tests separately or include them in the gym memberships' },
+                ])
+
+        section.video-row  
+            .inner-box 
+                +subTitle('Real-Life stories from clients')
+                    p.sub-paragraph Watch testimony videos of how doctors, fitness professionals, and health experts alike have used InBody to validate their programs and increase member retention.
+                +videoRow([
+                    {videoSrc: 'https://www.youtube.com/embed/YMOJLRSNiGg?si=Jb6anVammovdnrxF', width: '100%', subTitle: 'InBody Spotlight: Glenn - Founder of GTFIT Fitness Centre Malaysia'},
+                    {videoSrc: 'https://www.youtube.com/embed/uEH7lmuUthM?si=YS6gNmuQnZW9Gb7g', width: '100%', subTitle: 'InBody Spotlight UK - Tim Walker - Evolve Fitness'}
+                ])
+
+        +imgTextBg('The next level body composition analyser', 'At InBody we assist you in the full customer journey of your clients. From the moment of intake to a fully motivated gym member, InBody provides materials to increase motivation, loyalty and revenue.', '../img/sub/sectors_fitness02.png')
+
+        section.device-field.inner-box
+            +subTitle('The right InBody for you!','','') 
+                p.sub-title__desc Get in contact with one of our InBody Specialists in order to make the right choice and to get details on pricing.
+            +deviceList([
+                { imgSrc: '../img/product/sector_device_270.png', title: 'InBody 270', desc: 'Do InBody tests wherever you go! With its compact design the InBody 270 is created for travelling professionals.', extraClass: 'device_270'},
+                { imgSrc: '../img/product/sector_device_380.png', title: 'InBody 380', desc: 'The InBody 380 is the base model for gyms. This model was especially designed to attract the attention of members within a gym.' , extraClass: 'device_380'},
+                { imgSrc: '../img/product/sector_device_580.png', title: 'InBody 580', desc: 'The InBody 580 tracks besides muscle and fat the intra- and extracellular water. In the field of diabetes, obesity and sarcopenia essential parameters.', extraClass: 'device_580'},
+                { imgSrc: '../img/product/sector_device_770.png', title: 'InBody 770', desc: 'The Inbody 770 is a research grade body composition analyser and helps professionals worldwide in the field of diabetes, sarcopenia, nephrology, obesity, fitness and more.'},
+            ])
+

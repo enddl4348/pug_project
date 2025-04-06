@@ -1,0 +1,742 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.main {
+  $root: &;
+
+  .main-wrapper {
+    overflow: hidden;
+  }
+
+  @include mix.respond-to(pc) {}
+
+  &-visual {
+    position: relative;
+    padding: 0 1.6rem;
+
+    @include mix.respond-to(pc) {
+      padding: 0 4rem;
+    }
+  }
+
+  &__scroll-button {
+    position: relative;
+    @include mix.widthHeight(3.6rem, 3.6rem);
+    @include mix.position(absolute, $left: 3.6rem, $bottom: 5.6rem);
+    @include mix.icon('icon_scroll_arrow', 1.8rem, 3.8rem);
+    animation: scrollArrow 0.7s ease-in-out alternate infinite;
+    z-index: 2;
+
+    @include mix.respond-to(pc) {
+      left: 16rem;
+      bottom: 8rem;
+      @include mix.widthHeight(3rem, 6.2rem);
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 3.2rem;
+
+    @include mix.respond-to(pc) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  &__title {
+    font-size: 3.4rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var.$black-color;
+
+    @include mix.respond-to(pc) {
+      font-size: 8.8rem;
+    }
+  }
+
+  &__sub-text {
+    margin-top: .8rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.33;
+    color: var.$gray-888;
+
+    @include mix.respond-to(pc) {
+      margin-top: 1.2rem;
+      font-size: 2.4rem;
+      max-width: 56%;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .main-swiper {
+    padding-bottom: 3.6rem;
+
+    @include mix.respond-to(pc) {
+      padding-bottom: 0;
+    }
+
+    &__item {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      // swiper active
+      &.swiper-slide-active {
+
+        .main-swiper__sub,
+        .main-swiper__title {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    }
+
+
+    &__text-box {
+      @include mix.position(absolute, $bottom: 0);
+      width: 100%;
+      padding: 0 2rem 8rem;
+      color: var.$white-color;
+
+      @include mix.respond-to(pc) {
+        top: 50%;
+        bottom: auto;
+        padding: 0 0 0 12rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__title {
+      @include mix.fontStyle(4.2rem, 600, 1.19);
+      margin-top: 0.8rem;
+      opacity: 0;
+      transform: translateY(-2.4rem);
+      transition: all 1s ease;
+      transition-delay: 0.3s;
+
+      @include mix.respond-to(pc) {
+        font-size: 11.6rem;
+      }
+    }
+
+    &__sub {
+      @include mix.fontStyle(1.6rem, 400, 1.5);
+      opacity: 0;
+      transform: translateY(-2.4rem);
+      transition: all 1s ease;
+
+      @include mix.respond-to(pc) {
+        font-size: 3.8rem;
+      }
+    }
+
+    &__img {
+      height: 52rem;
+      background: no-repeat 50%;
+      background-size: cover;
+      border-radius: 24px;
+      overflow: hidden;
+
+      @include mix.respond-to(pc) {
+        height: 90.8rem;
+      }
+
+      &.main-swiper__img01 {
+        background-image: url('../img/main/main_visual01_mo.jpg');
+
+        @include mix.respond-to(pc) {
+          background-image: url('../img/main/main_visual01_pc.jpg');
+        }
+      }
+
+      &.main-swiper__img02 {
+        background-image: url('../img/main/main_visual02_mo.jpg');
+
+        @include mix.respond-to(pc) {
+          background-image: url('../img/main/main_visual02_pc.jpg');
+        }
+      }
+
+      &.main-swiper__img03 {
+        background-image: url('../img/main/main_visual03_mo.jpg');
+
+        @include mix.respond-to(pc) {
+          background-image: url('../img/main/main_visual03_pc.jpg');
+        }
+      }
+    }
+
+    &__control-wrap {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 5.4%;
+      width: 100%;
+
+      @include mix.respond-to(mobile-small) {
+        padding: 0;
+      }
+
+      @include mix.respond-to(tablet) {
+        justify-content: flex-end;
+        padding: 0;
+      }
+
+      @include mix.respond-to(pc) {
+        padding: 0 1rem 0 0;
+        width: auto;
+        left: auto;
+        right: 0;
+        bottom: -1px;
+        transform: translateX(0);
+        background: var.$white-color;
+        height: 4.8rem;
+        z-index: 1;
+      }
+
+      &::before {
+        @include mix.respond-to(pc) {
+          content: '';
+          @include mix.icon('round_deco01', 4.8rem, 4.8rem);
+          @include mix.position(absolute, $top: 0, $left: -4.7rem);
+        }
+      }
+
+      &::after {
+        @include mix.respond-to(pc) {
+          content: '';
+          @include mix.icon('round_deco02', 4.3rem, 8.2rem);
+          @include mix.position(absolute, $bottom: 0, $right: -1px);
+          z-index: -1;
+        }
+      }
+
+    }
+
+    &__controler {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    // pagination
+    &__pagination.swiper-pagination-bullets {
+      position: static;
+      width: auto;
+      padding-top: 3px;
+
+      @include mix.respond-to(pc) {
+        margin-top: 0.5rem;
+      }
+
+      .swiper-pagination-bullet {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        margin: 0 1rem !important;
+        background: none;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var.$gray-aaa;
+        opacity: 1;
+
+        @include mix.respond-to(pc) {
+          font-size: 2rem;
+        }
+
+        &:first-child {
+          margin-left: 0 !important;
+        }
+
+        &.swiper-pagination-bullet-active {
+          color: var.$black-color;
+
+          .progress-bar {
+            display: block;
+
+            .progress-inner {
+              animation-name: slideProgress;
+              animation-fill-mode: both;
+              animation-play-state: running;
+              animation-duration: 7s;
+            }
+          }
+        }
+      }
+
+      .progress-bar {
+        display: none;
+        position: relative;
+        width: 16rem;
+        height: 2px;
+        margin-left: 1.2rem;
+        background-color: var.$gray-ccc;
+
+        @include mix.respond-to(mobile-small) {
+          width: 14rem;
+        }
+
+        @include mix.respond-to(pc) {
+          width: 15.4rem;
+          margin: 0 2rem 0 2rem;
+        }
+      }
+
+      .progress-inner {
+        display: block;
+        min-width: 100%;
+        height: 100%;
+        background-color: var.$primary-color;
+        transform: scaleX(0);
+        transform-origin: 0%;
+        animation-play-state: paused;
+      }
+    }
+
+    // play/stop
+    &__player {
+      margin-left: auto;
+      @include mix.icon('icon_swiper_stop', 2rem, 2rem);
+      background-size: 1.2rem auto;
+
+      @include mix.respond-to(pc) {
+        @include mix.widthHeight(2rem, 2rem);
+        background-size: 1.3rem 1.4rem;
+        margin-left: 2rem;
+      }
+
+      ;
+
+      &.active {
+        @include mix.icon('icon_swiper_play', 2rem, 2rem);
+        background-size: contain;
+        background-size: 1.2rem auto;
+
+        @include mix.respond-to(pc) {
+          background-size: 1.3rem 1.4rem;
+        }
+      }
+    }
+  }
+
+  /* //main-swiper */
+}
+
+.main-intro {
+  .align-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.6rem 9rem;
+    margin: 0 -1.6rem;
+    overflow: hidden;
+
+    @include mix.respond-to(pc) {
+      @include mix.flexbox($align: flex-end);
+      padding: 0 0 4rem;
+      margin: 0;
+      overflow: hidden;
+    }
+  }
+
+  .main__title {
+    @include mix.respond-to(pc) {}
+  }
+
+  .content__paragraph {
+    @include mix.respond-to(pc) {
+      margin-top: -3rem;
+    }
+  }
+
+  .round-arrow-link {
+    margin-top: 4rem;
+
+    @include mix.respond-to(pc) {
+      margin-top: 9rem;
+    }
+  }
+
+  &__text {
+    @include mix.respond-to(pc) {
+      width: func.percent(841, 1600);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: -7rem;
+    bottom: 0;
+    @include mix.widthHeight(22rem, 21rem);
+    z-index: -1;
+    background: url('../img/main/intro_bg.png')no-repeat 100%;
+    background-size: auto 100%;
+
+    @include mix.respond-to(pc) {
+      position: static;
+      right: 0;
+      margin-left: auto;
+      width: func.percent(714, 1600);
+      height: 64rem;
+      background-size: contain;
+    }
+  }
+}
+
+// main-products
+.product-list {
+  $root: &;
+
+  @media (min-width: 500px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+  }
+
+  @include mix.respond-to(pc) {
+    gap: 2.8rem;
+  }
+
+  #{$root} {
+    &__item {
+
+      @media (min-width: 500px) {
+        width: calc(50% - .8rem);
+      }
+
+      @include mix.respond-to(pc) {
+        width: calc(25% - 2.1rem);
+      }
+
+      &~.product-list__item {
+        margin-top: 3.2rem;
+
+        @media (min-width: 500px) {
+          margin-top: 0;
+        }
+      }
+
+    }
+
+    &__inner {
+      position: relative;
+
+      @include mix.respond-to(pc) {
+        &:hover .product-list__unit {
+          background-image: url('../img/icon/icon_plus_red.svg');
+        }
+      }
+    }
+
+    &__img {}
+
+    &__link {
+      display: block;
+    }
+
+    &__content {
+      margin-top: 2rem;
+      text-align: center;
+
+      @include mix.respond-to(pc) {
+        margin-top: 2.6rem;
+      }
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 600;
+
+      @include mix.respond-to(pc) {
+        font-size: 3rem;
+      }
+    }
+
+    &__desc {
+      margin: .6rem auto 0;
+      max-width: 80%;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var.$gray-666;
+
+      @include mix.respond-to(pc) {
+        margin-top: 0.8rem;
+        font-size: 2rem;
+      }
+    }
+
+    &__unit {
+      @include mix.position(absolute, $top: 0, $right: 0);
+      @include mix.icon(icon_plus_27, 16.4%, 16.4%);
+      background-position: 50% 0;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+// sectors
+.card-content {
+  $root: &;
+
+  #{$root} {
+    &__list {
+      @include mix.respond-to(pc) {}
+    }
+
+    &__item {
+      position: relative;
+      background: var.$black-color;
+      border-radius: 2rem;
+
+      &~.card-content__item {
+        margin-top: 1.6rem;
+
+        @include mix.respond-to(pc) {
+          margin-top: 2.8rem;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: .6rem;
+        right: -1px;
+        bottom: -1px;
+        background: var.$bg-f9;
+        border-radius: 2rem;
+        // z-index: 0;
+
+        @include mix.respond-to(pc) {
+          left: 1rem;
+        }
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      padding: 2.4rem;
+      // z-index: 1;
+
+      @include mix.respond-to(pc) {
+        @include mix.flexbox($align: center);
+        padding: 7rem 6.8% 7rem 26%;
+
+        &:hover {
+          .icon-arrow-round {
+            background-image: url('../img/icon/icon_arrow_bgred.svg');
+          }
+
+          .card-content__img {
+            opacity: 1;
+            transform: translateY(-50%) scale(1) skew(0deg) rotate(-15deg);
+          }
+        }
+      }
+    }
+
+    &__text {
+      margin-bottom: 1.8rem;
+
+      @include mix.respond-to(pc) {
+        @include mix.flexbox($align: center);
+        margin-bottom: 0;
+      }
+
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 700;
+
+      @include mix.respond-to(pc) {
+        font-size: 2.4rem;
+        @include mix.position(absolute, $left: 5.4%)
+      }
+    }
+
+    &__desc {
+      margin-top: 0.6rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var.$gray-666;
+
+      @include mix.respond-to(pc) {
+        font-size: 2rem;
+        margin: 0 16% 0 0;
+      }
+    }
+
+    &__img {
+      display: none;
+
+      @include mix.respond-to(pc) {
+        display: block;
+        @include mix.position(absolute, $top: 50%, $right: 6rem);
+        width: 39rem;
+        opacity: 0;
+
+        transform: translateY(-50%) scale(0.7) skew(0deg) rotate(10deg);
+        transition: opacity .3s, transform 0.5s cubic-bezier(.3, .68, .34, .8);
+        z-index: 1;
+
+      }
+    }
+
+  }
+
+  .icon-arrow-round {
+    @include mix.respond-to(pc) {
+      margin-left: auto;
+    }
+  }
+}
+
+.main-contact {
+  $root: &;
+  padding-top: 8rem;
+
+  #{$root} {
+    &__wrap {
+      padding-top: 13.2rem;
+      background: url('../img/main/contact_bg.jpg') no-repeat 50%;
+      background-size: cover;
+
+      @include mix.respond-to(pc) {
+        padding-top: 36.6rem;
+      }
+    }
+
+    &__content {
+      position: relative;
+      height: 17.6rem;
+      margin-right: 1.6rem;
+      padding-left: 1.6rem;
+
+      @include mix.respond-to(pc) {
+        margin-right: 8%;
+        padding-left: 8%;
+        height: 49rem;
+
+      }
+
+    }
+
+    &__img {
+      height: 100%;
+      overflow: hidden;
+      @include mix.position(absolute, $top: 0, $bottom: 0, $right: 0, $left: 0);
+
+      .img-mo {
+        @include mix.respond-to (pc) {
+          display: none;
+        }
+      }
+
+      .img-pc {
+        display: none;
+
+        @include mix.respond-to (pc) {
+          display: block;
+          width: auto;
+          max-width: none;
+          height: 100%;
+          @include mix.position(absolute, $top: auto, $bottom: 0, $right: 0, $left: auto);
+
+        }
+
+        @media (min-width: 1900px) {
+          left: 0;
+        }
+      }
+    }
+
+    &__text-box {
+      @include mix.position(absolute, $top: 50%);
+      transform: translateY(-50%);
+      color: var.$white-color;
+
+      @include mix.respond-to(pc) {
+        padding-right: 4%;
+      }
+
+    }
+
+    &__sub {
+      @include mix.fontStyle(1.4rem, 400, 1.5);
+
+      @include mix.respond-to(pc) {
+        font-size: 4rem;
+      }
+    }
+
+    &__title {
+      margin-top: 1rem;
+      @include mix.fontStyle(3rem, 700, 1.06);
+
+      @include mix.respond-to(pc) {
+        margin-top: 4rem;
+        font-size: 7.3rem;
+
+        br {
+          display: none;
+        }
+      }
+
+      @include mix.respond-to(pc-large) {
+        font-size: 10.2rem;
+      }
+
+    }
+  }
+
+  .round-arrow-link {
+    @include mix.position(absolute, $top: -6.6rem, $left: 1.6rem);
+
+    @include mix.respond-to(pc) {
+      top: 0;
+      left: auto;
+      right: 0;
+      padding: 0 1rem 0 4.8rem;
+      font-size: 3.2em;
+      height: 9.2rem;
+      z-index: 1;
+
+      .icon-arrow-round {
+        @include mix.widthHeight(7.2rem, 7.2rem);
+        margin-left: 8.2rem;
+      }
+    }
+  }
+}
+
+// animation
+@keyframes slideProgress {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scrollArrow {
+  to {
+    bottom: 6.4rem;
+  }
+}

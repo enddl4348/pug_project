@@ -1,0 +1,285 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.icon-list-content {
+    $root: &;
+
+    #{$root} {
+        &__wrap {
+            @include mix.flexbox(column);
+            align-items: flex-start;
+            gap: 3.2rem;
+
+            @include mix.respond-to(pc) {
+                flex-direction: row;
+                gap: 4.4%;
+            }
+
+            &.item--row3 {
+
+                @include mix.respond-to(pc) {
+                    flex-wrap: wrap;
+                    margin-top: -8rem;
+
+                    .icon-list-content__item {
+                        margin-top: 8rem;
+                        width: calc(91.2% / 3);
+                    }
+                }
+
+            }
+
+            &.item-column {
+                flex-direction: column;
+                gap: 3.2rem;
+
+                @include mix.respond-to(pc) {
+                    gap: 8rem;
+                }
+            }
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__icon {
+            @include mix.icon(icon_science, 4.8rem, 4.8rem);
+
+            @include mix.respond-to(pc) {
+                width: 7rem;
+                height: 7rem;
+            }
+
+            &.data {
+                background-image: url('../img/icon/icon_data.svg');
+            }
+
+            &.analysis {
+                background-image: url('../img/icon/icon_analysis.svg');
+            }
+
+
+            &.nutrition {
+                background-image: url('../img/icon/icon_nutrition.svg');
+            }
+
+            &.nephrology {
+                background-image: url('../img/icon/icon_nephrology.svg');
+            }
+
+            &.cardiology {
+                background-image: url('../img/icon/icon_cardiology.svg');
+            }
+
+            &.geriatrics {
+                background-image: url('../img/icon/icon_geriatrics.svg');
+            }
+
+            &.rehabilitation {
+                background-image: url('../img/icon/icon_rehabilitation.svg');
+            }
+
+            &.bariatric {
+                background-image: url('../img/icon/icon_bariatric.svg');
+            }
+
+            &.diabetes {
+                background-image: url('../img/icon/icon_diabetes.svg');
+            }
+
+            &.unit {
+                background-image: url('../img/icon/icon_unit.svg');
+            }
+
+            &.health {
+                background-image: url('../img/icon/icon_health.svg');
+            }
+
+            &.services {
+                background-image: url('../img/icon/icon_service.svg');
+            }
+
+            &.loyalty {
+                background-image: url('../img/icon/icon_loyalty.svg');
+            }
+
+            &.revenue {
+                background-image: url('../img/icon/icon_revenue.svg');
+            }
+
+            &.clean {
+                background-image: url('../img/icon/icon_clean.svg');
+            }
+
+            &.hand {
+                background-image: url('../img/icon/icon_hand.svg');
+            }
+
+            &.electrodes {
+                background-image: url('../img/icon/icon_electrodes.svg');
+            }
+
+            &.impedance {
+                background-image: url('../img/icon/icon_impedance.svg');
+            }
+
+            &.frequencies {
+                background-image: url('../img/icon/icon_frequencies.svg');
+            }
+
+            &.estimations {
+                background-image: url('../img/icon/icon_estimations.svg');
+            }
+
+            &.tests {
+                background-image: url('../img/icon/icon_clock.svg');
+            }
+
+            &.touchscreen {
+                background-image: url('../img/icon/icon_touch.svg');
+            }
+
+            &.cloud {
+                background-image: url('../img/icon/icon_cloud.svg');
+            }
+
+            &.qrcode {
+                background-image: url('../img/icon/icon_qrcode.svg');
+            }
+
+            &.interface {
+                background-image: url('../img/icon/icon_interface.svg');
+            }
+
+            &.hand_electrode {
+                background-image: url('../img/icon/icon_hand_electrode.svg');
+            }
+
+            &.design {
+                background-image: url('../img/icon/icon_design.svg');
+            }
+
+            &.mhz {
+                background-image: url('../img/icon/icon_mhz.svg');
+            }
+
+            &.evaluation {
+                background-image: url('../img/icon/icon_evaluation.svg');
+            }
+
+            &.sheet {
+                background-image: url('../img/icon/icon_sheet.svg');
+            }
+
+            &.laying-down {
+                background-image: url('../img/icon/icon_lay_down.svg');
+            }
+
+            &.portable {
+                background-image: url('../img/icon/icon_portable.svg');
+            }
+
+            &.clinical {
+                background-image: url('../img/icon/icon_clinical.svg');
+            }
+
+            &.convenent {
+                background-image: url('../img/icon/icon_convenent.svg');
+            }
+
+            &.one-touch {
+                background-image: url('../img/icon/icon_onetouch.svg');
+            }
+
+            &.pulse {
+                background-image: url('../img/icon/icon_pulse.svg');
+            }
+
+            &.cuff {
+                background-image: url('../img/icon/icon_cuff.svg');
+            }
+
+            &.pressure {
+                background-image: url('../img/icon/icon_pressure.svg');
+            }
+
+            &.user {
+                background-image: url('../img/icon/icon_user.svg');
+            }
+
+            &.screen {
+                background-image: url('../img/icon/icon_screen.svg');
+            }
+
+            &.hypertension {
+                background-image: url('../img/icon/icon_hypertension.svg');
+            }
+
+            &.movement {
+                background-image: url('../img/icon/icon_movement.svg');
+            }
+
+            &.testing {
+                background-image: url('../img/icon/icon_testing.svg');
+            }
+
+            &.advice {
+                background-image: url('../img/icon/icon_advice.svg');
+            }
+
+            &.monitoring {
+                background-image: url('../img/icon/icon_monitoring.svg');
+            }
+
+            &.durability {
+                background-image: url('../img/icon/icon_durability.svg');
+            }
+
+            &.handle {
+                background-image: url('../img/icon/icon_handle.svg');
+            }
+
+            &.wireless {
+                background-image: url('../img/icon/icon_wireless.svg');
+            }
+
+            &.obesity {
+                background-image: url('../img/icon/icon_obesity.svg');
+            }
+
+            &.profiles {
+                background-image: url('../img/icon/icon_profiles.svg');
+            }
+
+            &.muscle {
+                background-image: url('../img/icon/icon_muscle.svg');
+            }
+
+            &.growth {
+                background-image: url('../img/icon/icon_growth.svg');
+            }
+
+        }
+
+        &__title {
+            @include mix.fontStyle(1.8rem, 700, 1.44);
+            margin-top: 1.2rem;
+
+            @include mix.respond-to(pc) {
+                font-size: 3.2rem;
+                margin-top: 2.6rem;
+                line-height: 1.25;
+            }
+        }
+    }
+
+    .sub-paragraph {
+        margin-top: 0.6rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 1.6rem;
+        }
+    }
+}

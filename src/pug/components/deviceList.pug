@@ -1,0 +1,11 @@
+mixin deviceList(items)
+    .device-list
+        .device-list__wrap
+            each item in items
+                .device-list__item(class=item.extraClass)
+                    a.device-list__link(href="#") 
+                        .device-list__img(src=item.imgSrc)
+                            img(src=item.imgSrc, alt="")
+                        .device-list__text
+                            h3.device-list__name= item.title
+                            p.device-list__desc= item.desc

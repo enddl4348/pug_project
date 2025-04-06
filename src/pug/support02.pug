@@ -1,0 +1,42 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/deviceDownload.pug
+
+block content
+
+    main.sub.support
+        +subIntro('Brochure Downloads','Get your InBody product brochure','brochure-download')
+        
+        section.download-guide
+            .inner-box
+                .device-field
+                    +deviceDownload([
+                        { imgSrc: '../img/sub/brochure_380.jpg', title: 'InBody 380', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_580.jpg', title: 'InBody 580', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_ingrip.jpg', title: 'InGrip', downloads: [ { name: "Brochure", link: "#" } ] },
+                    ], 'brochure')
+
+                    +deviceDownload([
+                        { imgSrc: '../img/sub/brochure_970.jpg', title: 'InBody 970', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_770.jpg', title: 'InBody 770', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_270.jpg', title: 'InBody 270', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_bwa.jpg', title: 'InBody BWA', downloads: [ { name: "Brochure", link: "#" } ] },
+                    ], 'brochure')
+
+                    +deviceDownload([
+                        { imgSrc: '../img/sub/brochure_s10.jpg', title: 'InBody S10', downloads: [ { name: "Brochure", link: "#" } ] },
+                    ], 'brochure')
+
+                    +deviceDownload([
+                        { imgSrc: '../img/sub/brochure_bpbio750.jpg', title: 'BPBIO 750', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_bpbio320.jpg', title: 'BPBIO 320', downloads: [ { name: "Brochure", link: "#" } ] },
+                        { imgSrc: '../img/sub/brochure_bp170.jpg', title: 'BP170', downloads: [ { name: "Brochure", link: "#" } ] },
+                    ], 'brochure')
+
+                    +deviceDownload([
+                        { imgSrc: '../img/sub/brochure_fra.jpg', title: 'FRA', downloads: [ { name: "Brochure", link: "#" } ] },
+                    ], 'brochure')
+
+
+

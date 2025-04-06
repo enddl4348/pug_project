@@ -1,0 +1,71 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/videoRow.pug
+include ./components/imgTextRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody 270','Portable Body Composition Analyzer', 'Download Brochure', 'inbody-270', '../files/270_brochure.pdf')
+            p.sub-paragraph Designed with traveling professionals in mind, the InBody 270 is portable yet features the accuracy and precision customers expect from InBody.
+
+        section  
+            .inner-box 
+                +subTitle('What’s different about the InBody 270?', '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'tests', subTitle: '15 Second Tests', desc: 'Quickly measure fat mass, muscle mass, and body water levels. No dunking. No pinching. No discomfort. Simply stand on the device and hold the hand electrodes.' },
+                    { iconClass: 'touchscreen', subTitle: 'No Estimations', desc: 'Only impedance is used to determine your body composition results; no empirical estimations such as gender and age are used or required to predict your body composition.' },
+                    { iconClass: 'cloud', subTitle: 'Cloud Software', desc: 'Automatically save all the data from InBody units to Lookin’Body Web, InBody’s cloud database management system. Easily view and manage client’s results and see their progress anytime, anywhere.' }
+                ], 'slideUpMulti')
+
+        section.video-row  
+            .inner-box 
+                +subTitle('See how businesses utilise the InBody','','', 'slideInLeft')
+                    p.sub-paragraph(data-animation="slideInLeft") Watch testimony videos of how doctors, fitness professionals, and health experts alike have used InBody to validate their programs and increase member retention.
+                +videoRow([
+                    {videoSrc: 'https://www.youtube.com/embed/Yht6fi2ZPKo', subTitle: 'BLIS is the functional assessment that DBC Physiotherapy uses on their patients.'},
+                    {videoSrc: 'https://www.youtube.com/embed/jn7771t8k5w', subTitle: '[Is muscle mass related to body pain?] Why are there more body pain problems during the Movement Control Order? ! Let YOUR PHYSIO give you the answer.'}
+                ], 'slideUp')
+
+        section  
+            .inner-box 
+                +imgTextRow('../img/product/270_result_sheet.png','product-sheet', true, 'slideInRight')
+                    .img-text-row__content.img-text-list
+                        +subTitle('Explore the InBody 270 Result Sheet', '', '', 'slideInLeft')
+                            p.sub-title__desc(data-animation="slideInLeft") The InBody 270 records a user’s weight, skeletal muscle mass, and percent body fat from the last eight tests to track progress over time.
+
+        +barBanner('Explore the InBody 270 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+
+        section  
+            .inner-box 
+                +subTitle('How can Inbody 270 ultimate body composition analyzer be used?','','', 'slideInLeft')
+                    p.sub-title__desc(data-animation="slideInLeft") The InBody 270 is a portable analyzer that analyse with accuracy and precision, hence the Inbody 270 Portable Body Composition Analyzer is used worldwide in many business sectors
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/fitness.jpg', subTitle: 'Fitness', desc: 'Add extra value to your training program and turn your coaches into health experts with objective analysis.' },
+                    { itemClass: '', imgSrc: '../img/product/dietitian.jpg', subTitle: 'Dietitian', desc: 'Make the effect of your method visible by providing more insights into patiecnt’s body composition.' },
+                ], 'slideUp')
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'Add extra value to your training program and turn your coaches into health experts with objective analysis.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'Make the effect of your method visible by providing more insights into patiecnt’s body composition.' },
+                ], 'slideUp')
+
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '356 x 796 x 995<br>(L x W x H ) : mm', key02: 'Frequencies', value02: '20, 100 kHz'},
+            { key01: 'Test Duration', value01: '15 seconds', key02: 'Weight Range', value02: '10 – 250 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '14 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'InBody Result Sheets, USB Thumb Drive, InBody Tissue, Carrying Case, Thermal Printer', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '10 impedance measurements,<br> 2 frequencies at each of the 5 segments'},
+            { key01: 'Additional Features', value01: 'Lookin’Body 120 and Lookin’Body Web Compatible,Touchscreen,Voice Guidance System,Wi-Fi/Bluetooth Connectivity,Security Access Code,Foldable Design'},
+            { key01: 'Outputs', value01: 'Standard Outputs :<br>Weight, Total Body Water,Body Fat Mass,Skeletal Muscle Mass,Body Mass Index,Percent Body Fat,InBody Score,Segmental Lean Analysis,Body Composition History,Body Fat-Lean Body Mass Control,Basal Metabolic Rate,Impedance at each segment/ frequency'}])

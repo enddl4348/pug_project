@@ -1,0 +1,8 @@
+mixin titleList(number, title, items)
+    .number-list
+        h4.list-title.important 
+            span.number= number
+            | #{title} 
+        ul.text-list.text-list--dot
+            each item in items
+                li.text-list__item= item

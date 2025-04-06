@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "mandeepmittal.pug",
+        "mrmlnc.vscode-pugbeautify",
+        "ginie.pug2html"
+    ]
+    //"unwantedRecommendations": [""]
+}

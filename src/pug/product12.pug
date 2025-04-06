@@ -1,0 +1,55 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/videoRow.pug
+include ./components/imgTextRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InGrip','One of the most significant biomarkers for predicting your future health', 'Download Brochure', 'ingrip', '../files/ingrip_IB-HGS_brochure.pdf')
+            p.sub-paragraph You're in good hands with the InGrip Dynamometer, a superior solution for grip strength testing. Ideal for physical therapists, doctors, trainers, and researchers, the InGrip’s advanced features provide impeccable accuracy, ensuring you get a firm handle on your patients’ health.
+
+
+        section  
+            .inner-box 
+                +subTitle('Product Features', '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'durability', subTitle: 'Load cell sensor for accuracy and durability', desc: 'Ensuring durability and precision, InGrip uses a load cell method that eliminates concerns related to hysteresis which is an elastic deformation, guaranteeing the accurate reproduction of values' },
+                    { iconClass: 'handle', subTitle: '"Handle Guide" for consistent results', desc: 'Utilizing the "handle guide," all users can measure their handgrip strength by loading up the handle at the exact same position, minimizing errors in the measured values.' },
+                    { iconClass: 'wireless', subTitle: 'Wireless communication module designed to enhance versatility', desc: 'The InGrip is equipped with a bluetooth wireless communication module and can be linked with other programs. Furthermore, the InGrip can be linked with the InBody, Body Composition Analyzer, giving it a number of possibilities when it comes to its application in the future.'}
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +imgTextRow('../img/product/ingrip_detail.png', 'product-detail ingrip', true, 'slideInRight')
+                    .img-text-row__content
+                        +subTitle('InBody Ecosystem Integration', '', 'mb-0', 'slideInLeft')
+                            P.sub-paragraph(data-animation="slideInLeft") Part of the InBody Ecosystem of products, the InGrip is compatible with InBody's professional body composition analyzer line. Activate Bluetooth to sync the InGrip with your analyzer and send data to LookinBody Web, InBody’s HIPAA-compliant cloud platform.<br><br>The InGrip is compatible with the InBody 270, InBody 380, InBody 570, InBody 580, InBody 770, InBody 970 and BWA 2.0 
+                
+
+        +barBanner('Explore the InGrip Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+
+        +tableRow('Product Specifications', [
+            { key01: 'Measured items', value01: 'Handgrip strength', key02: 'Measuring range', value02: '1~100kg'},
+            { key01: 'Error Range', value01: '± 0.5kg', key02: 'Unit of measure', value02: '0.1kg'},
+            { key01: 'Results display', value01: '3-inch VA LCD', key02: 'Power supply', value02: '3V Battery (AA type 2EA)'},
+            { key01: 'Interface', value01: 'Wireless communication (Bluetooth5.0)', key02: 'Sound', value02: 'Buzzer'},
+            { key01: 'Size', value01: '140 (W) X 226 (L) X 50 (H): mm', key02: 'Weight', value02: 'Approx. 650g'},
+            { key01: 'Operating environment', value01: '10~40°C, relative humidity 30-75% RH, 70-106kPa'},
+            { key01: 'Storage environment', value01: '-10~70°C, relative humidity 10~80% RH, 50~106kPa (No Condensation)'},
+        ])

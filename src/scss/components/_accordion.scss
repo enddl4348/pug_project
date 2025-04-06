@@ -1,0 +1,85 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/functions' as func;
+@use 'abstracts/mixins' as mix;
+
+.accordion {
+    &__item {
+        padding: 2.4rem;
+        background: var.$bg-f9;
+        border-radius: 2rem;
+
+        @include mix.respond-to(pc) {
+            padding: 7.4rem 8rem;
+        }
+
+        &~.accordion__item {
+            margin-top: 1.6rem;
+        }
+
+        &.is-open {
+            .accordion__head::after {
+                background-image: url('../img/icon/icon_accordion_active.svg');
+            }
+
+            .accordion__title {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: var.$primary-color;
+
+                @include mix.respond-to(pc) {
+                    font-size: 2.4rem;
+                }
+            }
+
+            .accordion__content {
+                padding-top: 1.8rem;
+
+                @include mix.respond-to(pc) {
+                    padding-top: 1.4rem;
+                }
+            }
+        }
+    }
+
+    &__head {
+        width: 100%;
+        text-align: left;
+        @include mix.flexbox(row, $justify: space-between, $align: flex-start);
+
+        @include mix.respond-to(pc) {
+            align-items: center;
+        }
+
+        &::after {
+            content: '';
+            margin-left: 5rem;
+            @include mix.icon('icon_accordion', 3rem, 3rem);
+            min-width: 3rem;
+
+            @include mix.respond-to(pc) {
+                min-width: 5rem;
+                height: 5rem;
+            }
+        }
+    }
+
+    &__title {
+        @include mix.fontStyle(1.5rem, 400, 1.46);
+        color: var.$gray-666;
+
+        @include mix.respond-to(pc) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__content {
+        display: none;
+        @include mix.fontStyle(1.5rem, 400, 1.46);
+        color: var.$gray-666;
+
+        @include mix.respond-to(pc) {
+            padding-right: 10rem;
+            font-size: 2rem;
+        }
+    }
+}

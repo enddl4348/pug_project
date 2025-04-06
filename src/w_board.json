@@ -1,0 +1,219 @@
+[
+    {
+        "path": "Main",
+        "link": "main",
+        "date": "09-25",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Learn > About Us",
+        "link": "learn01",
+        "date": "09-25",
+        "status": "완료",
+        "remarks": "about inbody 추가 컨텐츠 있음"
+    },
+    {
+        "path": "Learn > InBody Technology",
+        "link": "learn02",
+        "date": "10-08",
+        "status": "완료",
+        "remarks": "영상 확인 필요"
+    },
+    {
+        "path": "Learn > InBody Test Procedures",
+        "link": "learn03",
+        "date": "09-27",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Learn > Result Sheet Interpretation",
+        "link": "learn04",
+        "date": "10-10",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Learn > What is Body Composition",
+        "link": "learn05",
+        "date": "10-07",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Learn > InBody and the Immune System",
+        "link": "learn06",
+        "date": "10-02",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Learn > Safety & Sanitation Tips",
+        "link": "learn07",
+        "date": "10-02",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Products > InBody 970",
+        "link": "product01",
+        "date": "10-11",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, 제품 사양 컨텐츠 수급 후 적용 필요"
+    },
+    {
+        "path": "Products > InBody 770",
+        "link": "product02",
+        "date": "10-11",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요"
+    },
+    {
+        "path": "Products > InBody 580",
+        "link": "product03",
+        "date": "09-30",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, 제품 사양 컨텐츠 수급 후 적용 필요"
+    },
+    {
+        "path": "Products > InBody 380",
+        "link": "product04",
+        "date": "10-11",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, 제품 사양 컨텐츠 수급 후 적용 필요"
+    },
+    {
+        "path": "Products > InBody 270",
+        "link": "product05",
+        "date": "10-11",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, "
+    },
+    {
+        "path": "Products > InBody BWA 2.0",
+        "link": "product06",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, 제품 사양 컨텐츠 수급 후 적용 필요"
+    },
+    {
+        "path": "Products > InBody S10",
+        "link": "product07",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요"
+    },
+    {
+        "path": "Products > BPBIO 750",
+        "link": "product08",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요"
+    },
+    {
+        "path": "Products > BPBIO 320",
+        "link": "product09",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요"
+    },
+    {
+        "path": "Products > BP170",
+        "link": "product10",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, "
+    },
+    {
+        "path": "Products > InBody FRA",
+        "link": "product11",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, 제품 사양 컨텐츠 수급 후 적용 필요"
+    },
+    {
+        "path": "Products > InGrip",
+        "link": "product12",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요, 제품 사양 컨텐츠 수급 후 적용 필요"
+    },
+    {
+        "path": "Products > LookinBody Web",
+        "link": "product13",
+        "date": "10-14",
+        "status": "완료",
+        "remarks": "영상 확인 필요"
+    },
+    {
+        "path": "Applications > Medical",
+        "link": "application01",
+        "date": "09-30",
+        "status": "완료",
+        "remarks": "영상 확인 필요"
+    },
+    {
+        "path": "Applications > Fitness",
+        "link": "application02",
+        "date": "09-30",
+        "status": "완료",
+        "remarks": "영상 확인 필요"
+    },
+    {
+        "path": "Applications > Dietitian",
+        "link": "application03",
+        "date": "09-30",
+        "status": "완료",
+        "remarks": "영상 확인 필요"
+    },
+    {
+        "path": "Applications > Physiotheraphy",
+        "link": "application04",
+        "date": "09-30",
+        "status": "완료",
+        "remarks": "영상 확인 필요"
+    },
+    {
+        "path": "Applications > Corperate",
+        "link": "application05",
+        "date": "09-30",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Support > Data Integration",
+        "link": "support01",
+        "date": "10-18",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Support > Brochure Downloads",
+        "link": "support02",
+        "date": "10-21",
+        "status": "완료",
+        "remarks": "브로슈어 링크 연결 필요"
+    },
+    {
+        "path": "Get in contact",
+        "link": "contact",
+        "date": "09-25",
+        "status": "완료",
+        "remarks": ""
+    },
+    {
+        "path": "Get in contact > email form",
+        "link": "email_form",
+        "date": "10-08",
+        "status": "완료",
+        "remarks": "개발요청 : logo img 경로 cdn 주소로 변환"
+    },
+    {
+        "path": "footer > Privacy Policy",
+        "link": "privacy",
+        "date": "09-25",
+        "status": "완료",
+        "remarks": "약관 내용 확인 필요"
+    }
+]

@@ -1,0 +1,6 @@
+mixin subTitle(title, highlightedText='', extraClass='', animationMode=false)
+    .sub-title(class=extraClass)
+        h2.sub-title__title(data-animation=animationMode)!= title
+            if highlightedText
+                em.important= highlightedText
+        block

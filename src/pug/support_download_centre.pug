@@ -1,0 +1,32 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/deviceDownload.pug
+include ./components/barBanner.pug
+
+block content
+
+    main.sub.support.pb-0
+        +subIntro('Download Centre','Resources for your InBody unit','download-centre')
+        
+        section.download-guide
+            .inner-box
+                +subTitle('Search through the tabs to download the material you need for your device.')
+                    ul.text-list.text-list--dot
+                        li.text-list__item <strong class="bold">QC Print Instructions : </strong>QC Print Instructions guide you through the QC printing process when requested by Customer Service. Please do not use this guide unless instructed by an InBody representative.
+                        li.text-list__item <strong class="bold">Repacking Instructions : </strong>The Repacking Instructions show you how to properly repack your InBody unit for shipping to avoid any product damages.
+                        li.text-list__item <strong class="bold">User’s Manual : </strong>The User’s Manual is a comprehensive guide in installing, managing, operating, and troubleshooting your InBody unit.
+                        li.text-list__item <strong class="bold">Connection Instructions : </strong>The Connections Instructions guides you through connecting your BSM170 stadiometer with your InBody570 or InBody770.
+        
+                .device-field
+                    +deviceDownload([
+                        { imgSrc: '../img/sub/centre_270.png', title: '270 Downloads', extraClass: 'product_270', downloads: [ { name: "QC Print Instruction", link: "#" }, { name: "User's Manual", link: "#"} ] },
+                        { imgSrc: '../img/sub/centre_770.png', title: '770 Downloads', extraClass: 'product_770' , downloads: [ { name: "QC Print Instruction", link: "#" }, { name: "User's Manual", link: "#"} ] },
+                        { imgSrc: '../img/sub/centre_970.png', title: '970 Downloads', extraClass: 'product_970' , downloads: [ { name: "QC Print Instruction", link: "#" }, { name: "Repacking Instructions", link: "#"}, { name: "User's Manual", link: "#"} ] },
+                        { imgSrc: '../img/sub/centre_s10.png', title: 'S10 Downloads', extraClass: 'product_S10' , downloads: [ { name: "User's Manual", link: "#"} ] },
+                        { imgSrc: '../img/sub/centre_bsm170.png', title: 'BSM170 Downloads', extraClass: 'bsm170', downloads: [ { name: "Connection Instructions", link: "#" } ] },
+                    ])
+
+        +barBanner('If you have questions about any of the material or require assistance,<br> please fill out the Contact form.', '', 'Contact us for the file needed ')
+
+

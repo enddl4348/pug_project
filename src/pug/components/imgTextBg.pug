@@ -1,0 +1,17 @@
+include ./subTitle.pug
+
+mixin imgTextBg(title, subText, imgSrc, linkText, extraClass)
+    section.img-text-bg(class=extraClass)
+        .inner-box
+            .img-text-bg__inner
+                .img-text-bg__text
+                    if title
+                        +subTitle(title)
+                            if subText
+                                p.sub-title__desc= subText
+                    if linkText
+                        a.round-arrow-link(href="#")= linkText
+                            i.icon-arrow-round 
+
+                .img-text-bg__img
+                    img(src=imgSrc, alt="")

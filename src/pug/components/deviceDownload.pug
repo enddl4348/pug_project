@@ -1,0 +1,14 @@
+mixin deviceDownload(items, extraClass)
+    .device-list.device-list--download
+        .device-list__wrap(class=extraClass)
+            each item in items
+                .device-list__item(class=item.extraClass)
+                    .device-list__img(src=item.imgSrc)
+                        img(src=item.imgSrc, alt="")
+                    .device-list__text
+                        h3.device-list__name= item.title
+                    .device-list__download
+                        if item.downloads && item.downloads.length
+                            each download in item.downloads
+                                .download-item
+                                    a.download-link(href=download.link, target="_blank", title="new window")= download.name

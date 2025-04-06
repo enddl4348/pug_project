@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.wrap {
+  padding-top: 6.4rem;
+
+  @include mix.respond-to(pc) {
+    padding-top: 10rem;
+  }
+}
+
+.container {}
+
+.inner-box {
+  padding: 8rem 1.6rem 0;
+
+  @include mix.respond-to(pc) {
+    padding: 18rem 7.6% 0;
+    margin: 0 auto;
+    max-width: 160rem;
+  }
+
+  @media (min-width: 1600px) {
+    padding: 18rem 0 0;
+  }
+}
+
+.sub {
+  padding-bottom: 8rem;
+
+  &.pb-0 {
+    padding-bottom: 0;
+  }
+
+  @include mix.respond-to(pc) {
+    padding-bottom: 16rem;
+  }
+
+  .inner-box {
+    @include mix.respond-to(pc) {
+      padding-top: 16rem;
+    }
+  }
+
+  &__common-intro {
+    padding: 6.4rem 1.6rem 3.2rem;
+
+    @include mix.respond-to(pc) {
+      padding: 16rem 0 8rem;
+    }
+  }
+
+  &__common-title {
+    @include mix.fontStyle(3rem, 700, 1.26);
+
+    @include mix.respond-to(pc) {
+      font-size: 6rem;
+      text-align: center;
+    }
+  }
+}
+
+.align-box {
+  display: flex;
+  flex-direction: column;
+
+  @include mix.respond-to(pc) {
+    flex-direction: row;
+  }
+}

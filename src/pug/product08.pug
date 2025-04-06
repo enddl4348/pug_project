@@ -1,0 +1,64 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/videoRow.pug
+include ./components/imgTextRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('BPBIO 750','Clinically Validated Kiosk Type Blood Pressure Monitor', 'Download Brochure', 'bpbio_750', '../files/BWA_brochure.pdf')
+            p.sub-paragraph Automatic, Non-Invasive Blood Pressure Measurement.<br><br>The BPBIO 750 is an accurate, fully automated and easy-to-use blood pressure monitor. The measurement posture correction with moving cuff and moving elbow sensor, guide display for easy self-measurement and the ergonomic structure for measuring both left and right arms allows you to be in the ideal position for testing.
+
+        section  
+            .inner-box 
+                +subTitle('How can the BPBIO 750 optimize your services?', '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'clinical', subTitle: 'Clinical Accuracy', desc: 'The clinically validated BPBIO 750 features an ergonomic design for measuring both left and right arms.' },
+                    { iconClass: 'convenent', subTitle: 'Convenent & Contact-free', desc: 'The BPBIO 750 is auto-calibrated, space-efficient, and portable for convenient measurement with minimal effort. To enhance sanitary testing conditions, the BPBIO 750 is available with a disposable cuff barrier and contact-free testing guidelines.' },
+                    { iconClass: 'tests', subTitle: 'Quick Self-Testing', desc: 'With an intuitive design, guide display and voice guidance users can measure their blood pressure in 45 seconds with the touch of a button. Choose from three different result sheets with up to seven outputs.' }
+                ] , 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +subTitle('Moving cuff & Elbow sensor', '', '', 'slideInLeft')
+                    p.sub-title__desc(data-animation="slideInLeft") The moving cuff and the elbow sensor induce the correct posture by detecting body movement and adjusting to the arm while measuring blood pressure. Moving cuff and moving elbow sensor in BPBIO750 help examinees to wear the cuff correctly without the help of healthcare professionals. This is InBody’s unique technology that induces correct posture for accurate measurement.
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/moving_cuff.jpg', subTitle: 'Moving cuff', desc: 'The moving cuff induces correct posture even is the examinee’s posture is not correct.' },
+                    { itemClass: '', imgSrc: '../img/product/elbow_sensor.jpg', subTitle: 'Elbow sensor', desc: 'The moving elbow sensor leads the elbow to correct position by sensing the contact of the elbow.'}
+                ], 'slideUp')
+
+        section  
+            .inner-box 
+                +imgTextRow('../img/product/bpbio750_result_sheet.png', 'product-sheet', true, 'slideInRight')
+                    .img-text-row__content.img-text-list
+                        +subTitle('Explore the BPBIO 750 Result Sheet' , '', '', 'slideInLeft')
+                            p.sub-title__desc(data-animation="slideInLeft") The clinically validated BPBIO 750 records a user’s systolic and diastolic blood pressure, mean arterial pressure, pulse pressure, pulse, and rate pressure product.
+
+        +barBanner('Explore the BPBIO 750 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')                    
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'Add extra value to your training program and turn your coaches into health experts with objective analysis.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'Make the effect of your method visible by providing more insights into patiecnt’s body composition.' },
+                ], 'slideUp')
+
+
+        +tableRow('Product Specifications', [
+            { key01: 'Product Dimensions', value01: '547 x 299 x 485 ( L x W x H ) : mm', key02: 'Stand Dimensions', value02: '381 x 470 x 770 ( L x W x H ) : mm'},
+            { key01: 'Measurement Method', value01: 'Oscillometric', key02: 'Display Unit', value02: '1mmHg'},
+            { key01: 'Test Duration', value01: '45 sec', key02: 'Measurement Range', value02: '0 – 300mmHg (Pressure)<br>30 – 240bpm (Pulse)'},
+            { key01: 'Product Weight', value01: '7.1 kg', key02: 'Database', value02: 'Stores results for the last 5 measurements'},
+            { key01: 'Warranty', value01: '2 Year Manufacturer’s Warranty', key02: 'Power Source', value02: 'AC 100 – 240V, 50/60Hz'},
+            { key01: 'Display Type', value01: '7-Segment LED (Systolic, Diastolic, Time, Pulse)', key02: 'Printer', value02: 'High-speed thermal printer'},
+            { key01: 'Accuracy', value01: '± 2mmHG (Pressure), ± 1.5% (Pulse)', key02: 'Cuff Size', value02: 'Arm circumference: 17 – 42 cm'},
+            { key01: 'Outputs', value01: 'Systolic Blood Pressure, Diastolic Blood Pressure, Mean Arterial Pressure, Pulse Pressure, Pulse, Rate Pressure Product'},
+            { key01: 'Dual Safety System', value01: '[START/STOP] button: <br>If the air pressure exceeds 300mmHg, the cuff will automatically deflate.<br><br>[EMERGENCY] button: <br>The cuff will quickly deflate regardless of the pressure.'},
+            { key01: 'Type of Result Sheets', value01: '3-line high-speed printing or graph printing'}])

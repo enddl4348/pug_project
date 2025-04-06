@@ -1,0 +1,54 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/imgTextList.pug
+include ./components/videoRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody BWA 2.0','Ultimate Body Composition Analyser', 'Download Brochure', 'inbody-bwa', '../files/BWA_brochure.pdf')
+            p.sub-paragraph The human body consists of 50~70% of body water. Healthy people maintain a balanced body water ratio between Intracellular Water and Extracellular Water at about 3:2. For the people who have poor blood circulation, injury, inflammation, and disease, body water ratio can be broken down which can lead to edema. Therefore, body water analysis is being used in various medical fields such as nephrology, cardiology, intensive care, and rehabilitation to screen and monitor the fluid balance of a patient.
+
+        section  
+            .inner-box 
+                +subTitle('What’s New in the Next Generation of InBody BWA?' ,'', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'mhz', subTitle: 'Accurate 3 MHz Measurement Technology', desc: 'Utilizing the 3MHz frequency for more accuracy, which enables the precise measurement in diverse subjects. This higher 3MHz technology also ensures the measurement stability in all range of frequencies regardless of test environment.' },
+                    { iconClass: 'evaluation', subTitle: 'Age Specific Evaluation by InBody Big Data', desc: 'InBody provides body composition evaluation by age, based on globally accumulated InBody Big Data. With this, a comprehensive analysis is provided so that you can compare your data to the data of the young age group (T-score) and the same age group (Z-score).' },
+                    { iconClass: 'sheet', subTitle: '7 Different Result Sheets for In-Depth Analysis', desc: 'Provides 7 different result sheets to fulfill all the needs of our researchers. Evaluation, research, comparison, visceral fat, body composition (for children), and body water result sheet are available.' }
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +subTitle('BWA2.0 Highlights','', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/bwa_img01.jpg', subTitle: 'Clamp Electrode for High Reproducibility', desc: 'Combination of two forceps electrodes, Clamp electrode acts as an indicator attached on the wrist and ankle for high reproducibility. <br><br>The 16-Point Clamp Electrodes were developed in a way so that the electrodes can be positioned on the wrist and ankle bone. It allows the instructor to place the electrode in the proper position and secures the reproducibility by minimizing the measurement errors. This technology also exempted the resistance from the hands and feet, which secures a more accurate results.<br><br> With the 16-Point Clamp Electrodes, two different measurement modes are provided which enables users to choose between —Research (Distal) and Medical (Proximal), depending on their purposes.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/bwa_img02.jpg', subTitle: 'Accurate 3MHz High-Frequency Measurement Technology', desc: 'The higher the frequency, the more difficult it is to control the frequency in the human body which results in an unstable impedance measurement.​ BWA overcame this limitation and applied the 3MHz frequency which penetrates through our cell membranes even better.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/bwa_img03.jpg', subTitle: 'Extensive Research Parameters for Researchers', desc: 'Provides variety of optional parameters along with references for in-depth analysis of BWA result. Depending on the research purpose and preferences, it provides optional parameters with references.' },
+                ], 'slideUp')
+        
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '526 x 850 x 1175 (L x W x H ) : mm', key02: 'Frequencies', value02: '1, 5, 50, 250, 500, 1000 kHz'},
+            { key01: 'Test Duration', value01: '60 seconds', key02: 'Weight Range', value02: '10 – 270 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '38 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'Body Composition Result Sheet, Body Water Result Sheet (Optional), USB Thumb Drive, InBody Tissue', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '30 impedance measurements, 6 frequencies at each of the 5 segments (Right Arm, Left Arm, Trunk, Right Leg, Left Leg)'},
+            { key01: 'Additional Features', value01: 'EMR Integration (HL7 Ready), Barcode Scanner Integration, Lookin’Body 120 and Lookin’Body Web Compatible, Touchscreen, Voice Guidance System, Wi-Fi/Bluetooth Connectivity, Security Access Code'},
+            { key01: 'Outputs', value01: 'Standard Outputs : <br> Weight, Total Body Water, Soft Lean Mass, Fat Free Mass, Body Fat Mass, Skeletal Muscle Mass, Body Mass Index, Percent Body Fat, InBody Score, Segmental Lean Analysis, Body Composition History, Body Fat-Lean Body Mass Control, Basal Metabolic Rate, Impedance at each segment/ frequency<br><br>Additional Outputs :<br>Intracellular Water, Extracellular Water, ECW/TBW Analysis, Visceral Fat Level, Segmental Fat Analysis, Visceral Fat Area, Segmental Body Water Analysis, Segmental ECW/TBW Analysis, Segmental ICW Analysis, Segmental ECW Analysis, Leg Lean Mass, TBW/LBM, Reactance, Whole Body and Segmental Phase Angle'}
+        ])

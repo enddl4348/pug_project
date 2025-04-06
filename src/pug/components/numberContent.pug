@@ -1,0 +1,12 @@
+mixin numberContent (items)
+    .number-content
+        each item,index in items
+            .number-content__item
+                .number-content__img
+                    span.img-box
+                        img(src=item.src)
+                    span.number-content__number= index + 1
+
+                .number-content__text
+                    h3.number-content__title= item.title
+                    p.number-content__desc= item.desc

@@ -1,0 +1,95 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.alert-popup {
+    $root: &;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &.is-open {
+        display: block;
+    }
+
+    #{$root} {
+        &__dim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        &__layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88.8%;
+            background: var.$white-color;
+            border-radius: .8rem;
+            overflow: hidden;
+            box-shadow: 5px 8px 26px 0px rgba(0, 0, 0, 0.12);
+            padding: 7.2rem 3.6rem 2.8rem;
+        }
+
+        &__title {
+            @include mix.fontStyle(1.8rem, 700, 1.44);
+            color: var.$primary-color;
+        }
+
+        &__desc {
+            margin-top: 1rem;
+            @include mix.fontStyle(1.5rem, 400, 1.46);
+            color: var.$gray-666;
+        }
+
+        &__close {
+            @include mix.position(absolute, $top: 2.8rem, $right: 2.4rem);
+            @include mix.icon('icon_popup_close', 2.4rem, 2.4rem);
+        }
+
+        &__button-box {
+            display: flex;
+            gap: 1.2rem;
+
+            .popup-button {
+                width: 50%;
+            }
+        }
+    }
+
+    &--form {
+        .alert-popup__layer {
+            padding-bottom: 2.4rem;
+
+            @include mix.respond-to(pc) {
+                width: 50rem;
+                padding: 8.8rem 4rem 3.6rem;
+            }
+        }
+
+        .alert-popup__title {
+            @include mix.fontStyle(1.6rem, 500, 1.5);
+            margin-bottom: 2.8rem;
+            color: #222;
+            text-align: center;
+
+            @include mix.respond-to(pc) {
+                font-size: 2rem;
+                margin-bottom: 3.6rem;
+            }
+
+            &~.alert-popup__button-box {
+                padding-top: 0.8rem;
+            }
+        }
+
+    }
+}

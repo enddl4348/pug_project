@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title InBody
+
+    body(style="margin: 0; padding: 0; background-color: #fff;")
+    - const info = [{label: "Name", value: "Name" }, {label: "Company Name", value: "Company Name" }, {label: "E-mail", value: "1234@inbody.com" }, {label: "Phone Number", value: "+603-7732-0730" }, {label: "Do you want technical support?", value: "Yes" }, {label: "Serial number", value: "No.123456789" }, {label: "Inquiry details", value: "Inquiry details" }]
+
+        table(align="center" border="0" cellpadding="0" cellspacing="0" width="960" style="width:960px; background-color:#ffffff; text-align:left; font-family: 'Roboto', Arial, sans-serif;")
+            tr
+                td(style="padding: 26px 48px; background-color: #901C2E;")
+                    // img 경로: img/email_form , 이미지 cdn으로 올려주세요
+                    img(src="../img/email_form/logo.png", alt="", style="display: inline-block; width: 100px; height: 28px;")
+            tr
+                td(style="padding: 54px 48px 40px;")
+                    table(border="0" cellpadding="0" cellspacing="0" style="width: 100%;") 
+                        tr 
+                            td(style="padding-bottom: 14px; font-size: 28px; font-weight: 600; color: #222;") <span>Hong</span>'s consultation/inquiry has been received.
+                        tr 
+                            td(style="padding-bottom: 44px; font-size: 18px; font-weight: 400; color: #888; line-height: 26px;") Your consultation/inquiry has been received as follows.<br> We will respond as soon as possible.
+                    table(border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-top: 1px solid #E5E5E5;") 
+                        tr  
+                            th(colspan="2", style="height: 68px; padding: 0 40px; background-color: #F8F8F8; border-bottom: 1px solid #E5E5E5; font-size: 20px; font-weight: 600; text-align: center; color: #222;") Personal information / inquiry details
+                        each item in info
+                            tr 
+                                td(style="width:240px; padding:16px 40px; background-color: #F8F8F8; border-bottom: 1px solid #E5E5E5;") 
+                                    span(style="font-size: 18px; font-weight: 600; line-height: 26px; color: #222;") #{item.label}
+                                td(style="padding:16px 40px; background-color: #ffffff; border-bottom: 1px solid #E5E5E5;") 
+                                    span(style="font-size: 18px; font-weight: 400; line-height: 26px; color: #666;") #{item.value}
+                    table(border="0" cellpadding="0" cellspacing="0" style="width: 100%;") 
+                        tr 
+                            td(style="padding: 54px 0 12px; border-bottom: 1px solid #E5E5E5; font-size: 16px; font-weight: 400; color: #222;") This email is for sending only.
+                        tr  
+                            td
+                                table(border="0" cellpadding="0" cellspacing="0" style="width: 100%;")
+                                    tr 
+                                        td(style="padding-top: 20px; font-size: 16px; font-weight: 400; line-height: 26px; color: #b5b5b5;") Address: 76037320730 Damansara. No.685 Jalan Damansara, 60000 Kuala Lumpur, Malaysia <br> Numer: +603-7732-0730
+                                    tr 
+                                        td(style="padding-top: 8px; font-size: 16px; font-weight: 400; line-height: 26px; color: #b5b5b5;") Copyright 2024 InBody Vietnam. All rights reserved.

@@ -1,0 +1,56 @@
+extends ./layout/layout
+include ./components/input.pug
+include ./components/inputRadio.pug
+
+block content
+
+	main.sub.contact
+		.sub__common-intro 
+			h1.sub__common-title Get in Contact!​
+		.contact__form
+			.form
+				form(id="contact-form")
+					.form__group
+						.form__item 
+							+input('text', 'Name', 'name', false, true)
+						.form__item 
+							+input('text', 'Company name ', 'companyName', 'Company name ', false)
+					.form__group
+						.form__item 
+							+input('text', 'E-mail', 'email', false, true)
+						.form__item 
+							+input('number', 'Phone Number ', 'phoneNumber', false)
+					.form__group
+						.form__item.radio-form
+							p.input-title Do you want technical support?
+							.input-radio-group
+								+inputRadio('technicalSupport', 'support-yes', 'Yes')
+								+inputRadio('technicalSupport', 'support-no', 'No')
+						.form__item 
+							+input('number', 'Please enter serial number', 'serialNumber', false)
+					.form__group.full
+						.form__item
+							+input('textarea', 'Specific details regarding your inquiry(optional)', 'inquiryDetails', false, true, 6 )
+					p.description Thank you for getting in contact, press submit and we will be in contact as soon as possible.
+					.contact__button-box
+						button.round-arrow-link(type="submit", data-popup-open="formAlert") Submit
+							i.icon-arrow-round 
+		.contact__etc-text
+			p.sub-paragraph Never share sensitive information (credit card numbers, social security numbers, passwords) through this form. This site is protected by reCAPTCHA and the Google <a href="#" class="link link--underline">Privacy Policy</a> apply.
+
+	.alert-popup.alert-popup--form(id="formAlert", data-popup="formAlertPopup")
+		.alert-popup__dim
+		.alert-popup__layer
+			p.alert-popup__title Would you like to accept it? 
+			<!-- button 없는 케이스는 아래 마크업 빼시면 됩니다. -->
+			.alert-popup__button-box
+				button.popup-button(type="button") <i class="icon-cancel"></i>Cancel
+				button.popup-button.popup-button--black(type="button") <i class="icon-confirm"></i>Confirm
+			button.alert-popup__close(type="button", aria-label="popup-close", data-popup-close="formAlert")
+
+            
+    
+
+block bottomScripts
+	script 
+	

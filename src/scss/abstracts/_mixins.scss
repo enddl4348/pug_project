@@ -1,0 +1,89 @@
+@use 'abstracts/functions' as func;
+@use 'abstracts/variables' as var;
+$icon-path: '../img/icon';
+
+// 반응형 해상도 분기
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==mobile-small {
+        @media (max-width: 359px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==pc {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    }
+}
+
+
+@mixin flexbox($direction: row, $justify: flex-start, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// center 정렬 
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin position($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin fontStyle($size, $weight: 400, $lineHeight: 1.4) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+}
+
+// 1줄 말줄임
+@mixin text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// 여러줄 말줄임
+@mixin text-overflow($line: 2, $fontsize: 16px) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $fontsize;
+}
+
+@mixin icon($filename, $width, $height) {
+    display: inline-block;
+    background: url("#{$icon-path}/#{$filename}.svg") no-repeat 50% 50%;
+    background-size: 100% auto;
+    width: $width;
+    height: $height;
+}

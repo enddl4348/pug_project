@@ -1,0 +1,28 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/videoIframe.pug
+include ./components/sheetLink.pug
+include ./components/deviceList.pug
+
+block content
+
+    main.sub.sectors-dietitian
+        +subIntro('Dietitian','Help your patients achieve identified goals','sectors03')
+
+        section.video-content.inner-box
+            +subTitle('InBody in Nutrition') 
+            +videoIframe('https://www.youtube.com/embed/GIPHUIz0xxY', '100%')
+
+        +sheetLink('Track the success of a diet program', 'More than 50 body composition parameters available.', 'Learn More', '../img/sub/dietitian_sheet.png')
+
+        section.device-field.inner-box
+            +subTitle('Which InBody is right for you?') 
+                p.sub-title__desc Get in contact with one of our InBody Specialists in order to make the right choice and to get details on pricing.
+            +deviceList([
+                { imgSrc: '../img/product/sector_device_270.png', title: 'InBody 270', desc: 'Do InBody tests wherever you go! With its compact design the InBody 270 is created for travelling professionals.', extraClass: 'device_270'},
+                { imgSrc: '../img/product/sector_device_380.png', title: 'InBody 380', desc: 'The InBody 380 is the base model for gyms. This model was especially designed to attract the attention of members within a gym.' , extraClass: 'device_380'},
+                { imgSrc: '../img/product/sector_device_580.png', title: 'InBody 580', desc: 'The InBody 580 tracks besides muscle and fat the intra- and extracellular water. In the field of diabetes, obesity and sarcopenia essential parameters.'},
+                { imgSrc: '../img/product/sector_device_770.png', title: 'InBody 770', desc: 'The Inbody 770 is a research grade body composition analyser and helps professionals worldwide in the field of diabetes, sarcopenia, nephrology, obesity, fitness and more.'},
+            ])
+

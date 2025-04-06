@@ -1,0 +1,36 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/tooltipItem.pug
+include ./components/alertPopup.pug
+include ./components/barBanner.pug
+
+
+block content
+    - const sheetContents = [{ id: 'info-01', title: 'Body Composition Analysis', desc: 'Body Composition Analysis displays the weight of Total Body Water (Intracellular water (ICW) and extracellular water (ECW)), protein, minerals, and body fat mass. Body weight is the total of these four components.', alignClass: 'left' },{ id: 'info-02', title: 'Muscle-Fat Analysis', desc: 'Muscle-Fat Analysis uses bar graphs to provide a comparison between weight, skeletal muscle mass, and body fat mass. The lengths of the bar graphs indicate the relationship between the current weight to the average value for that specific segment, based on the examinee’s height.', alignClass: 'left' },{ id: 'info-03', title: 'Obesity Analysis', desc: 'Obesity Analysis displays both BMI and percent body fat. PBF is a more accurate determination of your health because it compares your fat levels to your weight. Although outdated, BMI is included on the InBody result sheets because it is commonly used in scientific research.', alignClass: 'left' },{ id: 'info-04', title: 'Segmental Lean Analysis', desc: 'The Segmental Lean Analysis graph is effective and informed assessment of lean mass distribution within the five segments of a user’s body. This helps professionals closely monitor changes and make adjustments as necessary.', alignClass: 'left' },{ id: 'info-05', title: 'ECW Ratio Analysis', desc: 'Total body water is composed of intracellular water (ICW) and extracellular water (ECW). A healthy person’s ECW/TBW ratio is expected to fall between .360-.390. ECW/TBW Analysis can detect unusual shifts in fluid distribution or changes in the ECW/ICW ratio.', alignClass: 'left' },{ id: 'info-06', title: 'Body Composition History', desc: 'After an InBody Test is taken, results are saved onto the device and can be recalled if an ID is entered at the beginning of the test. The cumulative graph quickly shows changes in the examinee’s body composition and allows for dietary-exercise modifications.', alignClass: 'left' },{ id: 'info-07', title: 'Visceral Fat Area', desc: 'Visceral fat is the fat surrounding your organs. InBody recommends people maintain a Visceral Fat Level under 10 or a Visceral Fat Area under 100 square centimeters. Higher amounts of visceral fat are associated with the development of diseases like diabetes, stroke and dementia.', alignClass: 'right' },{ id: 'info-08', title: 'Weight Control', desc: 'Weight control gives the examinee a guideline so they can adjust their diet and exercise in order to attain a healthy percent body fat. This data is useful in monitoring clients’ health and helps facilitate trust between health professionals and their clients.', alignClass: 'right' },{ id: 'info-09', title: 'Segmental Fat Analysis', desc: 'Segmental fat analysis is a derivative of the Segmental Lean Analysis and is presented in a similar manner. This portion of the result sheet provides the weight of fat in each segment and the percent above or below sufficiency.', alignClass: 'right' },{ id: 'info-10', title: 'Basal Metabolic Rate (BMR)', desc: 'Basal Metabolic Rate (BMR) is the amount of calories a person needs to keep the body functioning while at rest. A person with more lean body mass would have a higher BMR than a person with less lean body mass.', alignClass: 'right' },{ id: 'info-11', title: 'Whole Body Phase Angle', desc: 'Phase angle is an indicator of cellular integrity and intracellular water. InBody devices provide whole body phase angle and segmental phase angle at 50 kHz. Higher phase angles indicate greater cellular integrity and/or fluids inside the cells.', alignClass: 'right' },{ id: 'info-12', title: 'Impedance', desc: 'InBody provides segmental impedance values at varying frequencies to obtain an accurate analysis of the body.', alignClass: 'right' },]
+    main.sub.pb-0.result-sheet
+        +subIntro('Result Sheet Interpretation', 'What does your InBody Result Sheet mean?','interpretation')
+        section
+            .inner-box
+                p.sub-paragraph Hover over different parts of the InBody Result Sheet to get a brief overview of what each body composition output means. The following interpretations are demonstrated on the InBody 770 Body Composition Result Sheet but are applicable to all Result Sheets.
+        section.sheet
+            .inner-box 
+                .sheet-info
+                    .sheet-info__img  
+                        img(src="../img/sub/result_sheet.jpg", alt="")
+                    .sheet-info__container
+                        each content, index in sheetContents
+                            +tooltipItem('tooltip--' + (index + 1), content.id, content.title, content.desc, content.alignClass)
+                    each content in sheetContents
+                        +alertPopup(content.id, content.title, content.desc)
+                p.sub-paragraph Everything you need to know to interpret InBody Results and start offering your clients the insights they need to improve their health & wellness.<br><br>The InBody Result Sheet, if used properly, can be one of the most powerful tools at your disposal to guide, train, and care for your clients in ways that were never before possible. However, to unlock the power of the InBody Result Sheet, you need to become familiar with how it reports information, and even more importantly, what you can do with it.<br><br>Packed into the InBody Result Sheet is the health and fitness information that anyone who deals with the health and wellness of their clients absolutely needs if they want to be the best professional they can be.<br><br>You’ll learn what the terms on the Result Sheet mean, why they’re valuable, and the strategies you can use to implement this invaluable data into your business and with your clients.<br><br>If you have any questions at all, visit our contact page and an InBody Specialist will be happy to assist you with anything you’d like to know.
+        section.img-text-bg.bg--pink
+            .inner-box  
+                .img-text-bg__inner
+                    .img-text-bg__img
+                        img(src="../img/sub/physiotheraphy_img01.png", alt="")
+                    .img-text-bg__text
+                        +subTitle('The Professional’s Guide to the InBody Result Sheet', '', 'mb-0')
+                            p.sub-title__desc Learn how to read, understand, and sue the InBody Result Sheet to maximize your business and validate your programs.
+        +barBanner('The InBody Result Sheet', 'Click here to download the Result Sheet Interpretation E-book!', 'FREE EBOOK Download')
+block bottomScripts 

@@ -1,0 +1,205 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.support {
+    .text-list {
+        margin-top: 1.4rem;
+
+        @include mix.respond-to(pc) {
+            margin-top: 1.8rem;
+        }
+    }
+
+    .number-list {
+        margin-top: 4.2rem;
+
+        .text-list {
+            margin-top: 0.6rem;
+
+            @include mix.respond-to(pc) {
+                margin-top: 1.6rem;
+            }
+        }
+
+        .number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-right: 0.6rem;
+            border-radius: 50%;
+            background: var.$primary-color;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var.$white-color;
+            vertical-align: 0.1rem;
+        }
+    }
+
+    .align-box {
+        gap: .8rem;
+
+        margin-top: 4.2rem;
+
+        @include mix.respond-to(pc) {
+            gap: 2rem;
+            margin-top: 8rem;
+        }
+
+        .bg-round-box {
+            margin-top: 0;
+        }
+    }
+
+    .bg-round-box {
+        margin-top: 4.2rem;
+        padding: 8rem 5.4rem;
+        background: var.$bg-f7;
+        @include mix.flexbox(column, $align: center, $justify: center);
+
+        @include mix.respond-to(mobile-small) {
+            padding: 4rem 3rem;
+        }
+
+        @include mix.respond-to(pc) {
+            margin-top: 8rem;
+            padding: 6rem 6.5rem;
+        }
+
+        .img-box {
+            @include mix.respond-to(mobile-small) {
+                height: auto;
+            }
+        }
+
+
+        img {
+            width: auto;
+            height: 100%;
+
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .img--mo {
+            @include mix.respond-to(pc) {
+                display: none;
+            }
+        }
+
+        .img--pc {
+            display: none;
+
+            @include mix.respond-to(pc) {
+                display: block;
+            }
+        }
+
+        .integration_img01 {
+            height: 81.5rem;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .integration_img02 {
+            height: 70rem;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .integration_img03 {
+            height: 45.2rem;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .integration_img04 {
+            height: 73.4rem;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .integration_img05 {
+            height: 78.7rem;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .integration_img06 {
+            height: 78.7rem;
+
+            @include mix.respond-to(pc) {
+                height: auto;
+            }
+        }
+
+        .img-title {
+            margin-top: 1.4rem;
+            @include mix.fontStyle(2.4rem, 700, 1.33);
+            text-align: center;
+
+            @include mix.respond-to(pc) {
+                font-size: 2.8rem;
+                margin-top: 4rem;
+            }
+        }
+
+        &--scroll {
+            padding: 8rem 0;
+            align-items: flex-start;
+
+            @include mix.respond-to(pc) {
+                padding: 6rem 6.7%;
+            }
+
+            .scroll-wrap {
+                padding-left: 2rem;
+                overflow-x: auto;
+                width: 100%;
+
+                @include mix.respond-to(pc) {
+                    padding-left: 0;
+                }
+            }
+
+            img {
+                padding-right: 2rem;
+                width: auto;
+                max-width: none;
+                height: 100%;
+
+                @include mix.respond-to(pc) {
+                    width: 100%;
+                    margin: 0 auto;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    .data-bar-banner {
+        @include mix.respond-to(pc) {
+            .round-arrow-link {
+                min-width: 26.6rem;
+            }
+
+            .icon-arrow-round {
+                margin-left: 10.8rem;
+            }
+        }
+    }
+}

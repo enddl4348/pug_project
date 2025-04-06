@@ -1,0 +1,10 @@
+mixin input(type, name, id, placeholder, required, rows, cols)
+    .input
+        label.input__label(for=id)= name 
+            if required
+                span.input__required(aria-hidden="true")
+        div.input__box
+            if type === 'textarea'
+                textarea.input__field(id=id, name=id, rows=rows, cols=cols,aria-required=required ? 'true' : undefined, placeholder=placeholder ? placeholder : undefined)
+            else
+                input.input__field(type=type, name=id, id=id, aria-required=required ? 'true' : undefined, placeholder=placeholder ? placeholder : undefined)

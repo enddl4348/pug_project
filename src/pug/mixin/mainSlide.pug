@@ -1,0 +1,7 @@
+mixin mainSlide(title, subText, imgClass)
+    .swiper-slide.main-swiper__item
+        a.main-swiper__link(href="#") 
+            .main-swiper__img(class=imgClass)
+            .main-swiper__text-box
+                p.main-swiper__sub= subText
+                h2.main-swiper__title !{title}

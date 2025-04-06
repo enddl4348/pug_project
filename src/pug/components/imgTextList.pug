@@ -1,0 +1,15 @@
+include ./subTitle.pug
+
+mixin imgTextList (title, imgSrc, items)
+    .img-text-list
+        .inner-box
+            if title
+                +subTitle(title, '', '', 'slideInLeft')
+            .img-text-list__wrap
+                .img-text-list__img(data-animation="slideInLeft")
+                    img(src=imgSrc)
+                .img-text-list__content
+                    each item in items
+                        .img-text-list__item(data-animation="slideInRight")
+                            h3.sub__content-title= item.subTitle
+                            p.sub-paragraph!= item.desc

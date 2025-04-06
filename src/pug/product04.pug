@@ -1,0 +1,63 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/imgTextList.pug
+include ./components/videoRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody 380','Ultimate Body Composition Analyser', 'Download Brochure', 'inbody-380', '../files/380_brochure.pdf')
+            p.sub-paragraph With multiple testing frequencies that deliver in-depth outputs, the InBody 380 offers portability and detailed data in the same package, for unbeatably quick yet advanced analysis. Get new insights into your clients’ health with Segmental Fat Analysis, ECW/TBW — Phase Angle, and other innovative metrics.
+
+        section  
+            .inner-box 
+                +subTitle('What’s different about the InBody 380?', '', '', 'slideInLeft')
+                +iconListContent('', [
+                    { iconClass: 'qrcode', subTitle: 'QR code scanner', desc: 'The InBody 380 is one of InBody’s first models with a smart element, revolutionizing the DSM-BIA market. The integrated QR code scanner enables simplified data entry for improved measurement efficiency.' },
+                    { iconClass: 'design', subTitle: 'Portable design', desc: 'Take the InBody 380 with you! Thanks to its foldable design and light weight, the InBody 380 is easy to take with you for transportation. Have a personal training session with an InBody test in Birmingham at 09:00 and have another client waiting for you in Coventry at 11:00? No problem!' },
+                    { iconClass: 'hand_electrode', subTitle: '3-way hand electrode', desc: 'Never before has the ease of measurement been so comprehensive. The ergonomically designed hand electrodes allow accurate measurement by holding the 3-way hand electrode anywhere.' }
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +subTitle('InBody 380 Highlights', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/380_img01.jpg', subTitle: 'Portabledesign', desc: 'The InBody 380 is uniquely light for such a ‘heavy weight’ body composition analyzer. Its portability is ideal for personal trainers, medical specialists, nutritionists and applicable to many other fields of expertise that operate ina fast-paced environment, moving from one place to another.<br><br> Though movable, it remains a sturdy InBody device with unmatched accuracy. The best part is the foldable structure and compact design of the InBody380 which facilitates simpler transportation and better space utilization. You can take it with you and do an InBody test anywhere!' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/380_img02.jpg', subTitle: 'QR Code Scanner', desc: 'Entering your data on the InBody is a thing of the past. From now on, you simply scan your personal QR code and your data will be immediately visible on the InBody 380 (provided there is already a registration with your data).<br><br>This ensures that you as an entrepreneur can implement a more efficient way of measuring with your clients and your clients will have a more advanced measurement experience. In addition, the results are communicated directly to the client’s InBody App so they can view them with you.' },
+                ], 'slideUp')
+        
+
+        +imgTextList('Comprehensive parameters','../img/product/visual_380_bg.jpg', [
+            {subTitle: 'Body Water Balance', desc: 'Maintaining a balanced body water balance is essential to overall health. InBody’s Whole Body ECW Ratio serves as a valuable tool for monitoring and assessing an individual’s health status.'},
+            {subTitle: 'Cellular Integrity Check', desc: 'Phase angle is an essential measure that indicates cellular health by revealing cellular integrity and overall physiological function. InBody’s phase angle helps assess an individual’s cellular health and assists in directing necessary actions.'},
+            {subTitle: 'Assessment of Sarcopenia', desc: 'Sarcopenia can be easily assessed and evaluated using the Skeletal Muscle Mass Index (SMI) and Hand Grip Strength*, allowing for comprehensive evaluation and personalized consultations. *Hand Grip Strength is available in conjunction with the InBody Handgrip Dynamometer (IB-HGS).'},
+            {subTitle: 'Body Composition analysis', desc: 'In addition to the impessive body composition additions above, the InBody 380 still provides the classic body composition analysis parameters. This includes, for example, muscle mass, fat mass and fat percentage. Maintain a complete and detailed overview with the InBody 380!'},
+        ])
+
+        +barBanner('Explore the InBody 380 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '526 x 854 x 1175 (L x W x H ) : mm', key02: 'Frequencies', value02: '1, 5, 50, 250, 500, 1000 kHz'},
+            { key01: 'Test Duration', value01: '60 seconds', key02: 'Weight Range', value02: '10 – 270 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '38 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'Body Composition Result Sheet, Body Water Result Sheet (Optional), USB Thumb Drive, InBody Tissue', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '30 impedance measurements, 6 frequencies at each of the 5 segments (Right Arm, Left Arm, Trunk, Right Leg, Left Leg)'},
+            { key01: 'Additional Features', value01: 'EMR Integration (HL7 Ready), Barcode Scanner Integration, Lookin’Body 120 and Lookin’Body Web Compatible, Touchscreen, Voice Guidance System, Wi-Fi/Bluetooth Connectivity, Security Access Code'},
+            { key01: 'Outputs', value01: 'Standard Outputs : <br> Weight, Total Body Water, Soft Lean Mass, Fat Free Mass, Body Fat Mass, Skeletal Muscle Mass, Body Mass Index, Percent Body Fat, InBody Score, Segmental Lean Analysis, Body Composition History, Body Fat-Lean Body Mass Control, Basal Metabolic Rate, Impedance at each segment/ frequency<br><br>Additional Outputs :<br>Intracellular Water, Extracellular Water, ECW/TBW Analysis, Visceral Fat Level, Segmental Fat Analysis, Visceral Fat Area, Segmental Body Water Analysis, Segmental ECW/TBW Analysis, Segmental ICW Analysis, Segmental ECW Analysis, Leg Lean Mass, TBW/LBM, Reactance, Whole Body and Segmental Phase Angle'}
+        ])

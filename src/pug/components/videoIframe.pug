@@ -1,0 +1,4 @@
+mixin videoIframe(videoSrc,width, animationMode=false, height)
+    .video-box(data-animation=animationMode)
+        .video-wrap.video-wrap--iframe
+            iframe.video-item(src=videoSrc, width=width, height=height, frameborder="0", allow="autoplay; encrypted-media", allowfullscreen)

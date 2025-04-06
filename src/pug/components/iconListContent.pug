@@ -1,0 +1,11 @@
+mixin iconListContent(extraClass, items, animationMode=false)
+    .icon-list-content
+        .icon-list-content__wrap(class=extraClass)
+            if items && items.length 
+                each item in items
+                    .icon-list-content__item(data-animation=animationMode)
+                        icon.icon-list-content__icon(aria-hidden="true", class=item.iconClass)
+                        if item.subTitle
+                            h3.icon-list-content__title!= item.subTitle
+                        if item.desc
+                            p.sub-paragraph!= item.desc

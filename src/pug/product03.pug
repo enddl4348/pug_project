@@ -1,0 +1,61 @@
+extends ./layout/layout
+include ./components/subTitle.pug
+include ./components/productVisual.pug
+include ./components/iconListContent.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/barBanner.pug
+include ./components/imgTextList.pug
+include ./components/videoRow.pug
+include ./components/tableRow.pug
+
+block content
+
+    main.sub.product
+        +productVisual('InBody 580','The most advanced user experience', 'Download Brochure', 'inbody-580', '../files/580_brochure.pdf')
+            p.sub-paragraph The research-grade InBody 770 goes beyond traditional body composition analysis and takes a deeper look into body water. This model offers two types of results sheets: body composition and body water. With this research-grade body composition analyser, you can measure body composition easily and quickly.
+
+        section  
+            .inner-box 
+                +subTitle('What’s different about the InBody 580?','','', 'slideInLeft')
+                +iconListContent('What’s different about the InBody 580?', [
+                    { iconClass: 'qrcode', subTitle: 'QR code scanner', desc: 'The InBody 580 is one of the first InBody models with a smart-element, revolutionizing the DSM-BIA market. The QR code scanner, integrated into the device, enables simplified data entry for improved measurement efficiency.' },
+                    { iconClass: 'interface', subTitle: 'User friendly interface', desc: 'The InBody 580 features a 10.1-inch touchscreen for seamless, user-friendly operation. The rather generous touchscreen is both stylish and elegant and allows for easy interaction.' },
+                    { iconClass: 'hand_electrode', subTitle: '3-way hand electrode', desc: 'Never before has the ease of measurement been so comprehensive. With ergonomically designed hand electrodes, an accurate measurement is made possible by holding the 3-way hand electrode anywhere.' }
+                ], 'slideUpMulti')
+
+        section  
+            .inner-box 
+                +subTitle('InBody 580 Highlights', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: 'hilights_01', imgSrc: '../img/product/580_img01.jpg', subTitle: 'User friendly interface', desc: 'The elegant display of the InBody 580 is designed for ease of use. Given the size of the screen, users can navigate very easily and accurately follow the InBody test steps provided by the integrated guide. Both the keyboard and touch screen ensure seamless operation and result in an enhanced customer experience.' },
+                    { itemClass: 'hilights_02', imgSrc: '../img/product/580_img02.jpg', subTitle: 'QR Code Scanner', desc: 'Entering your data on the InBody is a thing of the past. From now on, you simply scan your personal QR code and your data will be directly visible on the InBody 580 (provided there is already a registration with your data). <br>This ensures that you as a business owner can implement a more efficient way of measuring with your clients and your clients will have a more advanced measurement experience. In addition, the results are communicated directly to the client’s InBody App so they can view them with you.' },
+                ], 'slideUp')
+        
+        +barBanner('Explore the InBody 580 Result Sheet','Want to know how to use this data in practice?','Learn More', '', 'slideInRight')
+
+        +imgTextList('Comprehensive parameters','../img/product/visual_580_bg.jpg', [
+            {subTitle: 'Body Water Balance', desc: 'Maintaining body water balance is essential to overall health management. InBody’s whole-body ECW ratio is a valuable tool for monitoring and assessing an individual’s health status.'},
+            {subTitle: 'Cellular Integrity Check', desc: 'Phase Angle is a vital measure that signifies cellular health by revealing Cellular Integrity and overall<br>physiological function. InBody’s Phase Angle assists in evaluating an individual’s cellular health and guiding necessary actions.'},
+            {subTitle: 'Assessment of Sarcopenia', desc: 'Sarcopenia can be easily assessed and evaluated using the Skeletal Muscle Mass Index (SMI) and hand squeeze strength*, allowing for comprehensive evaluation and personalized advice.<br>*Hand squeeze strength can be measured with the InBody InGrip.'},
+            {subTitle: 'Body Composition analysis', desc: 'The InBody 580 is unique of its kind regarding the above parameters. However, it still measures traditional body composition where muscle mass, fat mass and fat percentage are accurately mapped out.'},
+        ])
+
+        section  
+            .inner-box 
+                +subTitle('InBody Cloud', '', '', 'slideInLeft')
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/product/cloud_01.jpg', subTitle: 'InBody App', desc: 'You and your customers can use the InBody App to easily view and monitor body composition data. It gives users a clear overview of their health status. Furthermore, it shows all detailed contents interms of parameters provided through the InBody test. With the InBody App your body composition data is just one tap away.' },
+                    { itemClass: '', imgSrc: '../img/product/cloud_02.jpg', subTitle: 'Lookin’Body Web', desc: 'This unique platform was designed for professionals who work with people. It stores and views data of your customers and gives you the opportunity to set goals with them, create groups(e.g., 12-week fat loss group), and set up internal challenges amongst your members. In addition, it is the perfect cloud-based tool to help you promote your business through data. Showcase your customers’ success like muscle gain or fat loss through the data kept in Lookin’BodyWeb.' },
+                ], 'slideUp')
+
+        +tableRow('Product Specifications', [
+            { key01: 'Dimensions', value01: '526 x 850 x 1175 (L x W x H ) : mm', key02: 'Frequencies', value02: '1, 5, 50, 250, 500, 1000 kHz'},
+            { key01: 'Test Duration', value01: '60 seconds', key02: 'Weight Range', value02: '10 – 270 kg'},
+            { key01: 'Age Range', value01: '3-99 years ', key02: 'Height Range', value02: '95 – 220 cm'},
+            { key01: 'Equipment Weight', value01: '38 kg', key02: 'Database', value02: '100,000 results (if member ID is utilized)'},
+            { key01: 'Accessories', value01: 'Body Composition Result Sheet, Body Water Result Sheet (Optional), USB Thumb Drive, InBody Tissue', key02: 'Warranty', value02: '1 Year Manufacturer’s Warranty'},
+            { key01: 'Compatible Printers', value01: 'Laser/Inkjet PCL 3 or above and SPL', key02: 'Measurements', value02: '30 impedance measurements, 6 frequencies at each of the 5 segments (Right Arm, Left Arm, Trunk, Right Leg, Left Leg)'},
+            { key01: 'Additional Features', value01: 'EMR Integration (HL7 Ready), Barcode Scanner Integration, Lookin’Body 120 and Lookin’Body Web Compatible, Touchscreen, Voice Guidance System, Wi-Fi/Bluetooth Connectivity, Security Access Code'},
+            { key01: 'Outputs', value01: 'Standard Outputs : <br> Weight, Total Body Water, Soft Lean Mass, Fat Free Mass, Body Fat Mass, Skeletal Muscle Mass, Body Mass Index, Percent Body Fat, InBody Score, Segmental Lean Analysis, Body Composition History, Body Fat-Lean Body Mass Control, Basal Metabolic Rate, Impedance at each segment/ frequency<br><br>Additional Outputs :<br>Intracellular Water, Extracellular Water, ECW/TBW Analysis, Visceral Fat Level, Segmental Fat Analysis, Visceral Fat Area, Segmental Body Water Analysis, Segmental ECW/TBW Analysis, Segmental ICW Analysis, Segmental ECW Analysis, Leg Lean Mass, TBW/LBM, Reactance, Whole Body and Segmental Phase Angle'}
+        ])

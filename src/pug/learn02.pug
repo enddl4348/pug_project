@@ -1,0 +1,195 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/tab.pug
+include ./components/video.pug
+include ./components/imgTextColumn.pug
+include ./components/imgTextRow.pug
+include ./components/iconListContent.pug
+include ./components/barBanner.pug
+
+block content
+
+	main.sub.technology.pb-0
+		+subIntro('InBody Technology', 'Advanced BIA technology refined through years of innovation.<br>Learn more about what makes InBody different.', 'technology')
+		+tab([{buttonText: 'What is BIA?'},{buttonText:'The History of BIA Technology'}, {buttonText: 'The Evolution of BIA through InBody'}], 'tab--list3')
+			.tab__content(data-js="tabContent")
+				section.video-section
+					.inner-box
+						.align-box 
+							.video-area
+								+video('https://inbodyasia.com/wp-content/uploads/2021/11/1-4.-First-Look_970', '100%')
+							+subTitle('What is Bio-Electrical  Impedance Analysis(BIA)?', '', 'mb-0')
+								p.sub-paragraph InBody devices use a method called Bio-electrical Impedance Analysis (BIA) to measure body composition, which divides your weight into different components such as lean body mass and fat mass to assess health and nutrition.
+
+				section.section--bg
+					.inner-box
+						+subTitle('The Human Body and Impedance')
+							p.sub-paragraph Bioelectrical Impedance Analysis (BIA) measures impedance by applying alternating currents on the human body.
+						+imgTextColumn([
+							{ itemClass: '', imgSrc: '../img/sub/img_impedance01.jpg', subTitle: 'The Concept of Resistance', desc: 'To better illustrate how this works, imagine the flow of cars in traffic. Your car is the voltage source or current, and the highway you’re on is body water. If there were no other cars, you could zoom past the highway, just as if the human body were full of body water and nothing else, there would be no resistance. <br><br>But water is not the only element in the human body, just like you’re not the only car on the freeway.  As more cars get onto the freeway, the longer it takes for you to get through the path, creating resistance. Other elements such as fat, muscle, bone, and minerals create resistance to the electrical current that is going through your body. <br><br>In BIA, the more water that is in your body, the lesser the resistance. The muscle in your body contains water, unlike fat, so the more muscle you have, the more body water. And the more body water you have, the lesser the resistance on the electrical current' },
+							{ itemClass: '', imgSrc: '../img/sub/img_impedance02.jpg', subTitle: 'The Concept of Resistance', desc: 'Reactance, also known as capacitive resistance,<br><br>is the opposition to the instantaneous flow of electric current caused by capacitance. Reactance helps measure the cell’s ability to store energy and is an indirect measurement of cellular strength and integrity.' },
+						])
+				
+				section.bia-device
+					.inner-box 
+						+imgTextRow('../img/sub/bia_device.jpg')
+							.img-text-row__content
+								+subTitle('Putting It All Together')
+									p.sub-paragraph Impedance is the vector sum of resistance and reactance and is the measurement  BIA devices use to determine your body composition. BIA applies a cylinder model for the relationship between impedance and a human body.
+								.line-box-content
+									.line-box-content__inner
+										h5.line-box-content__title Impedance is calculated by using two formulas:
+										ol.text-list.text-list--number
+											li.text-list__item Calculating the volume of a cylinder (Volume = Length x Area)
+											li.text-list__item Characteristic of impedance: impedance is inversely proportional to cross-sectional area and directly proportional to length.
+								p.sub-paragraph By knowing the impedance and the length of the cylinder, we can measure the volume of total body water. <br><br>In the human body, the same formula applies, where the length would be the height of the person. Therefore, we can calculate the volume of the total body water just by knowing the impedance and the height of individuals. This is also why it is imperative to have an accurate height measurement.
+
+			.tab__content(data-js="tabContent")
+				section
+					.inner-box 
+						+imgTextRow('../img/sub/technology_history.jpg')
+							.img-text-row__content
+								+subTitle('The History of BIA Technology' ,'', 'mb-0')
+									p.sub-paragraph InBody devices use a method called Bio-electrical Impedance Analysis (BIA) to measure body composition, which divides your weight into different components such as lean body mass and fat mass to assess health and nutrition.
+				
+				section.section--bg
+					.inner-box.tech-history
+						+imgTextRow('../img/sub/tech_history_detail01.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1969 – Hoffer and the Impedance Index
+								p.sub-paragraph In 1969, Hoffer carried out a series of experiments to prove that total body water and biological impedance were highly correlated, suggesting that impedance measurement could be used for determining total body water. He showed the squared value of height divided by impedance was highly correlated with total body water.<br><br>Hoffer took impedance measurements of the right half of the body including the right arm, torso, and right leg. The squared value divided by impedance showed correlation coefficient of 0.92 with total body water, which was higher than other indices including body weight. The equation Hoffer proved is the impedance index used in BIA today.
+					
+						+imgTextRow('../img/sub/tech_history_detail02.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1979 – RJL System and the first impedance meter
+								p.sub-paragraph In 1979, RJL Systems commercialized the impedance meter for the first time and the BIA method began to gain popularity. The device measured impedance by attaching electrodes on the back of the right hand and a top of the right foot of a patient and conducting a current of 50kHz through the right half of the body.<br><br>Prior to this, body composition could only be measured by caliper or underwater weighing. Such methods needed to be carried out by skilled people and installation was not easy. Also, only specific types of patients could benefit from them. BIA however, was easy, fast, less expensive and less intrusive. Therefore, many body composition researchers, nutritionists, and medical experts began to use BIA.
+					
+						+imgTextRow('../img/sub/tech_history_detail03.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1980’s – Discovering limitations to BIA with empirical data
+								p.sub-paragraph Research by Lukaski, Segal and other scholars accelerated the evolution of BIA. Studies proved BIA had high correlation with gold standard methods like underwater weighing and DEXA. But technical limitations of BIA began to surface in the late 1980s.<br><br>One limitation was that BIA assumed the human body to be in the shape of one cylinder and used a single frequency (50 kHz). This may have worked for patients with standard body types, but it wasn’t as accurate for other populations. So, researchers came up with various equations in addition to the impedance index so as to complement the technical limitation of BIA and achieve greater accuracy for patient groups of different age, gender etc.<br><br>
+						
+						+imgTextRow('../img/sub/tech_history_detail04.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1980’s – Lukaski and Kushner develop empirical equations
+								p.sub-paragraph To increase the accuracy of the results, researchers came up with empirical equations that utilized empirical data such as gender and age to calculate a person’s body composition.<br><br>Empirical data is knowledge acquired by means of observation or experimentation. By collecting data on a sample population that (hopefully) represents the variance of the entire population, researchers attempt to derive trends that may be used to predict outcomes. In body composition, researchers identify these trends in muscle and fat mass; they use this data to predict body composition based on specific variables (age, gender, ethnicity, etc.)<br><br>In 1986, Lukaski used the published equations using impedance index, body weight and reactance; and in 1986, Kushner published equations using the impedance index, body weight and gender.<br><br>Although empirical estimations could give you an accurate estimate of a general user’s body composition, there are significant problems when they are used for medical purposes.<br><br>Let’s suppose that there is a device that uses an empirical equation to calculate total body water. And there are two people who have same amount of lean body mass, but one person is 30 years old and the other one is 40 years old. Even though they have the same amount of lean body mass, the empirical equations will calculate that these two people will have 0.8 L difference in total body water only because of the age, which is neither fair nor accurate.
+						
+						+imgTextRow('../img/sub/tech_history_detail05.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1990’s – Home-use BIA devices
+								p.sub-paragraph Due to technological constraints, BIA devices became home-use devices rather than hospital devices. In the late 1980s, Japanese manufacturers released various types of BIA-based body composition devices that could easily be used by the general public. Some devices measured the impedance between two feet as the user stands on the scale, while another would measure the impedance between two hands while holding the device.
+						
+						+imgTextRow('../img/sub/tech_history_detail06.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1992 – Kushner and the proposal of multi-frequencies with segmental analysis
+								p.sub-paragraph Since the inaccuracy of BIA is due to technical limitations, many argued that this could be improved upon. In 1992, Kushner claimed that the human body is made up of five cylinders (right arm, left arm, torso, right leg, left leg) instead of one.<br><br>While the thin limbs affect the total impedance, the torso, which has the largest cross-sectional area, has little impact on impedance. However, since the torso makes up 50% of lean body mass, Kushner emphasized that measuring the impedance of the body torso separately would be very important.<br><br>Measuring the total impedance alone would not be sufficient but all five parts must be measured separately at different frequencies, making a distinction between extracellular water and intracellular water. In other words, the technical limitations of BIA should be overcome by measuring different parts at different frequencies.
+						
+						+imgTextRow('../img/sub/tech_history_detail07.jpg', 'align-top')
+							.img-text-row__content
+								h3.history-title 1996 – Dr. Cha creates the InBody body composition analyzer
+								p.sub-paragraph In 1996, Dr. Kichul Cha, a bioengineering major at Harvard Medical School, developed the world’s first 8-point tactile electrode system with direct segmental analysis which measures impedance for the five different parts of the body at multiple frequencies.<br><br>Measuring impedance by applying currents of multi-frequencies on the five parts of the body took a separate impedance measurement. Moreover, it allows separately checking torso impedance. This yielded highly accurate results without using empirical data. Thus, InBody body composition analyzers became a precise medical device. Impedance values for all cylinders, including the torso, can be found on the InBody Result Sheet.<br><br>Many BIA products today provide muscle mass for each section of the body. However, most of such products are unable to take sectional impedance measurements, especially the torso impedance. However, as shown on an InBody Result Sheet, you can see the impedance values of all five parts of the body including the torso with the use of both high and low frequencies.
+
+			.tab__content(data-js="tabContent", class="tech-evolution")
+				section
+					.inner-box 
+						+subTitle('Revolutionizing BIA Technology with InBody')
+							p.sub-paragraph InBody’s medical-grade body composition analyzers rely on four pillars of technology to give you extremely accurate and precise BIA results that are highly correlated to gold-standard methods. 
+						+iconListContent('item-column', [
+							{ iconClass: 'electrodes', subTitle: '8-Point Tactile Electrode System<br>with Thumb Electrodes', desc: 'When measuring impedance with electrodes, contact resistance occurs. InBody accounts for contact resistance by strategically placing electrodes to accurately measure impedance in the body.'},
+							{ iconClass: 'impedance', subTitle: 'Direct Segmental Multi-frequency Bioelectrical<br>Impedance Analysis', desc: "Direct segmental multi-frequency bioelectrical impedance analysis (DSM-BIA) views the human body as five cylinders: left arm, right arm, left leg, right leg and the trunk. InBody provides independent measurements for each cylinder to provide accurate measurements for the entire body." },
+							{ iconClass: 'frequencies', subTitle: 'Multiple Frequencies', desc: "Electric currents penetrate differently, depending on the frequency. Some frequencies are better suited for measuring body water outside the cell, while others can pass through cell membranes to measure total body water. InBody uses multiple currents at varying frequencies to provide the most precise body water analysis." },
+							{ iconClass: 'estimations', subTitle: 'No Estimations', desc: "No empirical estimations are used to calculate your body composition. InBody measures your impedance independently, so your results are not affected by your age, ethnicity, or gender. <br>Together all of these technologies allow InBody devices to bring you easy, quick,<br>and precise BIA body composition analysis." },
+						])
+				
+				section
+					.inner-box 
+						+subTitle('8-Point Tactile Electrode System with Thumb Electrodes')
+						.row-side-content
+							.row-side-content__inner
+								.row-side-content__text
+									h3.row-side-content__title BIA Tech Problem
+									p.sub-paragraph If the measurement starting position changes, impedance also changes and introduces error.
+								.row-side-content__img
+									img(src="../img/sub/tech_electrodes.png", alt="")
+								.row-side-content__text
+									h3.row-side-content__title InBody Solution
+									p.sub-paragraph 8-Point Tactile <br>Electrode System <br>with Thumb Electrodes
+							
+						+imgTextRow('../img/sub/electrode_thumb.jpg','align-top')
+							.img-text-row__content
+								p.sub-paragraph When the human body comes in contact with an electrode, contact resistance occurs. When measuring the resistance in the human body, it is important to control this contact resistance.<br><br>Leveraging on the ergonomic characteristics of the human body, when an InBody user holds around the hand electrode, current flows from the electrode and voltage is measured at the electrode touched by the thumb.<br><br>As the measurement is always taken at the same location on the wrist, this design boasts a high level of reproducibility. Accurate measurement is made possible as there is no interference of the contact resistance from the skin regardless of the contact points on the hand.<br><br>This works the same way the foot electrode, where current flows from the front sole electrode and voltage is measured at the rear sole electrode. Measurement is always taken at the ankle level.<br><br>The 8-point touch electrode method using the thumb electrode is a unique feature of InBody devices that produces an exceptionally high reproducibility rate in results.<br><br>The 8 points of contact come from the two thumb electrodes, two palm electrodes, two sole electrodes, and two heel electrodes.<br><br>The anatomical design of the hand electrode creates a simple holding position that is easy to reproduce. Using a voltage thumb electrode ensures that current measurement always starts at the wrist; same measurement values are returned even when the patient changes the holding position of the electrode or the contact points on the hand.<br><br>Competitors’ products that imitate this technology usually lack the thumb electrode and have a measurement start button in its place. In this case, both the current electrode and the voltage electrode come in contact with the palm and therefore measurement starting point is not always the same as the electrode is held in different positions.
+
+				section
+					.inner-box 
+						+subTitle('Direct Segmental Multi-frequency Bioelectrical Impedance Analysis')
+						.row-side-content
+							.row-side-content__inner
+								.row-side-content__text
+									h3.row-side-content__title BIA Tech Problem
+									p.sub-paragraph Traditional BIA views the human body as one cylinder. However, the torso of the body needs to be measured separately because even an error of 1-2 ohms in measurement can lead to substantial error in total body water measurements.
+								.row-side-content__img
+									img(src="../img/sub/tech_impedance.png", alt="")
+								.row-side-content__text
+									h3.row-side-content__title InBody Solution
+									p.sub-paragraph Direct segmental multi-frequency bioelectrical impedance analysis (DSM-BIA) views the human body as five cylinders: left arm, right arm, left leg, right leg and the torso. InBody provides independent measurements for each cylinder to provide accurate measurements for the entire body.
+						.img-step
+							.img-step__img-wrap
+								.img-step__img
+									img(src="../img/sub/tech_impedance_01.jpg", alt="")
+								.img-step__img
+									img(src="../img/sub/tech_impedance_02.jpg", alt="")
+								.img-step__img
+									img(src="../img/sub/tech_impedance_03.jpg", alt="")
+								.img-step__img
+									img(src="../img/sub/tech_impedance_04.jpg", alt="")
+							.img-step__text 
+								p.sub-paragraph Traditional BIA systems view the human body as a single cylinder of water, using whole-body impedance to determine total body water.<br><br>However, this method had a number of flaws:
+								.line-box-content
+									ul.text-list.text-list--dot
+										li.text-list__item It assumes the distribution of lean body mass and body fat across all segments of the body are constant.
+										li.text-list__item The shape & length of the arms, legs, and torso differ so the body cannot be seen as just one cylinder but actually as five separate parts.
+										li.text-list__item Since impedance is based on length and cross-sectional area, the calculation of TBW is inaccurate because each segment of the body has different length and cross-sectional area.
+
+								p.sub-paragraph One of the biggest problems with the one-cylinder method is the lack of a torso measurement. The torso has the lowest length and highest cross-sectional area, which results in a very low impedance (typically 10-40 ohms). However, the trunk comprises about 50% of an individual’s lean body mass (LBM).<br><br>In the whole-body impedance measurement, the torso impedance is ignored and thus the change of the body torso impedance is underestimated. A change of the torso impedance by 5 ohm is actually a huge difference, but it is shown as less than 1% of difference in the whole-body impedance measurement.<br><br>In other words, if the body torso is not separately measured, the body torso’s impedance could be overlooked. But as the body torso makes up more than half of our body weight, we can say that the whole-body impedance measurement ignores half of the entire body.<br><br>As the body torso contains much more water and muscles than the limbs, 1 ohm of  torso impedance and 1 ohm of limb impedance can have different implications altogether. Because each ohm represents a large amount of LBM, a difference of even 1-2 ohms can lead to great error in the determination of TBW.<br><br>Some BIA devices only measure the impedance values of two cylinders and estimate the rest. For BIA scales, only your leg values are measured. For BIA handheld devices, only your arm values are measured. Some BIA devices that say they measure the whole body actually only measure an arm and a leg and estimate the rest of the body.<br><br>When using a BIA device, it’s important to find a device that actually measures the torso and measures it separately, not estimating the values of what it could be. Otherwise, the estimations are leading to large errors in total body water and in turn fat-free mass and lean body mass.<br><br>With InBody, there’s no estimating through Direct Segmental Multi-frequency BIA, which in simpler terms, simply means that each segment of your body (right arm, left arm, torso, right leg, left leg) are all measured separately at multiple frequencies.
+
+				section
+					.inner-box 
+						+subTitle('Multiple Frequencies')
+						.row-side-content
+							.row-side-content__inner
+								.row-side-content__text
+									h3.row-side-content__title BIA Tech Problem
+									p.sub-paragraph Most BIA devices only use one frequency at 50 kHz to measure total body water. Since 50 kHz or lower frequencies barely pass through the cell membrane, accurate measurement of the impedance in the intracellular water was not possible. The ability to measure accurate intracellular vs. extracellular water is important for those in nephrology or rehabilitation.
+								.row-side-content__img
+									img(src="../img/sub/tech_frequencies.png", alt="")
+								.row-side-content__text
+									h3.row-side-content__title InBody Solution
+									p.sub-paragraph InBody uses varying high and low frequencies to measure intracellular and extracellular water for the most precise total body water analysis. The use of multiple frequencies make InBody devices accurate enough to be trusted for use in the medical field.
+						p.sub-paragraph Early BIA devices only used the frequency of 50 kHz to calculate total body water. Water is stored throughout the body, and total body water (TBW) can be divided into 2 compartments:<br><br>Intracellular water (ICW) – inside cells of muscles, bones, organs, etc.<br>Extracellular water (ECW) – water in the blood & interstitial fluids<br>However, 50 kHz or lower barely pasess through the cell membrane and cannot give an accurate measurement of intracellular water. Therefore, the intracellular water had to be estimated by calculating it proportionally based on the extracellular water.<br><br>The estimation of intracellular water was possible because the typical ratio of intracellular water to extracellular water is about 3:2. However, elderly and obese patients who require body composition analysis tend to have high ratio of extracellular water, nullifying the 3:2 ratio.<br><br>Thus, when measuring patients, estimating the intracellular water based on the extracellular water with a 3:2 ratio could result in a serious error.<br><br>InBody uses multiple currents at varying frequencies to provide the most precise body water analysis. Electric currents penetrate differently, depending on the frequency. Some frequencies are better suited for measuring body water outside the cell, while others can pass through cell membranes to measure total body water.<br><br>In other words, a high-frequency current can pass through the cell membrane well, making it possible to measure both the intra and extracellular water. Inversely, a low-frequency current hardly passes through the cell membrane. Therefore, it tend to flow through extracellular water, measuring extracellular water.<br><br>InBody is capable of measuring both the intracellular water and extracellular water as it utilizes multi frequencies from 1 kHz to 1 MHz.<br><br>Considering that the degree of penetration through the cell membrane differs by frequency, intracellular water can be obtained by direct measurement instead of assumption. Using multi frequencies provides much more detailed analysis of individual body composition.<br><br>By differentiating intracellular water and extracellular water, edema index and other figures can be obtained. This allows the body composition analyzer to be applied in nephrology and rehabilitation area.
+				
+				section
+					.inner-box 
+						+subTitle('No Estimations or Empirical Equations')
+						.row-side-content
+							.row-side-content__inner
+								.row-side-content__text
+									h3.row-side-content__title BIA Tech Problem
+									p.sub-paragraph Empirical equations were created and used order to compensate for the lack of torso impedance (due to the whole-body impedance measurement). These empirical equations plugged data in such as age, gender, and ethnicity to calculate a user’s body composition instead of measuring an individual’s actual body composition.
+								.row-side-content__img
+									img(src="../img/sub/tech_equations.png", alt="")
+								.row-side-content__text
+									h3.row-side-content__title InBody Solution
+									p.sub-paragraph No empirical estimations or equations are used to calculate your body composition. InBody measures your impedance independently, so your results are not affected by your age, ethnicity, or gender.
+						p.sub-paragraph BIA devices commonly use empirical equations to calculate a user’s body composition because most BIA devices use whole-body impedance. These equations help compensate for the lack of torso impedance measurement by plugging in empirical data such as age and gender.<br><br>Empirical equations can give a somewhat accurate estimate of a user’s body composition if the user has a typical body shape for their specific age, gender, and ethnicity. These equations take into consideration that as a person ages, their muscle mass will probably decrease and that males tend to have more muscle mass than females.<br><br>However, plugging data into an equation does not mean that your specific body composition is being measured. What if you’re an elderly female bodybuilder? In reality, you probably have more muscle mass than others in your age and gender group, but the empirical estimations will calculate otherwise.<br><br>The problem with empirical estimations is that you’re put into a preconstructed equation that estimates what your body composition. Your results are always predetermined, regardless of your actual body composition.<br><br>Here’s a sample empirical equation created by Lukaski in 1988 using height, body weight, impedance, age and gender to calculate total body water:<br><br>TBW = 0.377 H2/R + 0.14 weight – 0.08 age + 2.9 gender + 4.65<br><br>InBody does not need to use empirical equations to calculate your results because InBody body composition analyzers measure your entire body into 5 cylinders, giving you the torso measurement separate from the rest of the body. Your body composition is determined solely by using the impedance values found from each of the body’s five segments and your height.<br><br>You will get the same body composition measurements for muscle mass, fat mass, etc. whether the user is entered as male or female because Inbody measures you for you.<br><br>How can you determine if your BIA device uses empirical estimations? Try testing a user twice back-to-back by switching the age or the gender.<br><br>If the device yields two different results, it uses empirical estimations. These BIA devices are programmed to always output data that shows that males have more muscle mass than females– regardless of what is actually true.
+
+				//- section
+				//- 	.inner-box 
+				//- 		+imgTextRow('../img/sub/sectors_fitness02.png')
+				//- 			.img-text-row__content
+				//- 				+subTitle('High Correlation to Gold Standard Methods', '', 'mb-0')
+				//- 					p.sub-paragraph Because of its technology, InBody has become one of the most accurate BIA devices on the market and has been found to have a high correlation of 0.99 to DEXA for lean body mass in a population of adults.<br><br>Article: Accuracy of direct segmental multi-frequency bioimpedance analysis in the assessment of total body and segmental body composition in middle-aged adult population
+
+				+barBanner('Interested in learning more about how InBody can fit into your practice?', 'InBody devices are used by medical practitioners and health professionals around the world to give their clients results they can trust and track.', 'See how you can get started today')
+
+block bottomScripts

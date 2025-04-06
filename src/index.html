@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인바디 퍼블리싱 리스트</title>
+    <!-- Tabulator CSS -->
+    <link href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator_midnight.min.css" rel="stylesheet">
+    <!-- Tabulator JS -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+    <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            /* 부드러운 배경 색상 */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #example-table {
+            margin: 0 auto;
+            width: 96%;
+            /* 테이블의 너비를 화면에 맞추고 중앙에 배치 */
+            border-radius: 8px;
+            /* 테두리를 둥글게 */
+            overflow: hidden;
+            /* 테두리 밖의 내용 숨기기 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 부드러운 그림자 */
+            min-width: 600px;
+        }
+
+        /* 테이블 헤더 스타일 */
+        .tabulator-header {
+            background-color: #3e4e5c;
+            /* 헤더 배경 색상 */
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 행 스타일 */
+        .tabulator-row {
+            background-color: white;
+            /* 행 배경 */
+            color: #333;
+        }
+
+        .tabulator-row:nth-child(even) {
+            background-color: #f7f9fc;
+            /* 짝수 행 배경 */
+        }
+
+        /* 마우스 오버 시 행 스타일 */
+        .tabulator-row:hover {
+            background-color: #e0e6ed;
+            /* 마우스 오버 시 배경색 변경 */
+            transition: background-color 0.3s ease;
+            /* 부드러운 색 전환 */
+        }
+
+        /* 링크 스타일 */
+        .tabulator-cell a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        .tabulator-cell a:hover {
+            text-decoration: underline;
+        }
+
+        .w-board {
+            padding: 0.3% 2%;
+        }
+
+        .w-board__tit {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-board">
+        <h1 class="w-board__tit">퍼블리싱 리스트</h1>
+        <div id="example-table"></div>
+    </div>
+
+    <script>
+        // JSON 파일에서 데이터를 가져오는 fetch 함수
+        fetch('./w_board.json')
+            .then(response => response.json())
+            .then(tabledata => {
+                // Tabulator 그리드 생성
+                var table = new Tabulator("#example-table", {
+                    data: tabledata, // 외부 JSON 데이터를 사용
+                    layout: "fitColumns", // 데이터를 기반으로 열 너비를 비율에 따라 조정
+                    responsiveLayout: "collapse", // 작은 화면에서는 컬럼을 자동으로 숨김
+                    height: "auto", // 그리드 높이 설정
+                    movableColumns: true, // 컬럼 이동 가능
+                    resizableRows: true, // 행 크기 조정 가능
+                    columns: [
+                        { title: "경로", field: "path", headerSort: false, widthGrow: 4, responsive: 0 }, // 가장 중요, 가장 늦게 숨김
+                        {
+                            title: "링크", field: "link", formatter: "link", formatter: function (cell, formatterParams) {
+                                // 고정된 prefix와 링크 필드의 데이터를 연결
+                                var prefix = "./html/";
+                                var link = cell.getValue();
+                                return `<a href='${prefix}${link}.html' target='_blank'>${link}</a>`;
+
+                            }, widthGrow: 3, responsive: 0
+                        },
+                        {
+                            title: "날짜", field: "date", sorter: "date", widthGrow: 2, sorterParams: {
+                                format: "MM-DD" // 날짜 형식을 지정
+                            }, responsive: 1
+                        }, // 먼저 숨겨질 컬럼
+                        { title: "상태", field: "status", widthGrow: 1, responsive: 1 },
+                        { title: "비고", field: "remarks", widthGrow: 2, responsive: 1 } // 덜 중요, 가장 먼저 숨김
+                    ],
+                    headerVisible: true, // 헤더를 항상 표시
+                    columnDefaults: {
+                        headerFilterPlaceholder: "필터...", // 필터 텍스트
+                    },
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+
+</html>

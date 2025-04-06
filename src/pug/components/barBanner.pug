@@ -1,0 +1,7 @@
+mixin barBanner(title, subText, linkText, linkUrl='#', animationMode, extraClass)
+    .bar-banner(class=extraClass, data-animation=animationMode ? animationMode : false)
+        .bar-banner__inner
+            strong.bar-banner__title!= title
+            p.bar-banner__desc !{subText}
+            a.round-arrow-link.red(href=linkUrl)= linkText
+                i.icon-arrow-round.red 

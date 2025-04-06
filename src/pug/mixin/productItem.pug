@@ -1,0 +1,12 @@
+mixin productItem(title, desc, img)
+    li.product-list__item(data-animation="slideUpMulti") 
+        .product-list__inner
+            a.product-list__link(href="#") 
+                .product-list__img
+                    img(src=img, alt="")
+                .product-list__content 
+                    h3.product-list__title= title 
+                    p.product-list__desc= desc
+                span.product-list__unit(aria-hidden="true")
+
+

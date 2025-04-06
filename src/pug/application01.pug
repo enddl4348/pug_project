@@ -1,0 +1,57 @@
+extends ./layout/layout
+include ./components/subIntro.pug
+include ./components/subTitle.pug
+include ./components/iconListContent.pug
+include ./components/videoIframe.pug
+include ./components/imgTextColumn.pug
+include ./components/sheetLink.pug
+include ./components/deviceList.pug
+include ./components/barBanner.pug
+
+block content
+
+    main.sub.sectors-medical
+        +subIntro('Medical','The InBody 770 and S10 are used by doctors and health experts worldwide for clinical research.','sectors01')
+        
+        section
+            .inner-box
+                +iconListContent('item--row3', [
+                    { iconClass: 'nutrition', subTitle: 'Nutrition', desc: 'Observe changes in body composition for nutritional evaluation.' },
+                    { iconClass: 'nephrology', subTitle: 'Nephrology', desc: 'Gain useful insights into the hydration and nutritional status of dialysis patients.' },
+                    { iconClass: 'cardiology', subTitle: 'Cardiology', desc: 'Demonstrate the risk factors of cardiovascular disease in advance.' },
+                    { iconClass: 'geriatrics', subTitle: 'Geriatrics', desc: 'Observe muscle mass, muscle imbalance and sarcopenia, which are related to fall risks and vulnerability.' },
+                    { iconClass: 'rehabilitation', subTitle: 'Rehabilitation', desc: 'Observe injury and post-operative recovery.' },
+                    { iconClass: 'bariatric', subTitle: 'Bariatric', desc: 'Comprehensive assessment tool for pre and post surgery of obesity treatment.' },
+                    { iconClass: 'diabetes', subTitle: 'Diabetes', desc: 'Address diabetic care and prevention from related health problems.' },
+                    { iconClass: 'unit', subTitle: 'Intensive Care Unit (ICU)', desc: 'Monitor the patient’s nutritional status and recovery progress.' },
+                    { iconClass: 'health', subTitle: 'Health Screening', desc: 'Identify patient who are at risks of developing non-communicable diseases.'},
+                ])
+
+        section
+            .inner-box
+                +subTitle('Revolutionary BIA technology from InBody') 
+                    p.sub-title__desc InBody medical body composition analysers rely on four technological milestones to provide highly accurate and precise results that are highly correlated with golden standard methods.
+                +imgTextColumn([
+                    { itemClass: '', imgSrc: '../img/sub/sectors_medical01.jpg', subTitle: '8-Point Tactile Electrode System', desc: 'When measuring impedance with electrodes, contact resistance occurs. InBody accounts for contact resistance by strategically placing electrodes to accurately measure impedance in the body.' },
+                    { itemClass: '', imgSrc: '../img/sub/sectors_medical02.jpg', subTitle: 'Direct Segmental Measurements', desc: 'InBody provides separate measurements for each of the body’s 5 cylinders (left arm, right arm, left leg, right leg, and trunk) to provide accurate data.' },
+                    { itemClass: '', imgSrc: '../img/sub/sectors_medical03.jpg', subTitle: 'Multiple Frequencies', desc: 'InBody uses different currents at different frequencies to provide the most precise analysis of body water.' },
+                    { itemClass: '', imgSrc: '../img/sub/sectors_medical04.jpg', subTitle: 'No Estimations', desc: 'No empirical estimates are used to calculate your body composition. InBody measures your impedance independently so your results are not affected by your age, ethnicity or gender.' },
+                ])
+        
+        section.video-content.inner-box
+            +subTitle('A test takes less than 60 seconds','',) 
+                p.sub-title__desc Tests are made easy through voice and visual guidance.
+            +videoIframe('https://www.youtube.com/embed/bcZZlo7p8y4', '100%')
+
+        +sheetLink('More than 50 body composition parameters available', 'Providing necessary parameters for Healthcare Professionals to assist in their treatment and prevention in various non-communicable conditions.', 'Learn More', '../img/sub/medical_sheet.png')
+
+        section.device-field.inner-box
+            +subTitle('Popular Devices for the Medical Field','','mb0') 
+                p.sub-title__desc This webpage content is intended for Healthcare Professionals only. For general public knowledge or any personal health advice, please consult your doctor.
+            +deviceList([
+                { imgSrc: '../img/product/sector_device_580.png', title: 'InBody 580', desc: 'The InBody 580 tracks besides muscle and fat the intra- and extracellular water. In the field of diabetes, obesity and sarcopenia essential parameters.'},
+                { imgSrc: '../img/product/sector_device_770.png', title: 'InBody 770', desc: 'The Inbody 770 is a research grade body composition analyser and helps professionals worldwide in the field of diabetes, sarcopenia, nephrology, obesity, fitness and more.'},
+                { imgSrc: '../img/product/sector_device_s10.png', title: 'InBody S10', desc: 'The InBody S10 body water analyser is specifically designed for immobile or amputee patients. The attachable electrodes identify excess fluid and assess cellular health.', extraClass: 'device_s10'},
+                { imgSrc: '../img/product/sector_device_bpbio.png', title: 'BPBIO Blood Pressure', desc: 'The BPBIO 320 is an accurate, fully automated and easy-to-use blood pressure monitor. The monitor features a voice-guided, single-step measurement process and an elbow sensor that allows you to be in the ideal position for testing.',extraClass: 'device_bpbio'},
+            ])
+
